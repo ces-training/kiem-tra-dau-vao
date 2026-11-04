@@ -106,12 +106,13 @@ fs.writeFileSync(path.join(ROOT, 'data/tai-nguyen.js'), out);
 const PHONG_CACH = 'Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). ';
 fs.mkdirSync(path.join(ROOT, 'san-xuat'), { recursive: true });
 const picRows = pics.filter(p => !tranhCo.some(f => f.startsWith(p.id + '.')));
-fs.writeFileSync(path.join(ROOT, 'san-xuat/hinh-can-ve.json'), JSON.stringify(picRows.map(p => ({ ma: p.id, mo_ta: p.desc, tranh_tam: p.spec, cau_lenh: PHONG_CACH + p.desc, file: 'img/tranh/' + p.id + '.webp' })), null, 1));
+/* .json giữ TẤT CẢ tranh (co: đã có file chưa) để công cụ Gemini và trang duyet.html dùng; .csv chỉ liệt kê tranh còn thiếu */
+fs.writeFileSync(path.join(ROOT, 'san-xuat/hinh-can-ve.json'), JSON.stringify(pics.map(p => ({ ma: p.id, mo_ta: p.desc, tranh_tam: p.spec, cau_lenh: PHONG_CACH + p.desc, file: 'img/tranh/' + p.id + '.webp', co: !picRows.includes(p) })), null, 1));
 const csv = r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(',');
 fs.writeFileSync(path.join(ROOT, 'san-xuat/hinh-can-ve.csv'), '\ufeff' + [csv(['Mã (tên file .webp)', 'Mô tả', 'Câu lệnh vẽ'])].concat(picRows.map(p => csv([p.id, p.desc, PHONG_CACH + p.desc]))).join('\n'));
 const TEN_NV = { huou: 'co_huou', anna: 'anna', xm: 'xiaomei', leo: 'leo', bong: 'bong', tho: 'tho_con', gau: 'gau_con', me: 'me', bo: 'bo' };
 const lineRows = [...lines.values()].filter(l => !amCo.includes(l.id + '.mp3'));
-fs.writeFileSync(path.join(ROOT, 'san-xuat/giong-doc.json'), JSON.stringify(lineRows.map(l => ({ ma: l.id, nhan_vat: TEN_NV[l.nv] || l.nv, giong: (giong[TEN_NV[l.nv]] || [''])[0], nang_tong: (giong[TEN_NV[l.nv]] || [0, false])[1], tieng: l.lang, loi: l.loi, file: 'audio/' + l.id + '.mp3', dung_o: l.noi })), null, 1));
+fs.writeFileSync(path.join(ROOT, 'san-xuat/giong-doc.json'), JSON.stringify([...lines.values()].map(l => ({ co: amCo.includes(l.id + '.mp3'), ma: l.id, nhan_vat: TEN_NV[l.nv] || l.nv, giong: (giong[TEN_NV[l.nv]] || [''])[0], nang_tong: (giong[TEN_NV[l.nv]] || [0, false])[1], tieng: l.lang, loi: l.loi, file: 'audio/' + l.id + '.mp3', dung_o: l.noi })), null, 1));
 fs.writeFileSync(path.join(ROOT, 'san-xuat/giong-doc.csv'), '\ufeff' + [csv(['Mã (tên file .mp3)', 'Nhân vật', 'Giọng Gemini', 'Tiếng', 'Lời'])].concat(lineRows.map(l => csv([l.id, TEN_NV[l.nv] || l.nv, (giong[TEN_NV[l.nv]] || [''])[0], l.lang, l.loi]))).join('\n'));
 
 console.log('Câu hỏi:', flat.length, '| Tranh cần vẽ:', picRows.length, '| Câu cần thu giọng:', lineRows.length, '| Emoji:', Object.keys(emojiMap).length, '| Emoji thiếu:', thieu.join(' ') || 'không');

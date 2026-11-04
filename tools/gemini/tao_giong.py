@@ -18,6 +18,8 @@ OUT = ROOT / "audio"
 KEY = Path(sys.argv[1]).read_text().strip()
 MODE = sys.argv[2]
 ONLY = set(sys.argv[3:]) if sys.argv[2] != "cho" else set()
+# Câu Gemini hay đọc sai khi đứng một mình: gửi kèm dấu câu / cách viết khác (chỉ đổi lời gửi đi, không đổi mã)
+DOC_THAY = {"xm_zh_02239684": "学校。"}
 NANG = 1.12   # nâng tông giọng bạn nhỏ (Anna, Xiaomei) khoảng 2 nửa cung, giữ nguyên tốc độ
 
 
@@ -35,7 +37,7 @@ def loi_doc(t):
 
 def request(j):
     # mô hình 3.8 đọc to cả lời dặn, nên chỉ gửi đúng câu cần đọc
-    return {"contents": [{"parts": [{"text": loi_doc(j["loi"])}]}],
+    return {"contents": [{"parts": [{"text": DOC_THAY.get(j["ma"]) or loi_doc(j["loi"])}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": j["giong"]}}}}}
 
