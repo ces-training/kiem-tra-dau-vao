@@ -1,0 +1,3970 @@
+[
+ {
+  "ma": "anna_en_10bc2abf",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "apple",
+  "file": "audio/anna_en_10bc2abf.mp3",
+  "dung_o": [
+   "E-TV-THU"
+  ]
+ },
+ {
+  "ma": "anna_en_40f480dc",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "red",
+  "file": "audio/anna_en_40f480dc.mp3",
+  "dung_o": [
+   "E-TV-1-1A",
+   "E-VI-1-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_011decbc",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "green",
+  "file": "audio/anna_en_011decbc.mp3",
+  "dung_o": [
+   "E-TV-1-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_05bf6449",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "yellow",
+  "file": "audio/anna_en_05bf6449.mp3",
+  "dung_o": [
+   "E-TV-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_82fbf5cd",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "blue",
+  "file": "audio/anna_en_82fbf5cd.mp3",
+  "dung_o": [
+   "E-TV-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_568f4ba4",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "black",
+  "file": "audio/anna_en_568f4ba4.mp3",
+  "dung_o": [
+   "E-TV-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_e668bd09",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "dog",
+  "file": "audio/anna_en_e668bd09.mp3",
+  "dung_o": [
+   "E-TV-1-2A"
+  ]
+ },
+ {
+  "ma": "anna_en_afad8963",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "fish",
+  "file": "audio/anna_en_afad8963.mp3",
+  "dung_o": [
+   "E-TV-1-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_06745c07",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "cat",
+  "file": "audio/anna_en_06745c07.mp3",
+  "dung_o": [
+   "E-TV-1-2C",
+   "E-NG-THU"
+  ]
+ },
+ {
+  "ma": "anna_en_bb323378",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "duck",
+  "file": "audio/anna_en_bb323378.mp3",
+  "dung_o": [
+   "E-TV-1-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_f78ddc50",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "cow",
+  "file": "audio/anna_en_f78ddc50.mp3",
+  "dung_o": [
+   "E-TV-1-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_888603c3",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "three",
+  "file": "audio/anna_en_888603c3.mp3",
+  "dung_o": [
+   "E-TV-1-3A"
+  ]
+ },
+ {
+  "ma": "anna_en_3583acfe",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "seven",
+  "file": "audio/anna_en_3583acfe.mp3",
+  "dung_o": [
+   "E-TV-1-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_aeb44395",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "five",
+  "file": "audio/anna_en_aeb44395.mp3",
+  "dung_o": [
+   "E-TV-1-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_16266f55",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "nine",
+  "file": "audio/anna_en_16266f55.mp3",
+  "dung_o": [
+   "E-TV-1-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_be248829",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "two",
+  "file": "audio/anna_en_be248829.mp3",
+  "dung_o": [
+   "E-TV-1-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_78627a04",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "pencil",
+  "file": "audio/anna_en_78627a04.mp3",
+  "dung_o": [
+   "E-TV-2-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_ebb76fff",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "juice",
+  "file": "audio/anna_en_ebb76fff.mp3",
+  "dung_o": [
+   "E-TV-2-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_c4ba2f20",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "hand",
+  "file": "audio/anna_en_c4ba2f20.mp3",
+  "dung_o": [
+   "E-TV-2-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_5a5abd06",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "You go here when you are ill. Doctors and nurses work here.",
+  "file": "audio/anna_en_5a5abd06.mp3",
+  "dung_o": [
+   "E-TV-3-1A"
+  ]
+ },
+ {
+  "ma": "anna_en_745559fd",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "You can borrow books here.",
+  "file": "audio/anna_en_745559fd.mp3",
+  "dung_o": [
+   "E-TV-3-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_d933a454",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "This person cooks food in a restaurant.",
+  "file": "audio/anna_en_d933a454.mp3",
+  "dung_o": [
+   "E-TV-3-2A"
+  ]
+ },
+ {
+  "ma": "anna_en_30655126",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "This person drives a bus or a taxi.",
+  "file": "audio/anna_en_30655126.mp3",
+  "dung_o": [
+   "E-TV-3-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_67bf86af",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "It is white and cold. It falls from the sky in winter.",
+  "file": "audio/anna_en_67bf86af.mp3",
+  "dung_o": [
+   "E-TV-3-3A"
+  ]
+ },
+ {
+  "ma": "anna_en_adfa29f3",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "It is long and full of water. Boats can go on it.",
+  "file": "audio/anna_en_adfa29f3.mp3",
+  "dung_o": [
+   "E-TV-3-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_c6917780",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What is he doing?",
+  "file": "audio/anna_en_c6917780.mp3",
+  "dung_o": [
+   "E-TV-4-1C"
+  ]
+ },
+ {
+  "ma": "me_en_656ce18c",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Put the ball under the chair.",
+  "file": "audio/me_en_656ce18c.mp3",
+  "dung_o": [
+   "E-NG-1-1A"
+  ]
+ },
+ {
+  "ma": "me_en_9653fdc4",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Put the cat in the box.",
+  "file": "audio/me_en_9653fdc4.mp3",
+  "dung_o": [
+   "E-NG-1-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_2a9365a3",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The duck is on the table.",
+  "file": "audio/anna_en_2a9365a3.mp3",
+  "dung_o": [
+   "E-NG-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_67efe978",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The duck is under the table.",
+  "file": "audio/anna_en_67efe978.mp3",
+  "dung_o": [
+   "E-NG-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_1291faeb",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The duck is in the bag.",
+  "file": "audio/anna_en_1291faeb.mp3",
+  "dung_o": [
+   "E-NG-1-1C"
+  ]
+ },
+ {
+  "ma": "me_en_9f7b9c97",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Colour the kite blue.",
+  "file": "audio/me_en_9f7b9c97.mp3",
+  "dung_o": [
+   "E-NG-1-2A"
+  ]
+ },
+ {
+  "ma": "me_en_d80163b3",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Colour the car red.",
+  "file": "audio/me_en_d80163b3.mp3",
+  "dung_o": [
+   "E-NG-1-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_e545645a",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Leo has got a green hat.",
+  "file": "audio/anna_en_e545645a.mp3",
+  "dung_o": [
+   "E-NG-1-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_536e9aae",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Leo has got a red hat.",
+  "file": "audio/anna_en_536e9aae.mp3",
+  "dung_o": [
+   "E-NG-1-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_2c3eb41b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Leo has got a green bag.",
+  "file": "audio/anna_en_2c3eb41b.mp3",
+  "dung_o": [
+   "E-NG-1-2C"
+  ]
+ },
+ {
+  "ma": "leo_en_cad0e930",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "I've got a robot!",
+  "file": "audio/leo_en_cad0e930.mp3",
+  "dung_o": [
+   "E-NG-1-3A"
+  ]
+ },
+ {
+  "ma": "me_en_71751748",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Look! Leo has got a train.",
+  "file": "audio/me_en_71751748.mp3",
+  "dung_o": [
+   "E-NG-1-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_2df4912f",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Anna has got a doll.",
+  "file": "audio/anna_en_2df4912f.mp3",
+  "dung_o": [
+   "E-NG-1-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_c100274b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Anna has got a ball.",
+  "file": "audio/anna_en_c100274b.mp3",
+  "dung_o": [
+   "E-NG-1-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_8bb95452",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Anna has got a car.",
+  "file": "audio/anna_en_8bb95452.mp3",
+  "dung_o": [
+   "E-NG-1-3C"
+  ]
+ },
+ {
+  "ma": "bo_en_0574390a",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Who's that girl with the long hair?",
+  "file": "audio/bo_en_0574390a.mp3",
+  "dung_o": [
+   "E-NG-2-1A"
+  ]
+ },
+ {
+  "ma": "me_en_63d63bb4",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "That's Anna. She's reading a book.",
+  "file": "audio/me_en_63d63bb4.mp3",
+  "dung_o": [
+   "E-NG-2-1A"
+  ]
+ },
+ {
+  "ma": "me_en_4a481743",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "And the boy with the apple?",
+  "file": "audio/me_en_4a481743.mp3",
+  "dung_o": [
+   "E-NG-2-1B"
+  ]
+ },
+ {
+  "ma": "bo_en_6a929ff4",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "His name is Tom.",
+  "file": "audio/bo_en_6a929ff4.mp3",
+  "dung_o": [
+   "E-NG-2-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_7948c04f",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Sam is sitting under the tree.",
+  "file": "audio/anna_en_7948c04f.mp3",
+  "dung_o": [
+   "E-NG-2-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_a3d8eca7",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Sam is standing next to the tree.",
+  "file": "audio/anna_en_a3d8eca7.mp3",
+  "dung_o": [
+   "E-NG-2-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_51009400",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Sam is sitting in the car.",
+  "file": "audio/anna_en_51009400.mp3",
+  "dung_o": [
+   "E-NG-2-1C"
+  ]
+ },
+ {
+  "ma": "me_en_14bc98d2",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Is your brother playing football?",
+  "file": "audio/me_en_14bc98d2.mp3",
+  "dung_o": [
+   "E-NG-2-2A"
+  ]
+ },
+ {
+  "ma": "leo_en_c6167f96",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "No, he isn't. He's swimming.",
+  "file": "audio/leo_en_c6167f96.mp3",
+  "dung_o": [
+   "E-NG-2-2A"
+  ]
+ },
+ {
+  "ma": "anna_en_97ef1b80",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What is the brother doing?",
+  "file": "audio/anna_en_97ef1b80.mp3",
+  "dung_o": [
+   "E-NG-2-2A"
+  ]
+ },
+ {
+  "ma": "bo_en_8da92180",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What's Lucy doing?",
+  "file": "audio/bo_en_8da92180.mp3",
+  "dung_o": [
+   "E-NG-2-2B"
+  ]
+ },
+ {
+  "ma": "me_en_b8504834",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "She's painting a picture of her cat.",
+  "file": "audio/me_en_b8504834.mp3",
+  "dung_o": [
+   "E-NG-2-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_2a73ca54",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What is Lucy doing?",
+  "file": "audio/anna_en_2a73ca54.mp3",
+  "dung_o": [
+   "E-NG-2-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_a1ffd47e",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The bear is eating.",
+  "file": "audio/anna_en_a1ffd47e.mp3",
+  "dung_o": [
+   "E-NG-2-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_79739c7b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The bear is sleeping.",
+  "file": "audio/anna_en_79739c7b.mp3",
+  "dung_o": [
+   "E-NG-2-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_3c6bbdc1",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The bear is running.",
+  "file": "audio/anna_en_3c6bbdc1.mp3",
+  "dung_o": [
+   "E-NG-2-2C"
+  ]
+ },
+ {
+  "ma": "bo_en_d243bbc6",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "How old is your sister?",
+  "file": "audio/bo_en_d243bbc6.mp3",
+  "dung_o": [
+   "E-NG-2-3A"
+  ]
+ },
+ {
+  "ma": "me_en_4c3cc50c",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "She's seven.",
+  "file": "audio/me_en_4c3cc50c.mp3",
+  "dung_o": [
+   "E-NG-2-3A"
+  ]
+ },
+ {
+  "ma": "anna_en_fe5d3c26",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "How old is the sister?",
+  "file": "audio/anna_en_fe5d3c26.mp3",
+  "dung_o": [
+   "E-NG-2-3A"
+  ]
+ },
+ {
+  "ma": "me_en_4c6ec8ca",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What's your cat's name?",
+  "file": "audio/me_en_4c6ec8ca.mp3",
+  "dung_o": [
+   "E-NG-2-3B"
+  ]
+ },
+ {
+  "ma": "leo_en_91f4c7c5",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Kim. K, I, M.",
+  "file": "audio/leo_en_91f4c7c5.mp3",
+  "dung_o": [
+   "E-NG-2-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_96dbcc44",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's the cat's name?",
+  "file": "audio/anna_en_96dbcc44.mp3",
+  "dung_o": [
+   "E-NG-2-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_28c68e37",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "There are nine books.",
+  "file": "audio/anna_en_28c68e37.mp3",
+  "dung_o": [
+   "E-NG-2-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_0ec483f7",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "There are five books.",
+  "file": "audio/anna_en_0ec483f7.mp3",
+  "dung_o": [
+   "E-NG-2-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_6eec1b29",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "There are six books.",
+  "file": "audio/anna_en_6eec1b29.mp3",
+  "dung_o": [
+   "E-NG-2-3C"
+  ]
+ },
+ {
+  "ma": "bo_en_2134d8fe",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Do you have swimming lessons on Monday, Mary?",
+  "file": "audio/bo_en_2134d8fe.mp3",
+  "dung_o": [
+   "E-NG-3-1A"
+  ]
+ },
+ {
+  "ma": "anna_en_93cd78fe",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "No, on Monday I have music. I go swimming on Wednesday.",
+  "file": "audio/anna_en_93cd78fe.mp3",
+  "dung_o": [
+   "E-NG-3-1A"
+  ]
+ },
+ {
+  "ma": "me_en_b0e21aa3",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "When does Mary go swimming?",
+  "file": "audio/me_en_b0e21aa3.mp3",
+  "dung_o": [
+   "E-NG-3-1A"
+  ]
+ },
+ {
+  "ma": "me_en_c32759e9",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What time do you get up, Ben?",
+  "file": "audio/me_en_c32759e9.mp3",
+  "dung_o": [
+   "E-NG-3-1B"
+  ]
+ },
+ {
+  "ma": "leo_en_a2ae919f",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "At seven o'clock... no, at half past seven on school days.",
+  "file": "audio/leo_en_a2ae919f.mp3",
+  "dung_o": [
+   "E-NG-3-1B"
+  ]
+ },
+ {
+  "ma": "me_en_0655ffbe",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What time does Ben get up?",
+  "file": "audio/me_en_0655ffbe.mp3",
+  "dung_o": [
+   "E-NG-3-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_3002704b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He plays football on Saturdays.",
+  "file": "audio/anna_en_3002704b.mp3",
+  "dung_o": [
+   "E-NG-3-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_faee6108",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He plays football on Sundays.",
+  "file": "audio/anna_en_faee6108.mp3",
+  "dung_o": [
+   "E-NG-3-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_5a8e2fd1",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He plays tennis on Saturdays.",
+  "file": "audio/anna_en_5a8e2fd1.mp3",
+  "dung_o": [
+   "E-NG-3-1C"
+  ]
+ },
+ {
+  "ma": "me_en_1226352a",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What did you do yesterday, Sam?",
+  "file": "audio/me_en_1226352a.mp3",
+  "dung_o": [
+   "E-NG-3-2A"
+  ]
+ },
+ {
+  "ma": "leo_en_d73cc00e",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "I went to the zoo with Grandpa. We saw a big crocodile!",
+  "file": "audio/leo_en_d73cc00e.mp3",
+  "dung_o": [
+   "E-NG-3-2A"
+  ]
+ },
+ {
+  "ma": "me_en_1745456d",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Where did Sam go yesterday?",
+  "file": "audio/me_en_1745456d.mp3",
+  "dung_o": [
+   "E-NG-3-2A"
+  ]
+ },
+ {
+  "ma": "bo_en_c7ae7f03",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Did you watch TV last night, Lily?",
+  "file": "audio/bo_en_c7ae7f03.mp3",
+  "dung_o": [
+   "E-NG-3-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_185a5c46",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "No, I didn't. I read a comic.",
+  "file": "audio/anna_en_185a5c46.mp3",
+  "dung_o": [
+   "E-NG-3-2B"
+  ]
+ },
+ {
+  "ma": "me_en_998f75c8",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What did Lily do last night?",
+  "file": "audio/me_en_998f75c8.mp3",
+  "dung_o": [
+   "E-NG-3-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_993c2939",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Mary went to the beach.",
+  "file": "audio/anna_en_993c2939.mp3",
+  "dung_o": [
+   "E-NG-3-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_8faa8f08",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Mary went to the market.",
+  "file": "audio/anna_en_8faa8f08.mp3",
+  "dung_o": [
+   "E-NG-3-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_86ad17ac",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Mary went to the farm.",
+  "file": "audio/anna_en_86ad17ac.mp3",
+  "dung_o": [
+   "E-NG-3-2C"
+  ]
+ },
+ {
+  "ma": "leo_en_f984f87c",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Mum, where's my jacket?",
+  "file": "audio/leo_en_f984f87c.mp3",
+  "dung_o": [
+   "E-NG-3-3A"
+  ]
+ },
+ {
+  "ma": "me_en_463ca02f",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Is it next to the door? No, look, it's behind the sofa.",
+  "file": "audio/me_en_463ca02f.mp3",
+  "dung_o": [
+   "E-NG-3-3A"
+  ]
+ },
+ {
+  "ma": "bo_en_d08cbb78",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Where is the jacket?",
+  "file": "audio/bo_en_d08cbb78.mp3",
+  "dung_o": [
+   "E-NG-3-3A"
+  ]
+ },
+ {
+  "ma": "me_en_ab1283ed",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Where's the kitten?",
+  "file": "audio/me_en_ab1283ed.mp3",
+  "dung_o": [
+   "E-NG-3-3B"
+  ]
+ },
+ {
+  "ma": "bo_en_a93e84c8",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "It's between the two boxes.",
+  "file": "audio/bo_en_a93e84c8.mp3",
+  "dung_o": [
+   "E-NG-3-3B"
+  ]
+ },
+ {
+  "ma": "me_en_d139774f",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Where is the kitten?",
+  "file": "audio/me_en_d139774f.mp3",
+  "dung_o": [
+   "E-NG-3-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_7329cce8",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The umbrella is next to the fridge.",
+  "file": "audio/anna_en_7329cce8.mp3",
+  "dung_o": [
+   "E-NG-3-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_333b57e1",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The umbrella is in the fridge.",
+  "file": "audio/anna_en_333b57e1.mp3",
+  "dung_o": [
+   "E-NG-3-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_7dabde5d",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The umbrella is behind the door.",
+  "file": "audio/anna_en_7dabde5d.mp3",
+  "dung_o": [
+   "E-NG-3-3C"
+  ]
+ },
+ {
+  "ma": "bo_en_fedfbfdc",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What are you going to do this weekend, Emma?",
+  "file": "audio/bo_en_fedfbfdc.mp3",
+  "dung_o": [
+   "E-NG-4-1A"
+  ]
+ },
+ {
+  "ma": "anna_en_fdd21ec3",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "I wanted to go camping, but it's going to rain. So I'm going to visit my aunt.",
+  "file": "audio/anna_en_fdd21ec3.mp3",
+  "dung_o": [
+   "E-NG-4-1A"
+  ]
+ },
+ {
+  "ma": "me_en_30a6cc14",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "What is Emma going to do?",
+  "file": "audio/me_en_30a6cc14.mp3",
+  "dung_o": [
+   "E-NG-4-1A"
+  ]
+ },
+ {
+  "ma": "me_en_e84ceb2f",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Are you going to fly to Da Nang?",
+  "file": "audio/me_en_e84ceb2f.mp3",
+  "dung_o": [
+   "E-NG-4-1B"
+  ]
+ },
+ {
+  "ma": "bo_en_03d06396",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Not this time. It's cheaper by train, so we're going to take the train.",
+  "file": "audio/bo_en_03d06396.mp3",
+  "dung_o": [
+   "E-NG-4-1B"
+  ]
+ },
+ {
+  "ma": "me_en_c35da09f",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "How are they going to travel?",
+  "file": "audio/me_en_c35da09f.mp3",
+  "dung_o": [
+   "E-NG-4-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_421901bb",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "She's going to ride her bike tomorrow.",
+  "file": "audio/anna_en_421901bb.mp3",
+  "dung_o": [
+   "E-NG-4-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_9873d4ed",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "She rode her bike yesterday.",
+  "file": "audio/anna_en_9873d4ed.mp3",
+  "dung_o": [
+   "E-NG-4-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_3b40771a",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "She's going to buy a new bike.",
+  "file": "audio/anna_en_3b40771a.mp3",
+  "dung_o": [
+   "E-NG-4-1C"
+  ]
+ },
+ {
+  "ma": "me_en_5e39b6f2",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Why didn't you come to school yesterday, Peter?",
+  "file": "audio/me_en_5e39b6f2.mp3",
+  "dung_o": [
+   "E-NG-4-2A"
+  ]
+ },
+ {
+  "ma": "leo_en_e06482c0",
+  "nhan_vat": "leo",
+  "giong": "Fenrir",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "I had a terrible toothache, so I went to the dentist.",
+  "file": "audio/leo_en_e06482c0.mp3",
+  "dung_o": [
+   "E-NG-4-2A"
+  ]
+ },
+ {
+  "ma": "me_en_a89be579",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Why didn't Peter go to school?",
+  "file": "audio/me_en_a89be579.mp3",
+  "dung_o": [
+   "E-NG-4-2A"
+  ]
+ },
+ {
+  "ma": "bo_en_5018cffb",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Why is Sophia so happy today?",
+  "file": "audio/bo_en_5018cffb.mp3",
+  "dung_o": [
+   "E-NG-4-2B"
+  ]
+ },
+ {
+  "ma": "me_en_9202c2e7",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "She won a prize in the drawing competition.",
+  "file": "audio/me_en_9202c2e7.mp3",
+  "dung_o": [
+   "E-NG-4-2B"
+  ]
+ },
+ {
+  "ma": "bo_en_ccec53e4",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Why is Sophia happy?",
+  "file": "audio/bo_en_ccec53e4.mp3",
+  "dung_o": [
+   "E-NG-4-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_f6e0474b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He's wet because he didn't open his umbrella.",
+  "file": "audio/anna_en_f6e0474b.mp3",
+  "dung_o": [
+   "E-NG-4-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_02d3bc5e",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He's wet because he went swimming.",
+  "file": "audio/anna_en_02d3bc5e.mp3",
+  "dung_o": [
+   "E-NG-4-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_51822454",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He's happy because it's sunny.",
+  "file": "audio/anna_en_51822454.mp3",
+  "dung_o": [
+   "E-NG-4-2C"
+  ]
+ },
+ {
+  "ma": "me_en_dc51dc7c",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Which one is your brother?",
+  "file": "audio/me_en_dc51dc7c.mp3",
+  "dung_o": [
+   "E-NG-4-3A"
+  ]
+ },
+ {
+  "ma": "anna_en_0409b83f",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "He's the tallest boy. The one with glasses.",
+  "file": "audio/anna_en_0409b83f.mp3",
+  "dung_o": [
+   "E-NG-4-3A"
+  ]
+ },
+ {
+  "ma": "me_en_84926102",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Which boy is the brother?",
+  "file": "audio/me_en_84926102.mp3",
+  "dung_o": [
+   "E-NG-4-3A"
+  ]
+ },
+ {
+  "ma": "bo_en_77ead7f9",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "Which bag is the cheapest?",
+  "file": "audio/bo_en_77ead7f9.mp3",
+  "dung_o": [
+   "E-NG-4-3B"
+  ]
+ },
+ {
+  "ma": "me_en_b92fbd12",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "en",
+  "loi": "The green one is cheaper than the red one, but the blue one is the cheapest.",
+  "file": "audio/me_en_b92fbd12.mp3",
+  "dung_o": [
+   "E-NG-4-3B"
+  ]
+ },
+ {
+  "ma": "anna_en_bd4350bf",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The white dog is the smallest.",
+  "file": "audio/anna_en_bd4350bf.mp3",
+  "dung_o": [
+   "E-NG-4-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_93b314b7",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The white dog is the biggest.",
+  "file": "audio/anna_en_93b314b7.mp3",
+  "dung_o": [
+   "E-NG-4-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_aa5bc3d1",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "The black dog is the smallest.",
+  "file": "audio/anna_en_aa5bc3d1.mp3",
+  "dung_o": [
+   "E-NG-4-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_949f1a7f",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Touch the letter B.",
+  "file": "audio/anna_en_949f1a7f.mp3",
+  "dung_o": [
+   "E-DO-1-1A"
+  ]
+ },
+ {
+  "ma": "anna_en_3297c474",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Touch the letter M.",
+  "file": "audio/anna_en_3297c474.mp3",
+  "dung_o": [
+   "E-DO-1-1B"
+  ]
+ },
+ {
+  "ma": "anna_en_d60c1322",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "S",
+  "file": "audio/anna_en_d60c1322.mp3",
+  "dung_o": [
+   "E-DO-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_c60bf9f2",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "C",
+  "file": "audio/anna_en_c60bf9f2.mp3",
+  "dung_o": [
+   "E-DO-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_df0c214d",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Z",
+  "file": "audio/anna_en_df0c214d.mp3",
+  "dung_o": [
+   "E-DO-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_250a9362",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Sun. Which letter does sun start with?",
+  "file": "audio/anna_en_250a9362.mp3",
+  "dung_o": [
+   "E-DO-1-2A"
+  ]
+ },
+ {
+  "ma": "anna_en_6b49df72",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Fish. Which letter does fish start with?",
+  "file": "audio/anna_en_6b49df72.mp3",
+  "dung_o": [
+   "E-DO-1-2B"
+  ]
+ },
+ {
+  "ma": "anna_en_9b27873c",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Which picture starts with this letter?",
+  "file": "audio/anna_en_9b27873c.mp3",
+  "dung_o": [
+   "E-DO-1-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_28470eae",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "People are buying fruit at the market.",
+  "file": "audio/anna_en_28470eae.mp3",
+  "dung_o": [
+   "E-DO-3-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_6f602d19",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "People are watching a film at the cinema.",
+  "file": "audio/anna_en_6f602d19.mp3",
+  "dung_o": [
+   "E-DO-3-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_25d1f6e5",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "People are reading at the library.",
+  "file": "audio/anna_en_25d1f6e5.mp3",
+  "dung_o": [
+   "E-DO-3-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_fad50cec",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's the matter?",
+  "file": "audio/anna_en_fad50cec.mp3",
+  "dung_o": [
+   "E-DO-3-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_63f05cec",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Leo is wearing boots because it's raining.",
+  "file": "audio/anna_en_63f05cec.mp3",
+  "dung_o": [
+   "E-DO-3-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_66a91a0c",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Leo is wearing a hat because it's sunny.",
+  "file": "audio/anna_en_66a91a0c.mp3",
+  "dung_o": [
+   "E-DO-3-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_e31f47c4",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Leo is at home because it's raining.",
+  "file": "audio/anna_en_e31f47c4.mp3",
+  "dung_o": [
+   "E-DO-3-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_9eb49a99",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Sam's kite got stuck in a tall tree. He couldn't reach it. His grandma brought a ladder and helped him. Sam said thank you and gave her a big hug.",
+  "file": "audio/anna_en_9eb49a99.mp3",
+  "dung_o": [
+   "E-DO-4-1C",
+   "E-DO-4-2C",
+   "E-DO-4-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_50ae46ec",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "bed",
+  "file": "audio/anna_en_50ae46ec.mp3",
+  "dung_o": [
+   "E-VI-1-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_5fd56df9",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "bus",
+  "file": "audio/anna_en_5fd56df9.mp3",
+  "dung_o": [
+   "E-VI-1-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_07cc25f4",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "sheep",
+  "file": "audio/anna_en_07cc25f4.mp3",
+  "dung_o": [
+   "E-VI-2-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_117f73fe",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What colour is the chair?",
+  "file": "audio/anna_en_117f73fe.mp3",
+  "dung_o": [
+   "E-VI-2-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_548d43c4",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "I drink milk every morning.",
+  "file": "audio/anna_en_548d43c4.mp3",
+  "dung_o": [
+   "E-VI-2-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_260cb343",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "We went to the park yesterday.",
+  "file": "audio/anna_en_260cb343.mp3",
+  "dung_o": [
+   "E-VI-3-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_3fcc4d24",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What did you eat?",
+  "file": "audio/anna_en_3fcc4d24.mp3",
+  "dung_o": [
+   "E-VI-3-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_0a0734c6",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's the weather like?",
+  "file": "audio/anna_en_0a0734c6.mp3",
+  "dung_o": [
+   "E-VI-3-3C"
+  ]
+ },
+ {
+  "ma": "anna_en_0d997774",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "I couldn't go out because it was raining.",
+  "file": "audio/anna_en_0d997774.mp3",
+  "dung_o": [
+   "E-VI-4-1C"
+  ]
+ },
+ {
+  "ma": "anna_en_2ce2a97b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "She bought a new bag.",
+  "file": "audio/anna_en_2ce2a97b.mp3",
+  "dung_o": [
+   "E-VI-4-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_2b987a0f",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "猫",
+  "file": "audio/xm_zh_2b987a0f.mp3",
+  "dung_o": [
+   "Z-NG-THU"
+  ]
+ },
+ {
+  "ma": "xm_zh_54abffeb",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "再见",
+  "file": "audio/xm_zh_54abffeb.mp3",
+  "dung_o": [
+   "Z-NG-1-1A",
+   "Z-NG-1-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_4f774845",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "谢谢",
+  "file": "audio/xm_zh_4f774845.mp3",
+  "dung_o": [
+   "Z-NG-1-1B"
+  ]
+ },
+ {
+  "ma": "xm_zh_86938da3",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你好",
+  "file": "audio/xm_zh_86938da3.mp3",
+  "dung_o": [
+   "Z-NG-1-1C",
+   "Z-G-1"
+  ]
+ },
+ {
+  "ma": "xm_zh_82ad9def",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "不客气",
+  "file": "audio/xm_zh_82ad9def.mp3",
+  "dung_o": [
+   "Z-NG-1-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_3259564b",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "爸爸",
+  "file": "audio/xm_zh_3259564b.mp3",
+  "dung_o": [
+   "Z-NG-1-2A"
+  ]
+ },
+ {
+  "ma": "xm_zh_bbe64cdf",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "哥哥",
+  "file": "audio/xm_zh_bbe64cdf.mp3",
+  "dung_o": [
+   "Z-NG-1-2B"
+  ]
+ },
+ {
+  "ma": "xm_zh_2f469ab1",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "姐姐",
+  "file": "audio/xm_zh_2f469ab1.mp3",
+  "dung_o": [
+   "Z-NG-1-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_27968195",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "妹妹",
+  "file": "audio/xm_zh_27968195.mp3",
+  "dung_o": [
+   "Z-NG-1-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_f4c2e707",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "妈妈",
+  "file": "audio/xm_zh_f4c2e707.mp3",
+  "dung_o": [
+   "Z-NG-1-2C",
+   "Z-G-3",
+   "Z-HZ-1"
+  ]
+ },
+ {
+  "ma": "xm_zh_554027ed",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "五",
+  "file": "audio/xm_zh_554027ed.mp3",
+  "dung_o": [
+   "Z-NG-1-3A"
+  ]
+ },
+ {
+  "ma": "xm_zh_d44986bc",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "八",
+  "file": "audio/xm_zh_d44986bc.mp3",
+  "dung_o": [
+   "Z-NG-1-3B"
+  ]
+ },
+ {
+  "ma": "xm_zh_94469b48",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "三",
+  "file": "audio/xm_zh_94469b48.mp3",
+  "dung_o": [
+   "Z-NG-1-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_5c8076ce",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "四",
+  "file": "audio/xm_zh_5c8076ce.mp3",
+  "dung_o": [
+   "Z-NG-1-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_2e5d9c22",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "十",
+  "file": "audio/xm_zh_2e5d9c22.mp3",
+  "dung_o": [
+   "Z-NG-1-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_8d598865",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "红色",
+  "file": "audio/xm_zh_8d598865.mp3",
+  "dung_o": [
+   "Z-NG-2-1A",
+   "Z-HZ-2"
+  ]
+ },
+ {
+  "ma": "xm_zh_d7767726",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "黄色",
+  "file": "audio/xm_zh_d7767726.mp3",
+  "dung_o": [
+   "Z-NG-2-1B"
+  ]
+ },
+ {
+  "ma": "xm_zh_cc615eee",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "蓝色",
+  "file": "audio/xm_zh_cc615eee.mp3",
+  "dung_o": [
+   "Z-NG-2-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_52be251b",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "绿色",
+  "file": "audio/xm_zh_52be251b.mp3",
+  "dung_o": [
+   "Z-NG-2-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_388b1e4f",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "黑色",
+  "file": "audio/xm_zh_388b1e4f.mp3",
+  "dung_o": [
+   "Z-NG-2-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_afa198a0",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "狗",
+  "file": "audio/xm_zh_afa198a0.mp3",
+  "dung_o": [
+   "Z-NG-2-2A",
+   "Z-HZ-3"
+  ]
+ },
+ {
+  "ma": "xm_zh_91036441",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "苹果",
+  "file": "audio/xm_zh_91036441.mp3",
+  "dung_o": [
+   "Z-NG-2-2B",
+   "Z-HZ-4"
+  ]
+ },
+ {
+  "ma": "xm_zh_8f0926f5",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "香蕉",
+  "file": "audio/xm_zh_8f0926f5.mp3",
+  "dung_o": [
+   "Z-NG-2-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_713d6f38",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "草莓",
+  "file": "audio/xm_zh_713d6f38.mp3",
+  "dung_o": [
+   "Z-NG-2-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_1327b887",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "葡萄",
+  "file": "audio/xm_zh_1327b887.mp3",
+  "dung_o": [
+   "Z-NG-2-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_e4a58f81",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我五岁。",
+  "file": "audio/xm_zh_e4a58f81.mp3",
+  "dung_o": [
+   "Z-NG-2-3A"
+  ]
+ },
+ {
+  "ma": "xm_zh_1ac52ad6",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我喜欢猫。",
+  "file": "audio/xm_zh_1ac52ad6.mp3",
+  "dung_o": [
+   "Z-NG-2-3B"
+  ]
+ },
+ {
+  "ma": "xm_zh_c371362f",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "小美吃苹果。",
+  "file": "audio/xm_zh_c371362f.mp3",
+  "dung_o": [
+   "Z-NG-2-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_3982b791",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "小美喝水。",
+  "file": "audio/xm_zh_3982b791.mp3",
+  "dung_o": [
+   "Z-NG-2-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_0eab8458",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "小美看书。",
+  "file": "audio/xm_zh_0eab8458.mp3",
+  "dung_o": [
+   "Z-NG-2-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_2c2312ce",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "今天下雨了。",
+  "file": "audio/xm_zh_2c2312ce.mp3",
+  "dung_o": [
+   "Z-NG-3-1A"
+  ]
+ },
+ {
+  "ma": "bo_zh_390c7b8c",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "今天天气怎么样？",
+  "file": "audio/bo_zh_390c7b8c.mp3",
+  "dung_o": [
+   "Z-NG-3-1B"
+  ]
+ },
+ {
+  "ma": "me_zh_db51a522",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "很热。",
+  "file": "audio/me_zh_db51a522.mp3",
+  "dung_o": [
+   "Z-NG-3-1B"
+  ]
+ },
+ {
+  "ma": "xm_zh_eaee4e46",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "下雨了",
+  "file": "audio/xm_zh_eaee4e46.mp3",
+  "dung_o": [
+   "Z-NG-3-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_39d4ef9c",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "下雪了",
+  "file": "audio/xm_zh_39d4ef9c.mp3",
+  "dung_o": [
+   "Z-NG-3-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_73270bf1",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "天气很好",
+  "file": "audio/xm_zh_73270bf1.mp3",
+  "dung_o": [
+   "Z-NG-3-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_d555ad35",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "她在看书。",
+  "file": "audio/xm_zh_d555ad35.mp3",
+  "dung_o": [
+   "Z-NG-3-2A"
+  ]
+ },
+ {
+  "ma": "me_zh_cbe24ef9",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "你在做什么？",
+  "file": "audio/me_zh_cbe24ef9.mp3",
+  "dung_o": [
+   "Z-NG-3-2B"
+  ]
+ },
+ {
+  "ma": "bo_zh_ac83e6ef",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "我在写字。",
+  "file": "audio/bo_zh_ac83e6ef.mp3",
+  "dung_o": [
+   "Z-NG-3-2B"
+  ]
+ },
+ {
+  "ma": "xm_zh_88b4a1a6",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他在玩游戏",
+  "file": "audio/xm_zh_88b4a1a6.mp3",
+  "dung_o": [
+   "Z-NG-3-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_f501e7c0",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他在睡觉",
+  "file": "audio/xm_zh_f501e7c0.mp3",
+  "dung_o": [
+   "Z-NG-3-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_08570c2a",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他在吃饭",
+  "file": "audio/xm_zh_08570c2a.mp3",
+  "dung_o": [
+   "Z-NG-3-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_c4a3e91e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我想喝牛奶。",
+  "file": "audio/xm_zh_c4a3e91e.mp3",
+  "dung_o": [
+   "Z-NG-3-3A"
+  ]
+ },
+ {
+  "ma": "bo_zh_64f1787b",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "你喜欢吃什么？",
+  "file": "audio/bo_zh_64f1787b.mp3",
+  "dung_o": [
+   "Z-NG-3-3B"
+  ]
+ },
+ {
+  "ma": "me_zh_d8acc3f6",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "我喜欢吃米饭。",
+  "file": "audio/me_zh_d8acc3f6.mp3",
+  "dung_o": [
+   "Z-NG-3-3B"
+  ]
+ },
+ {
+  "ma": "xm_zh_cf0500bb",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他去学校",
+  "file": "audio/xm_zh_cf0500bb.mp3",
+  "dung_o": [
+   "Z-NG-3-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_fafc9b23",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他回家",
+  "file": "audio/xm_zh_fafc9b23.mp3",
+  "dung_o": [
+   "Z-NG-3-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_ca81829a",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他去商店",
+  "file": "audio/xm_zh_ca81829a.mp3",
+  "dung_o": [
+   "Z-NG-3-3C"
+  ]
+ },
+ {
+  "ma": "bo_zh_265d6f23",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "你每天几点起床？",
+  "file": "audio/bo_zh_265d6f23.mp3",
+  "dung_o": [
+   "Z-NG-4-1A"
+  ]
+ },
+ {
+  "ma": "me_zh_11b85189",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "我早上七点起床。",
+  "file": "audio/me_zh_11b85189.mp3",
+  "dung_o": [
+   "Z-NG-4-1A"
+  ]
+ },
+ {
+  "ma": "xm_zh_4ab57373",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "她几点起床？",
+  "file": "audio/xm_zh_4ab57373.mp3",
+  "dung_o": [
+   "Z-NG-4-1A"
+  ]
+ },
+ {
+  "ma": "me_zh_47605c80",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "今天星期几？",
+  "file": "audio/me_zh_47605c80.mp3",
+  "dung_o": [
+   "Z-NG-4-1B"
+  ]
+ },
+ {
+  "ma": "bo_zh_03f2ff7e",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "今天星期三。明天我们去公园。",
+  "file": "audio/bo_zh_03f2ff7e.mp3",
+  "dung_o": [
+   "Z-NG-4-1B"
+  ]
+ },
+ {
+  "ma": "xm_zh_4a65eba2",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他们星期几去公园？",
+  "file": "audio/xm_zh_4a65eba2.mp3",
+  "dung_o": [
+   "Z-NG-4-1B"
+  ]
+ },
+ {
+  "ma": "xm_zh_e2a13782",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "晚上九点我睡觉",
+  "file": "audio/xm_zh_e2a13782.mp3",
+  "dung_o": [
+   "Z-NG-4-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_9dc59a73",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "早上九点我起床",
+  "file": "audio/xm_zh_9dc59a73.mp3",
+  "dung_o": [
+   "Z-NG-4-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_0f49ea8a",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "下午五点我回家",
+  "file": "audio/xm_zh_0f49ea8a.mp3",
+  "dung_o": [
+   "Z-NG-4-1C"
+  ]
+ },
+ {
+  "ma": "me_zh_6aa5db77",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "你下午去哪儿？",
+  "file": "audio/me_zh_6aa5db77.mp3",
+  "dung_o": [
+   "Z-NG-4-2A"
+  ]
+ },
+ {
+  "ma": "bo_zh_238a1c00",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "我去商店买水果。",
+  "file": "audio/bo_zh_238a1c00.mp3",
+  "dung_o": [
+   "Z-NG-4-2A"
+  ]
+ },
+ {
+  "ma": "xm_zh_cea5c5f3",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他下午去哪儿？",
+  "file": "audio/xm_zh_cea5c5f3.mp3",
+  "dung_o": [
+   "Z-NG-4-2A"
+  ]
+ },
+ {
+  "ma": "bo_zh_ef7597f0",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "你妈妈在家吗？",
+  "file": "audio/bo_zh_ef7597f0.mp3",
+  "dung_o": [
+   "Z-NG-4-2B"
+  ]
+ },
+ {
+  "ma": "me_zh_15c04a79",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "不在，她在医院工作。",
+  "file": "audio/me_zh_15c04a79.mp3",
+  "dung_o": [
+   "Z-NG-4-2B"
+  ]
+ },
+ {
+  "ma": "xm_zh_9a14a0ea",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "妈妈在哪儿？",
+  "file": "audio/xm_zh_9a14a0ea.mp3",
+  "dung_o": [
+   "Z-NG-4-2B"
+  ]
+ },
+ {
+  "ma": "xm_zh_bf626e0b",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他放学回家",
+  "file": "audio/xm_zh_bf626e0b.mp3",
+  "dung_o": [
+   "Z-NG-4-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_16923bf1",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他去上课",
+  "file": "audio/xm_zh_16923bf1.mp3",
+  "dung_o": [
+   "Z-NG-4-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_ef26a5d0",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他去医院",
+  "file": "audio/xm_zh_ef26a5d0.mp3",
+  "dung_o": [
+   "Z-NG-4-2C"
+  ]
+ },
+ {
+  "ma": "me_zh_18c5a370",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "哥哥高还是你高？",
+  "file": "audio/me_zh_18c5a370.mp3",
+  "dung_o": [
+   "Z-NG-4-3A"
+  ]
+ },
+ {
+  "ma": "bo_zh_6e1d8f3a",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "哥哥比我高。",
+  "file": "audio/bo_zh_6e1d8f3a.mp3",
+  "dung_o": [
+   "Z-NG-4-3A"
+  ]
+ },
+ {
+  "ma": "xm_zh_b716e220",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "谁高？",
+  "file": "audio/xm_zh_b716e220.mp3",
+  "dung_o": [
+   "Z-NG-4-3A"
+  ]
+ },
+ {
+  "ma": "bo_zh_82be6c54",
+  "nhan_vat": "bo",
+  "giong": "Charon",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "你为什么不吃饭？",
+  "file": "audio/bo_zh_82be6c54.mp3",
+  "dung_o": [
+   "Z-NG-4-3B"
+  ]
+ },
+ {
+  "ma": "me_zh_03652779",
+  "nhan_vat": "me",
+  "giong": "Despina",
+  "nang_tong": false,
+  "tieng": "zh",
+  "loi": "因为我不饿。",
+  "file": "audio/me_zh_03652779.mp3",
+  "dung_o": [
+   "Z-NG-4-3B"
+  ]
+ },
+ {
+  "ma": "xm_zh_33e34a78",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "她为什么不吃饭？",
+  "file": "audio/xm_zh_33e34a78.mp3",
+  "dung_o": [
+   "Z-NG-4-3B"
+  ]
+ },
+ {
+  "ma": "xm_zh_5fa70092",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "因为我饿了，所以我吃面条",
+  "file": "audio/xm_zh_5fa70092.mp3",
+  "dung_o": [
+   "Z-NG-4-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_f128eb44",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "因为我累了，所以我睡觉",
+  "file": "audio/xm_zh_f128eb44.mp3",
+  "dung_o": [
+   "Z-NG-4-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_e82236bf",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "因为下雨了，所以我在家",
+  "file": "audio/xm_zh_e82236bf.mp3",
+  "dung_o": [
+   "Z-NG-4-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_4f18ced7",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你喜欢什么颜色？",
+  "file": "audio/xm_zh_4f18ced7.mp3",
+  "dung_o": [
+   "Z-DO-3-2C",
+   "Z-NO-2-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_aa2dabf1",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你今天去哪儿？",
+  "file": "audio/xm_zh_aa2dabf1.mp3",
+  "dung_o": [
+   "Z-DO-4-1C",
+   "Z-NO-4-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_a4cf9098",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我喜欢喝茶，但是不喜欢喝牛奶。",
+  "file": "audio/xm_zh_a4cf9098.mp3",
+  "dung_o": [
+   "Z-DO-4-2C"
+  ]
+ },
+ {
+  "ma": "xm_zh_1e36ebdd",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "今天天气很好。",
+  "file": "audio/xm_zh_1e36ebdd.mp3",
+  "dung_o": [
+   "Z-VI-3-1C",
+   "Z-VI-4-3C",
+   "Z-NO-3-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_5fadd113",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你家有几口人？",
+  "file": "audio/xm_zh_5fadd113.mp3",
+  "dung_o": [
+   "Z-VI-3-2C",
+   "Z-NO-2-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_a1e18cb7",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "小美在公园玩。",
+  "file": "audio/xm_zh_a1e18cb7.mp3",
+  "dung_o": [
+   "Z-VI-3-3C"
+  ]
+ },
+ {
+  "ma": "xm_zh_4b466b97",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我晚上九点睡觉。",
+  "file": "audio/xm_zh_4b466b97.mp3",
+  "dung_o": [
+   "Z-VI-4-1C"
+  ]
+ },
+ {
+  "ma": "xm_zh_694c4262",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "因为我很累，所以我想睡觉。",
+  "file": "audio/xm_zh_694c4262.mp3",
+  "dung_o": [
+   "Z-VI-4-2C"
+  ]
+ },
+ {
+  "ma": "anna_en_6d46669b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Is it an apple or a banana?",
+  "file": "audio/anna_en_6d46669b.mp3",
+  "dung_o": [
+   "E-NO-1-1"
+  ]
+ },
+ {
+  "ma": "anna_en_9938b2cc",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's this?",
+  "file": "audio/anna_en_9938b2cc.mp3",
+  "dung_o": [
+   "E-NO-1-1",
+   "E-NO-1-1",
+   "E-NO-1-1"
+  ]
+ },
+ {
+  "ma": "anna_en_b23af1e9",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Is it blue or red?",
+  "file": "audio/anna_en_b23af1e9.mp3",
+  "dung_o": [
+   "E-NO-1-2"
+  ]
+ },
+ {
+  "ma": "anna_en_2dfff789",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What colour is it?",
+  "file": "audio/anna_en_2dfff789.mp3",
+  "dung_o": [
+   "E-NO-1-2"
+  ]
+ },
+ {
+  "ma": "anna_en_59fabb98",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "My name is...",
+  "file": "audio/anna_en_59fabb98.mp3",
+  "dung_o": [
+   "E-NO-1-3"
+  ]
+ },
+ {
+  "ma": "anna_en_dad3497f",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's your name? How old are you?",
+  "file": "audio/anna_en_dad3497f.mp3",
+  "dung_o": [
+   "E-NO-1-3"
+  ]
+ },
+ {
+  "ma": "anna_en_4791041d",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Count the birds with me: one...",
+  "file": "audio/anna_en_4791041d.mp3",
+  "dung_o": [
+   "E-NO-2-1"
+  ]
+ },
+ {
+  "ma": "anna_en_9d2db428",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "How many birds can you see? What colour is the kite?",
+  "file": "audio/anna_en_9d2db428.mp3",
+  "dung_o": [
+   "E-NO-2-1"
+  ]
+ },
+ {
+  "ma": "anna_en_dfe40364",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Is the dog big or small? What is it doing?",
+  "file": "audio/anna_en_dfe40364.mp3",
+  "dung_o": [
+   "E-NO-2-2"
+  ]
+ },
+ {
+  "ma": "anna_en_fc51d512",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Tell me about the dog.",
+  "file": "audio/anna_en_fc51d512.mp3",
+  "dung_o": [
+   "E-NO-2-2"
+  ]
+ },
+ {
+  "ma": "anna_en_da7a11f0",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Do you like ice cream?",
+  "file": "audio/anna_en_da7a11f0.mp3",
+  "dung_o": [
+   "E-NO-2-3"
+  ]
+ },
+ {
+  "ma": "anna_en_e01f2624",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's your favourite food? Have you got a pet?",
+  "file": "audio/anna_en_e01f2624.mp3",
+  "dung_o": [
+   "E-NO-2-3"
+  ]
+ },
+ {
+  "ma": "anna_en_ce81ee1d",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What's the weather like in picture 2?",
+  "file": "audio/anna_en_ce81ee1d.mp3",
+  "dung_o": [
+   "E-NO-3-1"
+  ]
+ },
+ {
+  "ma": "anna_en_edf4b017",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "This is Sam. He wants to play football. Tell me the story.",
+  "file": "audio/anna_en_edf4b017.mp3",
+  "dung_o": [
+   "E-NO-3-1"
+  ]
+ },
+ {
+  "ma": "anna_en_cf7fa252",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Have you got a brother or a sister?",
+  "file": "audio/anna_en_cf7fa252.mp3",
+  "dung_o": [
+   "E-NO-3-2"
+  ]
+ },
+ {
+  "ma": "anna_en_c70eec45",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "How many people are there in your family? Who are they?",
+  "file": "audio/anna_en_c70eec45.mp3",
+  "dung_o": [
+   "E-NO-3-2"
+  ]
+ },
+ {
+  "ma": "anna_en_440a2e56",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Do you play games or read books?",
+  "file": "audio/anna_en_440a2e56.mp3",
+  "dung_o": [
+   "E-NO-3-3"
+  ]
+ },
+ {
+  "ma": "anna_en_48e5c4bb",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What do you do after school?",
+  "file": "audio/anna_en_48e5c4bb.mp3",
+  "dung_o": [
+   "E-NO-3-3"
+  ]
+ },
+ {
+  "ma": "anna_en_aaaeb6b8",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What happened to the bike?",
+  "file": "audio/anna_en_aaaeb6b8.mp3",
+  "dung_o": [
+   "E-NO-4-1"
+  ]
+ },
+ {
+  "ma": "anna_en_569195ab",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Look at the pictures and tell me the story.",
+  "file": "audio/anna_en_569195ab.mp3",
+  "dung_o": [
+   "E-NO-4-1"
+  ]
+ },
+ {
+  "ma": "anna_en_d6460d8b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Did you go anywhere?",
+  "file": "audio/anna_en_d6460d8b.mp3",
+  "dung_o": [
+   "E-NO-4-2"
+  ]
+ },
+ {
+  "ma": "anna_en_3256cf20",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "What did you do last weekend?",
+  "file": "audio/anna_en_3256cf20.mp3",
+  "dung_o": [
+   "E-NO-4-2"
+  ]
+ },
+ {
+  "ma": "anna_en_8e519266",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Start with: Excuse me...",
+  "file": "audio/anna_en_8e519266.mp3",
+  "dung_o": [
+   "E-NO-4-3"
+  ]
+ },
+ {
+  "ma": "anna_en_b78d3d8b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Ask Leo where the library is.",
+  "file": "audio/anna_en_b78d3d8b.mp3",
+  "dung_o": [
+   "E-NO-4-3"
+  ]
+ },
+ {
+  "ma": "xm_zh_aaf2cfeb",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你好！",
+  "file": "audio/xm_zh_aaf2cfeb.mp3",
+  "dung_o": [
+   "Z-NO-1-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_8d0b62a6",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "谢谢老师。",
+  "file": "audio/xm_zh_8d0b62a6.mp3",
+  "dung_o": [
+   "Z-NO-1-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_76dfbd19",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我是小美。",
+  "file": "audio/xm_zh_76dfbd19.mp3",
+  "dung_o": [
+   "Z-NO-1-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_f1509e7c",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你叫什么名字？",
+  "file": "audio/xm_zh_f1509e7c.mp3",
+  "dung_o": [
+   "Z-NO-1-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_e8e90964",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你几岁？",
+  "file": "audio/xm_zh_e8e90964.mp3",
+  "dung_o": [
+   "Z-NO-1-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_a0e6d4f8",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我喜欢红色。",
+  "file": "audio/xm_zh_a0e6d4f8.mp3",
+  "dung_o": [
+   "Z-NO-2-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_46e2b017",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我有一只狗。",
+  "file": "audio/xm_zh_46e2b017.mp3",
+  "dung_o": [
+   "Z-NO-2-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_7fb68a54",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "这是我妈妈。",
+  "file": "audio/xm_zh_7fb68a54.mp3",
+  "dung_o": [
+   "Z-NO-2-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_c8b53ba3",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你喜欢什么动物？",
+  "file": "audio/xm_zh_c8b53ba3.mp3",
+  "dung_o": [
+   "Z-NO-2-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_d13fe8a4",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "他是谁？",
+  "file": "audio/xm_zh_d13fe8a4.mp3",
+  "dung_o": [
+   "Z-NO-2-T"
+  ]
+ },
+ {
+  "ma": "xm_zh_fdac8d35",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我想喝水。",
+  "file": "audio/xm_zh_fdac8d35.mp3",
+  "dung_o": [
+   "Z-NO-3-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_ce6b8f36",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "她在教室里看书。",
+  "file": "audio/xm_zh_ce6b8f36.mp3",
+  "dung_o": [
+   "Z-NO-3-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_c022dbb6",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我每天早上去学校。",
+  "file": "audio/xm_zh_c022dbb6.mp3",
+  "dung_o": [
+   "Z-NO-3-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_d3f54859",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "我喜欢吃米饭，不喜欢吃面条。",
+  "file": "audio/xm_zh_d3f54859.mp3",
+  "dung_o": [
+   "Z-NO-3-R"
+  ]
+ },
+ {
+  "ma": "xm_zh_390c7b8c",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "今天天气怎么样？",
+  "file": "audio/xm_zh_390c7b8c.mp3",
+  "dung_o": [
+   "Z-NO-3-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_64f1787b",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你喜欢吃什么？",
+  "file": "audio/xm_zh_64f1787b.mp3",
+  "dung_o": [
+   "Z-NO-3-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_9fa8ea75",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你喜欢做什么？",
+  "file": "audio/xm_zh_9fa8ea75.mp3",
+  "dung_o": [
+   "Z-NO-3-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_a01850df",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你喜欢汉语吗？",
+  "file": "audio/xm_zh_a01850df.mp3",
+  "dung_o": [
+   "Z-NO-3-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_4fad6063",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你喜欢英语吗？",
+  "file": "audio/xm_zh_4fad6063.mp3",
+  "dung_o": [
+   "Z-NO-3-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_71863a95",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "请说一说这张图。",
+  "file": "audio/xm_zh_71863a95.mp3",
+  "dung_o": [
+   "Z-NO-3-T",
+   "Z-NO-4-T",
+   "Z-NO-4-T"
+  ]
+ },
+ {
+  "ma": "xm_zh_265d6f23",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你每天几点起床？",
+  "file": "audio/xm_zh_265d6f23.mp3",
+  "dung_o": [
+   "Z-NO-4-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_018336cd",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你每天几点去学校？",
+  "file": "audio/xm_zh_018336cd.mp3",
+  "dung_o": [
+   "Z-NO-4-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_5479a2b4",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你周末喜欢做什么？",
+  "file": "audio/xm_zh_5479a2b4.mp3",
+  "dung_o": [
+   "Z-NO-4-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_d8f106af",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "你为什么学汉语？用\"因为……所以……\"说一说。",
+  "file": "audio/xm_zh_d8f106af.mp3",
+  "dung_o": [
+   "Z-NO-4-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_b1d4dc92",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "很高兴认识你！",
+  "file": "audio/xm_zh_b1d4dc92.mp3",
+  "dung_o": [
+   "Z-NO-4-H"
+  ]
+ },
+ {
+  "ma": "xm_zh_3d400225",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "二",
+  "file": "audio/xm_zh_3d400225.mp3",
+  "dung_o": [
+   "Z-G-2"
+  ]
+ },
+ {
+  "ma": "xm_zh_81a3b6e3",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "老师",
+  "file": "audio/xm_zh_81a3b6e3.mp3",
+  "dung_o": [
+   "Z-HZ-5"
+  ]
+ },
+ {
+  "ma": "xm_zh_02239684",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "学校",
+  "file": "audio/xm_zh_02239684.mp3",
+  "dung_o": [
+   "Z-HZ-6"
+  ]
+ },
+ {
+  "ma": "xm_zh_921978ad",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "水",
+  "file": "audio/xm_zh_921978ad.mp3",
+  "dung_o": [
+   "Z-HZ-7"
+  ]
+ },
+ {
+  "ma": "xm_zh_d702459c",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "写字",
+  "file": "audio/xm_zh_d702459c.mp3",
+  "dung_o": [
+   "Z-HZ-8"
+  ]
+ },
+ {
+  "ma": "xm_zh_4e50dcbf",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "雨",
+  "file": "audio/xm_zh_4e50dcbf.mp3",
+  "dung_o": [
+   "Z-HZ-9"
+  ]
+ },
+ {
+  "ma": "xm_zh_c56c9996",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "起床",
+  "file": "audio/xm_zh_c56c9996.mp3",
+  "dung_o": [
+   "Z-HZ-10"
+  ]
+ },
+ {
+  "ma": "xm_zh_463b5954",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "教室",
+  "file": "audio/xm_zh_463b5954.mp3",
+  "dung_o": [
+   "Z-HZ-11"
+  ]
+ },
+ {
+  "ma": "xm_zh_30c99b3e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "喜欢",
+  "file": "audio/xm_zh_30c99b3e.mp3",
+  "dung_o": [
+   "Z-HZ-12"
+  ]
+ },
+ {
+  "ma": "huou_vi_8cd417db",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Ở mỗi trạm, con chọn một ô may mắn, nghe thật kỹ rồi chạm vào đáp án. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!",
+  "file": "audio/huou_vi_8cd417db.mp3",
+  "dung_o": [
+   "LOI-luat"
+  ]
+ },
+ {
+  "ma": "huou_vi_593a4fe3",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con có nghe rõ cô nói không? Nếu nghe rõ, con chạm vào ngôi sao nhé!",
+  "file": "audio/huou_vi_593a4fe3.mp3",
+  "dung_o": [
+   "LOI-thuLoa"
+  ]
+ },
+ {
+  "ma": "huou_vi_eceeadb4",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nói thật to: Hello!",
+  "file": "audio/huou_vi_eceeadb4.mp3",
+  "dung_o": [
+   "LOI-thuMic"
+  ]
+ },
+ {
+  "ma": "tho_vi_5f3a09db",
+  "nhan_vat": "tho_con",
+  "giong": "Achernar",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Ôi, Thỏ con muốn chơi thêm một thử thách nữa!",
+  "file": "audio/tho_vi_5f3a09db.mp3",
+  "dung_o": [
+   "LOI-thuThem"
+  ]
+ },
+ {
+  "ma": "huou_vi_38073e0e",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nhận được một sticker!",
+  "file": "audio/huou_vi_38073e0e.mp3",
+  "dung_o": [
+   "LOI-xongTram"
+  ]
+ },
+ {
+  "ma": "huou_vi_082bdbda",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con cần nghe lại không? Con chạm vào cái loa nhé!",
+  "file": "audio/huou_vi_082bdbda.mp3",
+  "dung_o": [
+   "LOI-imLang"
+  ]
+ },
+ {
+  "ma": "huou_vi_a1691dfa",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con giỏi quá! Vùng tiếng Anh xong rồi. Cùng các bạn vươn vai nào!",
+  "file": "audio/huou_vi_a1691dfa.mp3",
+  "dung_o": [
+   "LOI-nghi"
+  ]
+ },
+ {
+  "ma": "xm_vi_fed13c65",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "vi",
+  "loi": "Mình là Xiaomei. Chào mừng bạn đến vùng tiếng Trung!",
+  "file": "audio/xm_vi_fed13c65.mp3",
+  "dung_o": [
+   "LOI-vaoZh"
+  ]
+ },
+ {
+  "ma": "huou_vi_7de8c54c",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Giờ con đưa máy cho ba mẹ nhé. Hẹn gặp con ở lớp học!",
+  "file": "audio/huou_vi_7de8c54c.mp3",
+  "dung_o": [
+   "LOI-ketPh"
+  ]
+ },
+ {
+  "ma": "huou_vi_f5fd4cf6",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Mình làm thử một câu nhé!",
+  "file": "audio/huou_vi_f5fd4cf6.mp3",
+  "dung_o": [
+   "LOI-viDu"
+  ]
+ },
+ {
+  "ma": "huou_vi_62b2b08d",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con bấm nút micro rồi nói thật to nhé. Nói xong con bấm Xong.",
+  "file": "audio/huou_vi_62b2b08d.mp3",
+  "dung_o": [
+   "LOI-noiHd"
+  ]
+ },
+ {
+  "ma": "huou_vi_d5aadf5b",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe bạn nói, rồi nói lại giống hệt bạn nhé.",
+  "file": "audio/huou_vi_d5aadf5b.mp3",
+  "dung_o": [
+   "LOI-nhacHd"
+  ]
+ },
+ {
+  "ma": "anna_en_bdb20c7d",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Great!",
+  "file": "audio/anna_en_bdb20c7d.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "ma": "anna_en_fd18b61b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Thank you!",
+  "file": "audio/anna_en_fd18b61b.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "ma": "anna_en_f397ed77",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Next one!",
+  "file": "audio/anna_en_f397ed77.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "ma": "xm_zh_8f73e2bc",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "好！",
+  "file": "audio/xm_zh_8f73e2bc.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "ma": "xm_zh_3c491505",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "谢谢！",
+  "file": "audio/xm_zh_3c491505.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "ma": "xm_zh_519ed056",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "下一个！",
+  "file": "audio/xm_zh_519ed056.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "ma": "huou_vi_2111cb80",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe từ rồi chạm vào tranh đúng nhé.",
+  "file": "audio/huou_vi_2111cb80.mp3",
+  "dung_o": [
+   "E-TV-1"
+  ]
+ },
+ {
+  "ma": "huou_vi_317d2438",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nhìn tranh rồi chọn chữ đúng.",
+  "file": "audio/huou_vi_317d2438.mp3",
+  "dung_o": [
+   "E-TV-2"
+  ]
+ },
+ {
+  "ma": "huou_vi_6c81c5c7",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc (hoặc bấm loa nghe) câu giải thích, rồi chọn tranh đúng.",
+  "file": "audio/huou_vi_6c81c5c7.mp3",
+  "dung_o": [
+   "E-TV-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_9b2e1d7e",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc câu và chọn từ đúng cho chỗ trống.",
+  "file": "audio/huou_vi_9b2e1d7e.mp3",
+  "dung_o": [
+   "E-TV-4"
+  ]
+ },
+ {
+  "ma": "huou_vi_c07f1e82",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe câu rồi chạm vào tranh đúng nhé.",
+  "file": "audio/huou_vi_c07f1e82.mp3",
+  "dung_o": [
+   "E-NG-1"
+  ]
+ },
+ {
+  "ma": "huou_vi_25a1da6a",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe các bạn nói chuyện rồi chọn tranh đúng.",
+  "file": "audio/huou_vi_25a1da6a.mp3",
+  "dung_o": [
+   "E-NG-2"
+  ]
+ },
+ {
+  "ma": "huou_vi_101a6092",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe hết đoạn hội thoại rồi mới chọn nhé. Có bạn đổi ý giữa chừng đấy!",
+  "file": "audio/huou_vi_101a6092.mp3",
+  "dung_o": [
+   "E-NG-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_a92bacdf",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe kỹ lý do và kế hoạch của các bạn rồi chọn tranh đúng.",
+  "file": "audio/huou_vi_a92bacdf.mp3",
+  "dung_o": [
+   "E-NG-4"
+  ]
+ },
+ {
+  "ma": "huou_vi_f27ecd05",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe cô đọc rồi chạm vào chữ đúng nhé.",
+  "file": "audio/huou_vi_f27ecd05.mp3",
+  "dung_o": [
+   "E-DO-1"
+  ]
+ },
+ {
+  "ma": "huou_vi_d5f1d99a",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc câu. Đúng với tranh thì chạm 👍, sai thì chạm 👎.",
+  "file": "audio/huou_vi_d5f1d99a.mp3",
+  "dung_o": [
+   "E-DO-2"
+  ]
+ },
+ {
+  "ma": "huou_vi_a6c1ba19",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc và chọn câu trả lời đúng.",
+  "file": "audio/huou_vi_a6c1ba19.mp3",
+  "dung_o": [
+   "E-DO-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_c59b6fb9",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc truyện ngắn rồi trả lời câu hỏi.",
+  "file": "audio/huou_vi_c59b6fb9.mp3",
+  "dung_o": [
+   "E-DO-4"
+  ]
+ },
+ {
+  "ma": "huou_vi_b3f15fc1",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con chọn chữ cái còn thiếu, hoặc xếp chữ thành từ.",
+  "file": "audio/huou_vi_b3f15fc1.mp3",
+  "dung_o": [
+   "E-VI-1"
+  ]
+ },
+ {
+  "ma": "huou_vi_69fb4459",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con xếp chữ hoặc gõ từ còn thiếu.",
+  "file": "audio/huou_vi_69fb4459.mp3",
+  "dung_o": [
+   "E-VI-2"
+  ]
+ },
+ {
+  "ma": "huou_vi_cdf3973a",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con kéo thẻ từ thành câu, hoặc gõ câu trả lời.",
+  "file": "audio/huou_vi_cdf3973a.mp3",
+  "dung_o": [
+   "E-VI-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_3005a453",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con xếp câu, gõ động từ, rồi viết vài câu về tranh.",
+  "file": "audio/huou_vi_3005a453.mp3",
+  "dung_o": [
+   "E-VI-4"
+  ]
+ },
+ {
+  "ma": "huou_vi_b1bad400",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe bạn Xiaomei nói rồi chạm vào tranh đúng nhé.",
+  "file": "audio/huou_vi_b1bad400.mp3",
+  "dung_o": [
+   "Z-NG-1"
+  ]
+ },
+ {
+  "ma": "huou_vi_638f2dfe",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe từ hoặc câu ngắn rồi chọn tranh đúng.",
+  "file": "audio/huou_vi_638f2dfe.mp3",
+  "dung_o": [
+   "Z-NG-2"
+  ]
+ },
+ {
+  "ma": "huou_vi_9ba330e6",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe câu. Đúng với tranh thì chạm ✔, sai thì chạm ✘. Có câu con nghe hai bạn nói chuyện rồi chọn tranh.",
+  "file": "audio/huou_vi_9ba330e6.mp3",
+  "dung_o": [
+   "Z-NG-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_40f8e900",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe hai bạn nói chuyện và câu hỏi, rồi chọn tranh đúng.",
+  "file": "audio/huou_vi_40f8e900.mp3",
+  "dung_o": [
+   "Z-NG-4"
+  ]
+ },
+ {
+  "ma": "huou_vi_9dcb5077",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc từ. Đúng với tranh thì chạm ✔, sai thì chạm ✘.",
+  "file": "audio/huou_vi_9dcb5077.mp3",
+  "dung_o": [
+   "Z-DO-2"
+  ]
+ },
+ {
+  "ma": "huou_vi_7fdffe68",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con đọc câu rồi chọn tranh, hoặc chọn câu trả lời đúng.",
+  "file": "audio/huou_vi_7fdffe68.mp3",
+  "dung_o": [
+   "Z-DO-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_531da56e",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con chọn câu hoặc từ đúng cho chỗ trống.",
+  "file": "audio/huou_vi_531da56e.mp3",
+  "dung_o": [
+   "Z-DO-4"
+  ]
+ },
+ {
+  "ma": "huou_vi_e1c843c5",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con kéo thẻ từ thành câu đúng.",
+  "file": "audio/huou_vi_e1c843c5.mp3",
+  "dung_o": [
+   "Z-VI-3"
+  ]
+ },
+ {
+  "ma": "huou_vi_45cc8591",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con xếp câu (không có pinyin) hoặc chọn chữ Hán đúng.",
+  "file": "audio/huou_vi_45cc8591.mp3",
+  "dung_o": [
+   "Z-VI-4"
+  ]
+ }
+]
