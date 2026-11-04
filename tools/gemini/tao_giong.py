@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MODEL = "gemini-3.8-flash-tts"
 API = "https://generativelanguage.googleapis.com/v1beta/"
 OUT = ROOT / "audio"
-KEY = Path(sys.argv[1]).read_text().strip()
+KEY = Path(sys.argv[1]).read_text().strip() if sys.argv[1] != "-" else ""
 MODE = sys.argv[2]
 ONLY = set(sys.argv[3:]) if sys.argv[2] != "cho" else set()
 # Câu Gemini hay đọc sai khi đứng một mình: gửi kèm dấu câu / cách viết khác (chỉ đổi lời gửi đi, không đổi mã)
@@ -42,7 +42,35 @@ def request(j):
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": j["giong"]}}}}}
 
 
+def bo_tieng_re(pcm):
+    """Gemini TTS hay để lại một tiếng "rẹt" (nhiễu trắng ~0,15 giây) sau một khoảng lặng ở cuối câu: cắt bỏ nó."""
+    import numpy as np
+    a = np.frombuffer(pcm, dtype=np.int16).astype(np.float32)
+    seg = 480  # 20 ms ở 24 kHz
+    n = len(a) // seg
+    if n < 10: return pcm
+    rms = np.sqrt((a[: n * seg].reshape(n, seg) ** 2).mean(1)) / 32768
+    loud = rms > 0.01
+    for _ in range(3):  # có thể có hơn một tiếng rẹt
+        idx = np.where(loud)[0]
+        if not len(idx): break
+        end = idx[-1]; start = end
+        while start > 0 and loud[start - 1]: start -= 1
+        gap = start - 1
+        while gap >= 0 and not loud[gap]: gap -= 1
+        blk = a[start * seg:(end + 1) * seg]
+        zc = np.mean(np.abs(np.diff(np.sign(blk)))) / 2   # nhiễu trắng đổi dấu rất dày (≥0,2), giọng nói thì thưa hơn
+        lang = start - gap - 1; to = rms[start:end + 1].max()
+        # đoạn nhiễu ngắn ≤0,3 s, sau ≥0,14 s lặng; hoặc sau ≥0,06 s lặng nhưng rất to (tiếng "x", "s" thật thì nhỏ hơn nhiều)
+        if gap >= 0 and end - start + 1 <= 15 and zc >= 0.2 and (lang >= 7 or (lang >= 3 and to >= 0.3)):
+            loud[start:end + 1] = False; a[start * seg:] = 0
+        else:
+            break
+    return a.astype(np.int16).tobytes()
+
+
 def to_mp3(pcm, j):
+    pcm = bo_tieng_re(pcm)
     OUT.mkdir(exist_ok=True)
     dst = OUT / f"{j['ma']}.mp3"; raw = dst.with_suffix(".pcm"); raw.write_bytes(pcm)
     af = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
@@ -109,5 +137,13 @@ if MODE in ("batch", "cho"):
         if pcm and m in by: to_mp3(pcm, by[m]); ok += 1
         else: fail.append(m)
     print("xong", ok, "câu; lỗi:", fail)
+elif MODE == "lam-sach":   # làm sạch tiếng rẹt cho các file đã có (không gọi Gemini, không tốn tiền)
+    for j in jobs:
+        f = OUT / f"{j['ma']}.mp3"
+        if not f.exists(): continue
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(f), "-f", "s16le", "-ac", "1", "-ar", "24000", "-"], capture_output=True).stdout
+        j2 = dict(j, nang_tong=False)   # đã nâng tông từ trước, không nâng lần nữa
+        to_mp3(raw, j2)
+    print("đã làm sạch", len(jobs), "file")
 elif MODE not in ("thu", "lai"):
     raise SystemExit(__doc__)
