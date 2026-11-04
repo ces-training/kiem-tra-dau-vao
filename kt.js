@@ -493,7 +493,7 @@ function hienCau(e, tieuDe, opt = {}) {
       g.querySelectorAll('.but-mau button').forEach(b => b.onclick = () => {
         if (vat < 0) { g.querySelectorAll('.vat').forEach(x => { x.style.borderColor = 'var(--sky)'; }); return; }
         const c = b.dataset.c, el = g.querySelector(`.vat[data-v="${vat}"] .tr`);
-        if (el) { el.style.filter = 'none'; el.querySelectorAll('img.em').forEach(im => { const w = document.createElement('span'); w.className = 'to-mau'; w.innerHTML = `<img src="${im.src}" alt=""><i style="background:${MAU[c]};-webkit-mask-image:url(${im.getAttribute('src')});mask-image:url(${im.getAttribute('src')})"></i>`; im.replaceWith(w); }); }
+        if (el) { el.style.filter = 'none'; el.querySelectorAll('img.em, img.file').forEach(im => { const w = document.createElement('span'); w.className = 'to-mau' + (im.classList.contains('file') ? ' lon' : ''); w.innerHTML = `<img src="${im.src}" alt=""><i style="background:${MAU[c]};-webkit-mask-image:url(${im.getAttribute('src')});mask-image:url(${im.getAttribute('src')})"></i>`; im.replaceWith(w); }); }
         setTimeout(() => tra(vat === it.dap[0] && c === it.dap[1], CH.tachTranh(it.vat[vat]).desc + ' – ' + c, { dapAn: CH.tachTranh(it.vat[it.dap[0]]).desc + ' – ' + it.dap[1] }), 700);
       });
     } else if (k === 'xep') {

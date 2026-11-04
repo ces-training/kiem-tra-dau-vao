@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Duyệt tranh và giọng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Sans+SC:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E3262E;--yellow:#FFC72C;--cream:#FFFBF0;--ink:#3A2A1A;--muted:#7A6A58;--green:#3BB273;--line:#F0E2C0;--warn:#F28C00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.4 'Baloo 2',system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--yellow);padding:10px max(16px,env(safe-area-inset-left,0px));display:flex;flex-wrap:wrap;gap:10px;align-items:center;box-shadow:0 3px 0 rgba(0,0,0,.08)}
+h1{margin:0;font-size:22px;color:var(--red);margin-right:auto}
+button,select{font:inherit;font-weight:700;border:0;border-radius:12px;padding:6px 14px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 3px 0 rgba(0,0,0,.12)}
+button.on{background:var(--red);color:#fff}
+button.chinh{background:var(--green);color:#fff}
+main{padding:16px max(16px,env(safe-area-inset-left,0px)) 80px;max-width:1500px;margin:0 auto}
+.hd{background:#fff;border-radius:16px;padding:12px 16px;margin-bottom:14px;border:2px solid var(--line)}
+.hd b{color:var(--red)}
+.luoi{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.the{background:#fff;border-radius:16px;border:3px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.the.co{border-color:var(--warn)} .the.lai{border-color:var(--red);box-shadow:0 0 0 3px #fdd}
+.the img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#fafafa;display:block}
+.the .tt{padding:8px 10px;display:flex;flex-direction:column;gap:4px;flex:1}
+.ma{font-size:12px;color:var(--muted);font-family:ui-monospace,monospace}
+.mo{font-weight:700}
+.canh{font-size:13px;color:var(--warn);font-weight:700}
+.the input{font:inherit;font-size:14px;border:2px solid var(--line);border-radius:10px;padding:4px 8px;width:100%}
+.nut-lai{margin-top:auto}
+.the.lai .nut-lai{background:var(--red);color:#fff}
+.dong{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:#fff;border:3px solid var(--line);border-radius:14px;padding:8px 12px;margin-bottom:8px}
+.dong.co{border-color:var(--warn)} .dong.lai{border-color:var(--red)}
+.dong .phat{width:40px;height:40px;border-radius:50%;padding:0;font-size:18px;background:var(--yellow)}
+.dong .loi{font-weight:700}
+.dong .zh{font-family:'Noto Sans SC',sans-serif}
+.dong input{font:inherit;font-size:14px;border:2px solid var(--line);border-radius:10px;padding:4px 8px;width:100%;margin-top:4px}
+.dong.lai .nut-lai{background:var(--red);color:#fff}
+#gui{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:6}
+.trong{color:var(--muted);text-align:center;padding:30px}
+@media (max-width:600px){.dong{grid-template-columns:44px 1fr}.dong .nut-lai{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Duyệt tranh và giọng</h1>
+  <button id="t-tranh" class="on">🖼️ Tranh</button>
+  <button id="t-giong">🔊 Giọng</button>
+  <select id="loc"><option value="tat">Tất cả</option><option value="co">Chỉ mục máy gắn cờ</option><option value="lai">Chỉ mục cô chọn làm lại</option></select>
+</header>
+<main>
+  <div class="hd">Máy đã tự kiểm tra từng tranh, từng câu: mục <b style="color:var(--warn)">viền cam</b> là máy nghi có lỗi, cô xem kỹ những mục đó trước.
+  Mục nào chưa ưng, cô bấm <b>Làm lại</b> (có thể ghi thêm ý, ví dụ "vẽ con mèo to hơn"), xong bấm nút xanh <b>Sao chép danh sách</b> ở cuối trang và dán vào chat cho Claude.
+  Lựa chọn của cô được giữ trên máy này.</div>
+  <div id="noi"></div>
+</main>
+<button id="gui" class="chinh">📋 Sao chép danh sách làm lại (0)</button>
+<script>
+const KEY = 'kt-duyet-v1';
+let st = {}; try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+const luu = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} capNhat(); };
+let tab = 'tranh', TR = [], GI = [], KQ = {};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const TEN = { anna: 'Anna', xiaomei: 'Xiaomei', co_huou: 'Cô Hươu', me: 'Mẹ', bo: 'Bố', leo: 'Leo', tho_con: 'Thỏ con', bong: 'Bông', gau_con: 'Gấu con' };
+let am = null;
+
+async function nap() {
+  const j = u => fetch(u + '?v=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+  [TR, GI, KQ] = await Promise.all([j('san-xuat/hinh-can-ve.json'), j('san-xuat/giong-doc.json'), j('san-xuat/kiem-tra-tu-dong.json')]);
+  TR = TR || []; GI = GI || []; KQ = KQ || {};
+  ve();
+}
+function loc(ma, loai) {
+  const v = document.getElementById('loc').value, k = (KQ[loai] || {})[ma];
+  if (v === 'co') return k && !k.ok;
+  if (v === 'lai') return !!st[loai + ':' + ma];
+  return true;
+}
+function ve() {
+  const noi = document.getElementById('noi');
+  if (tab === 'tranh') {
+    const ds = TR.filter(x => loc(x.ma, 'tranh'));
+    noi.innerHTML = ds.length ? '<div class="luoi">' + ds.map(x => {
+      const k = (KQ.tranh || {})[x.ma], lai = st['tranh:' + x.ma];
+      return `<div class="the ${k && !k.ok ? 'co' : ''} ${lai ? 'lai' : ''}" data-ma="${x.ma}">
+        <img loading="lazy" src="${x.file}?v=${Date.now() % 100000}" alt="${esc(x.mo_ta)}">
+        <div class="tt"><span class="ma">${x.ma}</span><span class="mo">${esc(x.mo_ta)}</span>
+        ${k && !k.ok ? `<span class="canh">⚠ ${esc(k.ly_do || 'máy nghi có lỗi')}</span>` : ''}
+        ${lai ? `<input placeholder="Ý của cô khi vẽ lại…" value="${esc(lai.y || '')}">` : ''}
+        <button class="nut-lai">${lai ? '✓ Sẽ làm lại' : 'Làm lại'}</button></div></div>`;
+    }).join('') + '</div>' : '<p class="trong">Không có mục nào.</p>';
+  } else {
+    const ds = GI.filter(x => loc(x.ma, 'giong'));
+    noi.innerHTML = ds.length ? ds.map(x => {
+      const k = (KQ.giong || {})[x.ma], lai = st['giong:' + x.ma];
+      return `<div class="dong ${k && !k.ok ? 'co' : ''} ${lai ? 'lai' : ''}" data-ma="${x.ma}">
+        <button class="phat" data-f="${x.file}">▶</button>
+        <div><div class="loi ${x.tieng === 'zh' ? 'zh' : ''}">${esc(x.loi)}</div>
+        <div class="ma">${TEN[x.nhan_vat] || x.nhan_vat} · ${x.tieng} · ${x.ma}</div>
+        ${k && !k.ok ? `<div class="canh">⚠ ${esc(k.ly_do || '')}${k.nghe_duoc ? ' — máy nghe được: "' + esc(k.nghe_duoc) + '"' : ''}</div>` : ''}
+        ${lai ? `<input placeholder="Ý của cô khi thu lại…" value="${esc(lai.y || '')}">` : ''}</div>
+        <button class="nut-lai">${lai ? '✓ Sẽ thu lại' : 'Thu lại'}</button></div>`;
+    }).join('') : '<p class="trong">Không có mục nào.</p>';
+  }
+  noi.querySelectorAll('[data-ma]').forEach(el => {
+    const ma = el.dataset.ma, k = tab + ':' + ma;
+    el.querySelector('.nut-lai').onclick = () => { if (st[k]) delete st[k]; else st[k] = { y: '' }; luu(); ve(); };
+    const ip = el.querySelector('input'); if (ip) ip.oninput = () => { st[k].y = ip.value; luu(); };
+    const p = el.querySelector('.phat'); if (p) p.onclick = () => { if (am) am.pause(); am = new Audio(p.dataset.f + '?v=' + Date.now() % 100000); am.play().catch(() => {}); };
+  });
+  capNhat();
+}
+function capNhat() {
+  const n = Object.keys(st).length;
+  document.getElementById('gui').textContent = `📋 Sao chép danh sách làm lại (${n})`;
+}
+function vanBan() {
+  const t = Object.entries(st).filter(([k]) => k.startsWith('tranh:')), g = Object.entries(st).filter(([k]) => k.startsWith('giong:'));
+  let s = 'Duyệt tranh và giọng – cần làm lại:\n';
+  if (t.length) s += '\nTranh vẽ lại:\n' + t.map(([k, v]) => '- ' + k.slice(6) + (v.y ? ': ' + v.y : '')).join('\n');
+  if (g.length) s += '\n\nGiọng thu lại:\n' + g.map(([k, v]) => '- ' + k.slice(6) + (v.y ? ': ' + v.y : '')).join('\n');
+  return s;
+}
+document.getElementById('gui').onclick = async () => {
+  const s = vanBan(), b = document.getElementById('gui');
+  try { await navigator.clipboard.writeText(s); b.textContent = '✓ Đã sao chép, cô dán vào chat nhé'; }
+  catch (e) { const ta = document.createElement('textarea'); ta.value = s; ta.style.cssText = 'width:100%;height:200px'; document.querySelector('main').prepend(ta); ta.select(); b.textContent = 'Cô sao chép đoạn chữ ở đầu trang'; }
+  setTimeout(capNhat, 2500);
+};
+document.getElementById('t-tranh').onclick = () => { tab = 'tranh'; document.getElementById('t-tranh').classList.add('on'); document.getElementById('t-giong').classList.remove('on'); ve(); };
+document.getElementById('t-giong').onclick = () => { tab = 'giong'; document.getElementById('t-giong').classList.add('on'); document.getElementById('t-tranh').classList.remove('on'); ve(); };
+document.getElementById('loc').onchange = ve;
+nap();
+</script>
+</body>
+</html>

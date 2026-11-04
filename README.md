@@ -29,6 +29,14 @@ Thay dần bằng tranh và giọng thật, không cần sửa code:
 
 Lưu ý: khi sửa lời một câu trong `data/cau-hoi.js`, mã giọng của câu đó đổi theo, cần thu lại câu đó.
 
+### Làm tranh và giọng bằng Gemini (tools/gemini)
+Khoá Gemini để trong một tệp riêng ngoài kho (không bao giờ đưa lên GitHub).
+- `python3 tools/gemini/tao_tranh.py <khoá> batch` – vẽ mọi tranh còn thiếu qua Batch API (rẻ một nửa). Tranh trùng câu lệnh chỉ vẽ một lần; tranh đếm số chỉ vẽ một vật mẫu rồi máy ghép đúng số lượng. Câu lệnh từng tranh: `tools/gemini/tranh_prompt.py`.
+- `python3 tools/gemini/tao_giong.py <khoá> batch` – thu mọi câu còn thiếu, đúng giọng từng nhân vật như web 21 ngày.
+- `python3 tools/gemini/kiem_tra.py <khoá>` – máy tự soát tranh (đúng số lượng, màu, vị trí) và giọng (đọc đủ, đúng thanh điệu), ghi `san-xuat/kiem-tra-tu-dong.json`.
+- Trang `duyet.html`: cô xem toàn bộ tranh và nghe giọng, đánh dấu mục cần làm lại, sao chép danh sách gửi Claude. Làm lại riêng từng mục: `tao_tranh.py <khoá> lai <mã>` / `tao_giong.py <khoá> lai <mã>`.
+- Xong thì chạy `node tools/build.js` để web dùng tranh, giọng mới.
+
 ## Nhận kết quả về Google Sheet (tuỳ chọn)
 Làm theo hướng dẫn ở đầu `apps-script/KiemTra.gs`, dán link /exec vào `KQ_API`. Khi bé làm xong, web gửi 1 dòng vào trang tính "Kiểm tra đầu vào" và lưu file kết quả + ghi âm vào thư mục Drive "Kiểm tra đầu vào". Chưa cài thì ba mẹ bấm "Tải kết quả" ở trang Báo cáo và gửi file qua Zalo.
 

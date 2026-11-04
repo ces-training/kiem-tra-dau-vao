@@ -155,6 +155,7 @@ h2{font-size:26px;font-weight:800}
 .de .tr .mau{width:120px;height:120px}
 .tr .to-mau{position:relative;width:80px;height:80px}
 .de .tr .to-mau{width:120px;height:120px}
+.tr .to-mau.lon,.de .tr .to-mau.lon{width:150px;height:150px}
 .tr .to-mau img{width:100%;height:100%;filter:grayscale(1) brightness(1.25) contrast(.9)}
 .tr .to-mau i{position:absolute;inset:0;mix-blend-mode:multiply;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
 .tr .so{width:80px;height:96px;border-radius:16px;background:var(--yellow-soft);border:3px solid var(--yellow);display:grid;place-items:center;font-size:56px;font-weight:800;color:var(--red)}
