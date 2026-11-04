@@ -15,8 +15,8 @@ img{max-width:100%}
 .zh,.zh *{font-family:var(--zh)}
 
 /* ---------- khung: thanh bên + nội dung ---------- */
-.khung{display:flex;min-height:100vh}
-.thanh{width:96px;flex:0 0 96px;background:var(--yellow);display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 0;position:sticky;top:0;height:100vh;box-shadow:inset -4px 0 0 rgba(0,0,0,.06)}
+.khung{display:flex;min-height:100vh;--z:1}
+.thanh{width:96px;flex:0 0 96px;background:var(--yellow);display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 0;position:sticky;top:0;height:calc(100vh / var(--z));box-shadow:inset -4px 0 0 rgba(0,0,0,.06)}
 .logo{width:64px;height:64px;border-radius:50%;background:#fff;border:3px solid var(--red);display:grid;place-items:center;overflow:hidden}
 .logo img{width:56px}
 .logo-chu{font-size:11px;font-weight:800;color:var(--red-dark);text-align:center;line-height:1.05}
@@ -48,8 +48,8 @@ h2{font-size:26px;font-weight:800}
 .the .chan{background:var(--green);color:#fff;padding:8px 14px;font-weight:800}
 .the .chan small{display:block;font-weight:600;opacity:.92;font-size:14px}
 .luoi-trang-chu{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
-.the.lon{grid-row:span 2;cursor:pointer}
-.the.lon img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.the.lon{grid-row:span 2;cursor:pointer;display:flex;flex-direction:column}
+.the.lon img{display:block;width:100%;flex:1 1 0;min-height:240px;object-fit:cover}
 .the.o{cursor:pointer;display:flex;flex-direction:column}
 .the.o .anh{flex:1;display:grid;place-items:center;background:var(--yellow-soft);min-height:140px}
 .the.o .anh img{max-height:170px;object-fit:contain}
@@ -268,3 +268,11 @@ audio{height:34px;max-width:240px;vertical-align:middle}
   .dungsai button{width:120px;height:96px}
 }
 .ban-quyen{text-align:center;font-size:12px;color:var(--muted);padding:24px 0 8px}
+
+/* Màn hình lớn: phóng to cả giao diện cho vừa màn, không để co nhỏ giữa nhiều khoảng trống */
+@media (min-width:1280px) and (min-height:700px){ .khung{zoom:1.12;--z:1.12} }
+@media (min-width:1500px) and (min-height:800px){ .khung{zoom:1.25;--z:1.25} }
+@media (min-width:1750px) and (min-height:900px){ .khung{zoom:1.4;--z:1.4} }
+@media (min-width:2100px) and (min-height:1050px){ .khung{zoom:1.6;--z:1.6} }
+.khung{min-height:calc(100vh / var(--z))}
+.giua-man{min-height:calc(70vh / var(--z))}

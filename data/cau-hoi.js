@@ -534,6 +534,8 @@ KT.ZH.NO = {
 /* ---------- Lời thoại nhân vật (tiếng Việt, cô Hươu đọc) ---------- */
 KT.LOI = {
   chao: 'Chào {ten}! Cô là cô Hươu. Hôm nay Bông sẽ cùng con đi một chuyến thám hiểm qua hai vùng đất: vùng tiếng Anh của bạn Anna và vùng tiếng Trung của bạn Xiaomei nhé!',
+  trangChu: 'Chào mừng con đến với chuyến thám hiểm ngôn ngữ! Ba mẹ bấm vào ô Ba mẹ để điền thông tin của con, rồi con bấm Bắt đầu thám hiểm nhé!',
+  trangChuLai: 'Con quay lại rồi! Con bấm vào bản đồ để đi tiếp chuyến thám hiểm nhé!',
   luat: 'Ở mỗi trạm, con chọn một ô may mắn, nghe thật kỹ rồi chạm vào đáp án. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!',
   thuLoa: 'Con có nghe rõ cô nói không? Nếu nghe rõ, con chạm vào ngôi sao nhé!',
   thuMic: 'Con nói thật to: Hello!',

@@ -3452,6 +3452,30 @@
   ]
  },
  {
+  "ma": "huou_vi_799bda81",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Chào mừng con đến với chuyến thám hiểm ngôn ngữ! Ba mẹ bấm vào ô Ba mẹ để điền thông tin của con, rồi con bấm Bắt đầu thám hiểm nhé!",
+  "file": "audio/huou_vi_799bda81.mp3",
+  "dung_o": [
+   "LOI-trangChu"
+  ]
+ },
+ {
+  "ma": "huou_vi_19272f9f",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con quay lại rồi! Con bấm vào bản đồ để đi tiếp chuyến thám hiểm nhé!",
+  "file": "audio/huou_vi_19272f9f.mp3",
+  "dung_o": [
+   "LOI-trangChuLai"
+  ]
+ },
+ {
   "ma": "huou_vi_8cd417db",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",

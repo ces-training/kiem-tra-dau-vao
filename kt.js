@@ -72,7 +72,8 @@ const Am = {
     const v = this.giongMay;
     return v.find(x => x.lang.replace('_', '-') === want) || v.find(x => x.lang.toLowerCase().startsWith(want.slice(0, 2))) || null;
   },
-  dung() { this.luot++; try { if (this.cur) { this.cur.pause(); this.cur = null; } speechSynthesis.cancel(); } catch (e) {} },
+  tHuy: 0, choPhat: null, uHien: null,
+  dung() { this.luot++; this.choPhat = null; try { if (this.cur) { this.cur.pause(); this.cur = null; } this.tHuy = performance.now(); speechSynthesis.cancel(); } catch (e) {} },
   async noi(nv, lang, loi) {
     if (!loi || this.tat) return;
     const id = CH.maGiong(nv, lang, loi), f = KT.AM_CO && KT.AM_CO[id];
@@ -85,27 +86,43 @@ const Am = {
       const a = new Audio(src); this.cur = a;
       const xong = () => { if (this.cur === a) this.cur = null; res(); };
       a.onended = xong; a.onerror = xong;
-      a.play().catch(xong);
+      a.play().catch(err => { if (err && err.name === 'NotAllowedError') this.choPhat = () => this.file(src); xong(); });
       setTimeout(() => { if (luot !== this.luot) xong(); }, 60000);
     });
   },
-  may(nv, lang, loi) {
-    return new Promise(res => {
-      try {
-        if (!('speechSynthesis' in window)) return res();
-        const text = loi.replace(/_{2,}/g, ' ... ').replace(/\s*\/\s*[^\n]*$/m, '');
-        const u = new SpeechSynthesisUtterance(text);
-        const g = this.chonGiong(lang); if (g) u.voice = g;
-        u.lang = g ? g.lang : (lang === 'en' ? (CF.GIONG_ANH || 'en-GB') : lang === 'zh' ? 'zh-CN' : 'vi-VN');
-        const tre = ['anna', 'leo', 'xm', 'bong', 'tho', 'gau'].includes(nv);
-        u.pitch = nv === 'bo' ? 0.75 : nv === 'tho' ? 1.6 : tre ? 1.35 : nv === 'me' ? 1.1 : 1;
-        u.rate = lang === 'zh' ? 0.78 : lang === 'en' ? (tre ? 0.88 : 0.9) : 1;
-        let xong = false; const kt = () => { if (!xong) { xong = true; res(); } };
-        u.onend = kt; u.onerror = kt;
-        speechSynthesis.speak(u);
-        setTimeout(kt, 1500 + text.length * (lang === 'zh' ? 380 : 110));
-      } catch (e) { res(); }
-    });
+  async may(nv, lang, loi) {
+    if (!('speechSynthesis' in window)) return;
+    const luot = this.luot, ss = speechSynthesis;
+    try {
+      if (!this.giongMay.length) { this.napGiong(); if (!this.giongMay.length) { await ngu(300); this.napGiong(); } }
+      /* Chrome hay "nuốt" câu nói nếu speak() ngay sau cancel() */
+      const cho = 150 - (performance.now() - this.tHuy); if (cho > 0) await ngu(cho);
+      if (luot !== this.luot) return;
+      if (ss.paused) ss.resume();
+      const text = loi.replace(/_{2,}/g, ' ... ').replace(/\s*\/\s*[^\n]*$/m, '');
+      /* chia câu dài: Chrome tự ngắt giọng máy sau khoảng 15 giây */
+      const doan = []; for (const c of text.match(/[^.!?。！？]+[.!?。！？]*\s*/g) || [text]) {
+        if (doan.length && (doan[doan.length - 1] + c).length < 140) doan[doan.length - 1] += c; else doan.push(c);
+      }
+      const g = this.chonGiong(lang);
+      const tre = ['anna', 'leo', 'xm', 'bong', 'tho', 'gau'].includes(nv);
+      for (const d of doan) {
+        if (luot !== this.luot) return;
+        const ok = await new Promise(res => {
+          const u = new SpeechSynthesisUtterance(d); this.uHien = u; /* giữ tham chiếu để Chrome không làm mất sự kiện onend */
+          if (g) u.voice = g;
+          u.lang = g ? g.lang : (lang === 'en' ? (CF.GIONG_ANH || 'en-GB') : lang === 'zh' ? 'zh-CN' : 'vi-VN');
+          u.pitch = nv === 'bo' ? 0.75 : nv === 'tho' ? 1.6 : tre ? 1.35 : nv === 'me' ? 1.1 : 1;
+          u.rate = lang === 'zh' ? 0.78 : lang === 'en' ? (tre ? 0.88 : 0.9) : 1;
+          let xong = false; const kt = v => { if (!xong) { xong = true; res(v); } };
+          u.onend = () => kt(true);
+          u.onerror = ev => { if (ev && ev.error === 'not-allowed') { this.choPhat = () => this.may(nv, lang, loi); kt(false); } else kt(true); };
+          ss.speak(u);
+          setTimeout(() => kt(true), 1500 + d.length * (lang === 'zh' ? 380 : 110));
+        });
+        if (!ok) return;
+      }
+    } catch (e) {}
   },
   async chuoi(a, lang, nvDan) {
     if (typeof a === 'string') return this.noi(nvDan, lang, a);
@@ -114,6 +131,9 @@ const Am = {
   }
 };
 try { Am.napGiong(); speechSynthesis.onvoiceschanged = () => Am.napGiong(); } catch (e) {}
+/* Trình duyệt chặn tiếng khi bé chưa chạm vào trang: chạm lần đầu thì đọc lại câu vừa bị chặn */
+document.addEventListener('pointerdown', () => { const f = Am.choPhat; if (!f) return; Am.choPhat = null;
+  setTimeout(() => { try { if (!speechSynthesis.speaking && !Am.cur) f(); } catch (e) {} }, 400); }, true);
 
 /* ============================================================
    VẼ TRANH TẠM
@@ -208,6 +228,7 @@ function trangChu() {
       <div class="the o tim ${xong || GV ? '' : 'khoa'}" data-di="bc"><div class="anh"><img src="img/trang/cx_o_match.webp" alt=""></div><div class="chan">${xong || GV ? '' : '🔒 '}Báo cáo<small>Mở khi con làm xong</small></div></div>
       <div class="the o" data-di="lai"><div class="anh"><img src="${NV.tho}" alt=""></div><div class="chan">Bé khác làm<small>Bắt đầu lại từ đầu</small></div></div>
     </div>`, { man: 'chu' });
+  if (!xong) Am.noi('huou', 'vi', S.hs ? KT.LOI.trangChuLai : KT.LOI.trangChu);
   g.querySelectorAll('[data-di]').forEach(el => el.onclick = () => {
     const d = el.dataset.di;
     if (d === 'bat') S.hs ? (S.daChao ? banDo() : moDau()) : phuHuynh();
