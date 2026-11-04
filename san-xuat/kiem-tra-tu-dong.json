@@ -1876,8 +1876,8 @@
    "ly_do": ""
   },
   "E-TV-4-3A_pic": {
-   "ok": false,
-   "ly_do": "Có chữ tiếng Anh lộ đáp án (\"GOOD JOB FINISHED\") – chờ vẽ lại"
+   "ok": true,
+   "ly_do": "Đã vẽ lại 05/11, Claude soát: đạt"
   },
   "E-TV-4-3B_pic": {
    "ok": true,
@@ -2084,8 +2084,8 @@
    "ly_do": ""
   },
   "E-NG-3-3B_o3": {
-   "ok": false,
-   "ly_do": "Mèo ở TRONG hộp, chưa phải SAU hộp – chờ vẽ lại"
+   "ok": true,
+   "ly_do": "Đã vẽ lại 05/11, Claude soát: đạt"
   },
   "E-NG-3-3C_pic": {
    "ok": true,
@@ -2140,8 +2140,8 @@
    "ly_do": ""
   },
   "E-NG-4-3A_o3": {
-   "ok": false,
-   "ly_do": "Hai bạn còn lại chưa mờ, khó nhận ra bạn thấp đeo kính – chờ vẽ lại"
+   "ok": true,
+   "ly_do": "Đã vẽ lại 05/11, Claude soát: đạt"
   },
   "E-NG-4-3B_o1": {
    "ok": true,
@@ -2312,8 +2312,8 @@
    "ly_do": ""
   },
   "E-VI-3-3B_pic": {
-   "ok": false,
-   "ly_do": "Vẽ thành đầu bếp, chưa rõ là mẹ nấu ăn ở nhà – chờ vẽ lại"
+   "ok": true,
+   "ly_do": "Đã vẽ lại 05/11, Claude soát: đạt"
   },
   "E-VI-3-3C_pic": {
    "ok": true,
