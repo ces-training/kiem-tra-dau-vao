@@ -7,7 +7,7 @@ window.KT_CAU_HINH = {
   KQ_API: 'https://script.google.com/macros/s/AKfycbxMGjKLZqGBbdNp-WOBzi8clym5r2hVnIoE3LEkemEJ38vGTW_DZE5ZZ_ElLyaRl0rB/exec',
 
   /* Hiện chú thích tiếng Việt dưới tranh tạm (emoji) – tắt khi đã có đủ tranh vẽ thật */
-  CHU_THICH: true,
+  CHU_THICH: false,
 
   /* Tiếng Anh đọc bằng giọng máy khi chưa có file giọng: 'en-GB' (Anh) hoặc 'en-US' (Mỹ) */
   GIONG_ANH: 'en-GB',

@@ -607,16 +607,29 @@ function entry(ma, def, bac, pi, ci) {
   const it = def.bac[bac].diem[pi].cau[ci];
   return { id: `${ma}-${bac}-${pi + 1}${ABC[ci]}`, lang: def.lang, dan: def.dan, item: it };
 }
+/* Mỗi bé một đề khác: xáo thứ tự các điểm kiến thức trong bậc và chọn ngẫu nhiên câu nào trong 3 câu song song
+   làm câu chính (2 câu còn lại làm câu xác nhận). Lưu theo bé để tải lại trang vẫn giữ đúng đề. */
+function tronMang(n) { const a = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function hoanVi(key, n) {
+  S.tron = S.tron || {};
+  if (!S.tron[key] || S.tron[key].length !== n) { S.tron[key] = tronMang(n); luu(); }
+  return S.tron[key];
+}
+function entryVai(ma, def, bac, pi, vai) {
+  const n = def.bac[bac].diem[pi].cau.length;
+  const ci = hoanVi(`${ma}-${bac}-${pi}`, n)[ABC.indexOf(vai)] ?? ABC.indexOf(vai);
+  return Object.assign(entry(ma, def, bac, pi, ci), { vai });
+}
 
 async function chayBac(ma, def, bac, tieuDe, opt) {
   const lv = def.bac[bac];
   await manHuongDanBac(lv.hd, tieuDe);
   const diem = lv.diem.map((p, pi) => ({ ten: p.ten, tuDo: !!p.tuDo, kq: {}, pi }));
-  const hang = diem.map(d => ({ d, k: 'A' }));
+  const hang = hoanVi(`${ma}-${bac}-thuTu`, diem.length).map(pi => ({ d: diem[pi], k: 'A' }));
   for (let i = 0; i < hang.length; i++) {
     const { d, k } = hang[i];
     if (k === 'B') await thoCon();
-    const e = entry(ma, def, bac, d.pi, ABC.indexOf(k));
+    const e = entryVai(ma, def, bac, d.pi, k);
     const daLam = PHIEN.kd[e.id];   // câu này bé đã làm lúc khởi động / câu cứu: dùng lại, không hỏi lần nữa
     const r = daLam || await hienCau(e, tieuDe);
     PHIEN.daHoi[e.id] = true;
@@ -864,7 +877,7 @@ function ghiAm(stream, giay, onLevel) {
 async function chayNoi(ma, def, L) {
   const zh = def.lang === 'zh', dan = def.dan;
   const bacs = [...new Set([L, Math.min(L + 1, 4)])];
-  const tasks = bacs.flatMap(b => def.bac[b].map(t => Object.assign({ bac: b }, t)));
+  const tasks = bacs.flatMap(b => hoanVi(`${ma}-${b}-noi`, def.bac[b].length).map(i => Object.assign({ bac: b }, def.bac[b][i])));
   /* khởi động: 1 câu hỏi dễ ở bậc thấp hơn (giáo viên vẫn nghe được, không tính vào bậc Nói) */
   if (L > 1 && def.bac[L - 1] && def.bac[L - 1][0]) { const t0 = def.bac[L - 1][0]; tasks.unshift(Object.assign({}, t0, { bac: L - 1, kd: true, buoc: t0.buoc.slice(0, 1) })); }
   const tieuDe = (zh ? 'Tiếng Trung' : 'Tiếng Anh') + ' · Nói';
@@ -1141,5 +1154,48 @@ async function guiKetQua(baoLai, coGhiAm = true) {
 window.KT_THU = { S: () => S, tinh, chayBac, hienCau, banDo, trangChu, LO };
 
 /* ---------- bắt đầu ---------- */
-if (GV && S.hs && S.tien.KET) baoCao(true); else chamBatDau();
+/* ============================================================
+   XEM TOÀN BỘ ĐỀ (?xem=1): để giáo viên duyệt hình thức từng phần, không lưu, không gửi kết quả
+   ============================================================ */
+const XEM = /[?&]xem=1/.test(location.search);
+const XEM_TRAM = [['E-TV', 'TA · Từ vựng'], ['E-NG', 'TA · Nghe'], ['E-DO', 'TA · Đọc'], ['E-VI', 'TA · Viết'], ['E-NO', 'TA · Nói'],
+  ['Z-G', 'TT · Cổng'], ['Z-NG', 'TT · Nghe'], ['Z-DO', 'TT · Đọc'], ['Z-HZ', 'TT · Thẻ chữ Hán'], ['Z-VI', 'TT · Viết'], ['Z-NO', 'TT · Nói']];
+let xemCuon = 0;
+function xemDe(ma = 'E-TV', baoKq = '') {
+  const tab = `<div class="xem-tab">${XEM_TRAM.map(([m, t]) => `<button class="${m === ma ? 'chon' : ''}" data-tab="${m}">${t}</button>`).join('')}</div>`;
+  const nut = (id, nhan) => `<button class="xem-cau" data-id="${id}">${nhan}</button>`;
+  let noi = '';
+  const def = TRAM_DEF[ma];
+  if (ma === 'Z-G') noi = `<div class="xem-bac"><h3>3 câu sàng lọc</h3><div class="xem-diem">${KT.ZH.CONG.map((it, i) => nut('CONG:' + i, 'Câu ' + (i + 1))).join('')}</div></div>`;
+  else if (ma === 'Z-HZ') noi = `<div class="xem-bac"><h3>12 thẻ chữ Hán (dừng khi sai 3 thẻ liền)</h3><div class="xem-diem">${KT.ZH.HAN.map((h, i) => nut('HZ:' + i, esc(h[0]))).join('')}</div></div>`;
+  else if (ma.endsWith('NO')) {
+    noi = Object.entries(def.bac).map(([b, ts]) => `<div class="xem-bac"><h3>Bậc ${b}</h3>${ts.map(t => `<div class="xem-noi"><b>${esc(t.ten)}</b> <span class="nho">· đạt: ${esc(t.dat || (t.loai === 'nhac' ? 'nhắc lại đủ, rõ, đúng thanh điệu' : ''))}</span>
+      <div class="xem-buoc">${t.buoc.map((bc, i) => `<div>${bc.pic ? tranh(bc.pic, t.id + '_b' + (i + 1)) : ''}<button class="xem-nghe" data-nv="${def.dan}" data-lang="${def.lang}" data-t="${esc(bc.a)}">🔊</button> <span class="${def.lang === 'zh' ? 'zh' : ''}">${t.loai === 'nhac' ? '(nhắc lại) ' : ''}${esc(bc.a)}</span></div>`).join('')}</div></div>`).join('')}</div>`).join('');
+  } else {
+    if (def.thu) noi += `<div class="xem-bac"><h3>Câu làm thử</h3><div class="xem-diem">${nut(ma + ':THU', 'Làm thử')}</div></div>`;
+    if (def.kiemTra) noi += `<div class="xem-bac"><h3>Kiểm tra biết đọc (2 câu)</h3><div class="xem-diem">${def.kiemTra.map((it, i) => nut(ma + ':KT:' + i, 'Câu ' + (i + 1))).join('')}</div></div>`;
+    noi += Object.entries(def.bac).map(([b, lv]) => `<div class="xem-bac"><h3>Bậc ${b} <button class="xem-nghe" data-nv="huou" data-lang="vi" data-t="${esc(lv.hd)}">🔊</button></h3><p class="nho">${esc(lv.hd)}</p>
+      ${lv.diem.map((p, pi) => `<div class="xem-diem"><span class="ten-diem">${pi + 1}. ${esc(p.ten)}${p.tuDo ? ' (viết tự do, GV chấm)' : ''}</span>${p.cau.map((c, ci) => nut(`${ma}:${b}:${pi}:${ci}`, ABC[ci])).join('')}</div>`).join('')}</div>`).join('');
+  }
+  const g = khung(`<span class="nhan">Xem toàn bộ đề · chế độ duyệt</span><p class="nho">Bấm vào từng câu để làm thử đúng như bé thấy. Chế độ này không lưu, không gửi kết quả. A/B/C là 3 câu song song; khi bé làm thật, máy chọn ngẫu nhiên một câu làm câu chính.</p>
+    ${baoKq ? `<div class="xem-kq">${baoKq}</div>` : ''}${tab}<div class="xem-noi-dung">${noi}</div>`, { man: 'xem' });
+  window.scrollTo(0, xemCuon);
+  g.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { xemCuon = 0; xemDe(b.dataset.tab); });
+  g.querySelectorAll('.xem-nghe').forEach(b => b.onclick = () => { Am.dung(); Am.noi(b.dataset.nv, b.dataset.lang, b.dataset.t); });
+  g.querySelectorAll('.xem-cau').forEach(b => b.onclick = async () => {
+    xemCuon = window.scrollY;
+    const id = b.dataset.id, p = id.split(':');
+    let e;
+    if (p[0] === 'CONG') { const it = KT.ZH.CONG[+p[1]]; e = { id: it.id, lang: 'zh', dan: 'xm', item: it }; }
+    else if (p[0] === 'HZ') { const [d, s2] = KT.ZH.HAN[+p[1]]; e = { id: 'Z-HZ-' + (+p[1] + 1), lang: 'zh', dan: 'xm', item: { a: d, o: ['t:' + d, 't:' + s2] } }; }
+    else if (p[1] === 'THU') e = { id: p[0] + '-THU', lang: def.lang, dan: def.dan, item: def.thu };
+    else if (p[1] === 'KT') e = { id: p[0] + '-KT' + (+p[2] + 1), lang: def.lang, dan: def.dan, item: def.kiemTra[+p[2]] };
+    else e = entry(p[0], def, +p[1], +p[2], +p[3]);
+    const r = await hienCau(e, 'Xem đề · ' + XEM_TRAM.find(x => x[0] === ma)[1] + ' · ' + e.id);
+    xemDe(ma, `Câu ${esc(e.id)}: ${r.dung === null ? 'viết tự do (giáo viên chấm)' : r.dung ? '✅ đúng' : '❌ sai'}${r.chon != null ? ' · đã chọn: ' + esc(String(r.chon)) : ''}`);
+  });
+}
+
+if (XEM) xemDe();
+else if (GV && S.hs && S.tien.KET) baoCao(true); else chamBatDau();
 })();

@@ -281,3 +281,19 @@ audio{height:34px;max-width:240px;vertical-align:middle}
 @media (min-width:2100px) and (min-height:1050px){ .khung{zoom:1.6;--z:1.6} }
 .khung{min-height:calc(100vh / var(--z))}
 .giua-man{min-height:calc(70vh / var(--z))}
+
+/* chế độ xem toàn bộ đề */
+.xem-tab{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.xem-tab button{border:0;border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;background:#fff;box-shadow:var(--shadow);cursor:pointer}
+.xem-tab button.chon{background:var(--red);color:#fff}
+.xem-bac{background:#fff;border-radius:18px;padding:12px 16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.xem-bac h3{margin:0 0 4px;display:flex;align-items:center;gap:8px}
+.xem-diem{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.ten-diem{flex:1 1 220px;font-weight:600}
+.xem-cau{border:0;border-radius:12px;min-width:44px;padding:8px 12px;font:inherit;font-weight:800;background:var(--sky);color:#fff;cursor:pointer}
+.xem-nghe{border:0;background:var(--yellow-soft);border-radius:50%;width:34px;height:34px;cursor:pointer}
+.xem-noi{padding:8px 0;border-top:1px dashed var(--line)}
+.xem-buoc{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.xem-buoc > div{display:flex;flex-direction:column;align-items:center;gap:4px;max-width:220px;text-align:center}
+.xem-buoc .tr .file{max-height:120px}
+.xem-kq{background:var(--yellow-soft);border-radius:12px;padding:8px 14px;font-weight:700;margin-top:8px}
