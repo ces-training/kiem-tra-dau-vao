@@ -10,7 +10,7 @@
  * 3. Sao chép link /exec, dán vào KQ_API trong data/cau-hinh.js của trang kiểm tra.
  *
  * Mỗi bài làm xong: thêm 1 dòng vào trang tính "Kiểm tra đầu vào",
- * lưu file kết quả (.json) và các file ghi âm phần Nói vào thư mục Drive "Kiểm tra đầu vào".
+ * lưu file kết quả (.json) và các file ghi âm phần Nói vào thư mục "Kiểm tra đầu vào" nằm cùng thư mục với Sheet.
  */
 var TEN_TRANG = 'Kiểm tra đầu vào';
 var TEN_THU_MUC = 'Kiểm tra đầu vào';
@@ -28,7 +28,9 @@ function luuKiemTra_(d) {
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var sh = ss.getSheetByName(TEN_TRANG) || taoTrang_(ss);
-    var goc = layThuMuc_(DriveApp.getRootFolder(), TEN_THU_MUC);
+    // thư mục ghi âm đặt cạnh Sheet (ví dụ trong "Dữ liệu web Anh - Trung"), không có thì để ở Drive gốc
+    var cha = DriveApp.getFileById(ss.getId()).getParents();
+    var goc = layThuMuc_(cha.hasNext() ? cha.next() : DriveApp.getRootFolder(), TEN_THU_MUC);
     var tm = layThuMuc_(goc, (d.hs.ten || 'be') + ' - ' + (d.hs.sdt || '') + ' - ' + d.phien);
     // ghi âm
     var soFile = 0;
