@@ -555,6 +555,8 @@ KT.LOI = {
   ketPh: 'Giờ con đưa máy cho ba mẹ nhé. Hẹn gặp con ở lớp học!',
   baoCao: 'Ba mẹ xem kết quả của con ở dưới đây nhé. Cảm ơn ba mẹ đã đồng hành cùng con!',
   viDu: 'Mình làm thử một câu nhé!',
+  lenBac: 'Con giỏi quá! Mình thử vài câu khó hơn một chút nhé. Khó cũng không sao, con cứ làm hết sức nhé!',
+  veDich: 'Câu cuối của trạm này rồi, con làm thật tốt nhé!',
   dapAnDung: 'Con xem đáp án đúng nhé. Giờ mình làm thật nhé!',
   noiHd: 'Con bấm nút micro rồi nói thật to nhé. Nói xong con bấm Xong.',
   nhacHd: 'Con nghe bạn nói, rồi nói lại giống hệt bạn nhé.',

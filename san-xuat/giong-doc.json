@@ -4026,6 +4026,32 @@
  },
  {
   "co": true,
+  "ma": "huou_vi_04a1c6b5",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con giỏi quá! Mình thử vài câu khó hơn một chút nhé. Khó cũng không sao, con cứ làm hết sức nhé!",
+  "file": "audio/huou_vi_04a1c6b5.mp3",
+  "dung_o": [
+   "LOI-lenBac"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_b72eb692",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Câu cuối của trạm này rồi, con làm thật tốt nhé!",
+  "file": "audio/huou_vi_b72eb692.mp3",
+  "dung_o": [
+   "LOI-veDich"
+  ]
+ },
+ {
+  "co": true,
   "ma": "huou_vi_0249eaa3",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",

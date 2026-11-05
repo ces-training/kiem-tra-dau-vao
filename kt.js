@@ -419,7 +419,7 @@ function oMayMan(vung, tiep) {
 /* ============================================================
    MÀN CÂU HỎI
    ============================================================ */
-const PHIEN = { tram: '', cauSo: 0 };
+const PHIEN = { tram: '', cauSo: 0, daHoi: {}, kd: {}, saiLien: 0, soCuu: 0 };
 function dauCau(tieuDe) {
   PHIEN.cauSo++;
   const n = Math.min(PHIEN.cauSo, 12);
@@ -617,10 +617,18 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
     const { d, k } = hang[i];
     if (k === 'B') await thoCon();
     const e = entry(ma, def, bac, d.pi, ABC.indexOf(k));
-    const r = await hienCau(e, tieuDe);
-    d.kq[k] = r; ghiLog(e.id, k, r);
+    const daLam = PHIEN.kd[e.id];   // câu này bé đã làm lúc khởi động / câu cứu: dùng lại, không hỏi lần nữa
+    const r = daLam || await hienCau(e, tieuDe);
+    PHIEN.daHoi[e.id] = true;
+    d.kq[k] = r; if (!daLam) ghiLog(e.id, k, r);
     if (k === 'A' && !d.tuDo && (!r.dung || r.nhanh) && !opt.chiA) hang.splice(Math.min(i + 2, hang.length), 0, { d, k: 'B' }, { d, k: 'C' });
+    if (daLam) continue;
     await khen(def.lang, r.dung);
+    PHIEN.saiLien = r.dung === false ? PHIEN.saiLien + 1 : r.dung ? 0 : PHIEN.saiLien;
+    if (PHIEN.saiLien >= 2 && PHIEN.soCuu < 2 && !opt.ngan) {   // sai 2 câu liền: chen một câu dễ để bé lấy lại tự tin
+      PHIEN.saiLien = 0; PHIEN.soCuu++;
+      await cauNhe(chonCauDe(ma, def, opt.min, bac) || cauThuLai(ma, def), tieuDe, 'cuu', def.lang);
+    }
   }
   let tong = 0, dem = 0;
   for (const d of diem) {
@@ -638,10 +646,51 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
   return { bac, tong, dem, qua, diem: diem.map(d => ({ ten: d.ten, gt: d.gt, ketLuan: d.ketLuan, baiViet: d.baiViet })) };
 }
 
+/* ---------- nhịp êm cho bé: khởi động, câu cứu, câu về đích (không tính điểm) ---------- */
+/* câu dễ chưa hỏi ở bậc thấp nhất trong [tuBac, denBac) */
+function chonCauDe(ma, def, tuBac, denBac) {
+  for (let b = tuBac; b < denBac; b++) {
+    const lv = def.bac[b]; if (!lv) continue;
+    for (const ci of [2, 1, 0]) for (let pi = 0; pi < lv.diem.length; pi++) {
+      if (lv.diem[pi].tuDo) continue;
+      const e = entry(ma, def, b, pi, ci);
+      if (!PHIEN.daHoi[e.id]) return e;
+    }
+  }
+  return null;
+}
+/* không còn bậc thấp hơn: cho làm lại câu làm thử (bé đã biết cách làm) */
+function cauThuLai(ma, def) {
+  if (!def.thu || PHIEN.daHoi[ma + '-THU-LAI']) return null;
+  return { id: ma + '-THU-LAI', lang: def.lang, dan: def.dan, item: def.thu };
+}
+async function cauNhe(e, tieuDe, loai, lang) {
+  if (!e) return null;
+  PHIEN.daHoi[e.id] = true;
+  const r = await hienCau(e, tieuDe);
+  ghiLog(e.id, loai, r); PHIEN.kd[e.id] = r;
+  await khen(lang, r.dung);
+  return r;
+}
+/* 2 câu khởi động đi lên dần tới bậc bắt đầu (bậc−2 rồi bậc−1) */
+async function khoiDong(ma, def, opt, tieuDe) {
+  const bd = opt.bacDau, cac = [bd - 2, bd - 1].filter(b => b >= opt.min && def.bac[b]);
+  const ds = cac.length === 2 ? cac : cac.length === 1 ? [cac[0], cac[0]] : [];
+  const lay = opt.ngan || opt.chiA ? ds.slice(-1) : ds;
+  if (!lay.length) return;
+  let daHd = {};
+  for (const b of lay) {
+    const e = chonCauDe(ma, def, b, b + 1); if (!e) continue;
+    if (!daHd[b]) { daHd[b] = 1; await manHuongDanBac(def.bac[b].hd, tieuDe); }
+    await cauNhe(e, tieuDe, 'kd', def.lang);
+  }
+}
+
 async function chayKyNang(ma, def, opt) {
   const tieuDe = (ma.startsWith('Z') ? 'Tiếng Trung · ' : 'Tiếng Anh · ') + def.ten;
-  PHIEN.tram = ma; PHIEN.cauSo = 0;
+  PHIEN.tram = ma; PHIEN.cauSo = 0; PHIEN.daHoi = {}; PHIEN.kd = {}; PHIEN.saiLien = 0; PHIEN.soCuu = 0;
   if (def.thu && !opt.boThu) await cauThu({ id: ma + '-THU', lang: def.lang, dan: def.dan, item: def.thu }, tieuDe);
+  await khoiDong(ma, def, opt, tieuDe);
   let bac = opt.bacDau, xuong = 0, coQua = false, kq = null;
   const chiTiet = [];
   for (;;) {
@@ -652,10 +701,16 @@ async function chayKyNang(ma, def, opt) {
       if (xuong > 0 || opt.ngan) { kq = bac; break; }
       if (bac >= opt.max) { kq = bac + 1; break; }
       bac++;
+      await manHuongDanBac(KT.LOI.lenBac, tieuDe);   // báo trước nhẹ nhàng: câu sẽ khó hơn một chút
     } else {
       if (!coQua && !opt.ngan && bac > opt.min && xuong < 2) { bac--; xuong++; continue; }
       kq = bac - 1; break;
     }
+  }
+  /* trạm dừng ở bậc bé chưa làm được: kết thúc bằng một câu dễ để bé rời trạm với cảm giác làm được */
+  if (!chiTiet[chiTiet.length - 1].qua && !opt.ngan) {
+    const e = chonCauDe(ma, def, opt.min, Math.max(opt.min, kq) + 1) || cauThuLai(ma, def);
+    if (e) { await manHuongDanBac(KT.LOI.veDich, tieuDe); await cauNhe(e, tieuDe, 'vedich', def.lang); }
   }
   const choGV = chiTiet.some(c => c.diem.some(d => d.ketLuan === 'cho_gv'));
   return { bac: kq, chiTiet, choGV, ngan: !!opt.ngan };
@@ -809,6 +864,8 @@ async function chayNoi(ma, def, L) {
   const zh = def.lang === 'zh', dan = def.dan;
   const bacs = [...new Set([L, Math.min(L + 1, 4)])];
   const tasks = bacs.flatMap(b => def.bac[b].map(t => Object.assign({ bac: b }, t)));
+  /* khởi động: 1 câu hỏi dễ ở bậc thấp hơn (giáo viên vẫn nghe được, không tính vào bậc Nói) */
+  if (L > 1 && def.bac[L - 1] && def.bac[L - 1][0]) { const t0 = def.bac[L - 1][0]; tasks.unshift(Object.assign({}, t0, { bac: L - 1, kd: true, buoc: t0.buoc.slice(0, 1) })); }
   const tieuDe = (zh ? 'Tiếng Trung' : 'Tiếng Anh') + ' · Nói';
   let stream = null;
   for (;;) {
@@ -824,7 +881,7 @@ async function chayNoi(ma, def, L) {
   const kq = { bacs, tasks: [] };
   PHIEN.cauSo = 0;
   for (const t of tasks) {
-    const rt = { id: t.id, bac: t.bac, ten: t.ten, dat: t.dat || (t.loai === 'nhac' ? 'Nhắc lại đủ câu, rõ tiếng, đúng thanh điệu' : ''), nhac: t.loai === 'nhac', buoc: [] };
+    const rt = { id: t.id, bac: t.bac, kd: !!t.kd, ten: (t.kd ? 'Khởi động · ' : '') + t.ten, dat: t.dat || (t.loai === 'nhac' ? 'Nhắc lại đủ câu, rõ tiếng, đúng thanh điệu' : ''), nhac: t.loai === 'nhac', buoc: [] };
     if (t.loai === 'nhac') await manHuongDanBac(KT.LOI.nhacHd, tieuDe);
     for (let bi = 0; bi < t.buoc.length; bi++) {
       const b = t.buoc[bi];
