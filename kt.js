@@ -370,7 +370,7 @@ function diTiep() {
 }
 /* Đọc lời rồi tự chuyển; nếu bé/ba mẹ bấm sang màn khác thì thôi */
 async function tuDongDi(loi, man, tiep, nv = 'huou', lang = 'vi') {
-  await Promise.race([Am.noi(nv, lang, loi), ngu(9000)]);
+  await Promise.race([Am.noi(nv, lang, loi), ngu(30000)]);
   await ngu(700);
   if (manHienTai === man) tiep();
 }
@@ -492,7 +492,9 @@ function hienCau(e, tieuDe, opt = {}) {
       if (docTruyen) await Am.noi(e.dan, e.lang, docTruyen); else await Am.chuoi(aLoi, e.lang, e.dan);
       nghe = false; loa.classList.remove('dang'); t0 = performance.now();
     }
-    if (loa) { loa.onclick = () => phat(); capNhatLoa(); if (!docTruyen) phat(); }
+    /* lời cô Hươu trước câu (nếu có) đọc hết rồi mới phát câu hỏi */
+    const dauLoi = opt.loiTruoc ? Am.noi('huou', 'vi', opt.loiTruoc) : Promise.resolve();
+    if (loa) { loa.onclick = () => phat(); capNhatLoa(); if (!docTruyen) dauLoi.then(() => { if (!daTra && manHienTai === 'cau') phat(); }); }
 
     let daTra = false;
     const tra = (dung, chon, them) => {
@@ -565,9 +567,7 @@ function hienCau(e, tieuDe, opt = {}) {
 /* câu làm thử: không tính điểm, sai thì chỉ đáp án */
 async function cauThu(e, tieuDe) {
   const truoc = loiNV('huou', KT.LOI.viDu, { anh: 'huou2' });
-  Am.noi('huou', 'vi', KT.LOI.viDu);
-  await ngu(300);
-  const r = await hienCau(e, tieuDe, { truoc });
+  const r = await hienCau(e, tieuDe, { truoc, loiTruoc: KT.LOI.viDu });
   ghiLog(e.id, 'thu', r);
   if (!r.dung && (e.item.o || e.item.dap)) {
     const g = khung(`${bang(`<div class="de">${loiNV('huou', KT.LOI.dapAnDung) + '<div class="cau">' + esc(e.item.o ? nhanLC(e.item.o[0]) : e.item.dap[0]) + '</div>'}${e.item.o ? (phanLC(e.item.o[0]).loai === 'p' ? tranh(phanLC(e.item.o[0]).spec, (e.anh || e.id) + '_o1') : '') : ''}</div>`)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`);
@@ -596,7 +596,7 @@ async function manHuongDanBac(text, tieuDe) {
 
 async function thoCon() {
   khung(`<div class="giua-man"><img src="${NV.tho}" style="height:220px" alt="">${loiNV('tho', KT.LOI.thuThem)}</div>`, { man: 'tho' });
-  await Promise.race([Am.noi('tho', 'vi', KT.LOI.thuThem), ngu(2500)]);
+  await Promise.race([Am.noi('tho', 'vi', KT.LOI.thuThem), ngu(12000)]);
   await ngu(300);
 }
 
