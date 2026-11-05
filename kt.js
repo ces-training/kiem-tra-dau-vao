@@ -446,7 +446,7 @@ function hienCau(e, tieuDe, opt = {}) {
   const truyen = it.truyen ? KT.EN.DO.truyen[it.truyen] : null;
   let de = '';
   if (coLoa) de += `<button class="loa-to" id="loa">${em('🔊')}<span class="lan" id="lan"></span></button>`;
-  if (it.pic) de += `<div class="tranh-de">${tranh(it.pic, e.id + '_pic')}</div>`;
+  if (it.pic) de += `<div class="tranh-de">${tranh(it.pic, (e.anh || e.id) + '_pic')}</div>`;
   if (truyen) de += `<div class="truyen">${esc(truyen)}</div>`;
   if (it.q) de += `<div class="cau ${zh ? 'zh' : ''} ${String(it.q).length > 60 ? 'nho-hon' : ''}">${esc(it.q)}</div>`;
   if (it.hop) de += `<div class="hop-tu">${it.hop.map(w => `<span>${esc(w)}</span>`).join('')}</div>`;
@@ -460,7 +460,7 @@ function hienCau(e, tieuDe, opt = {}) {
       const nCot = thuTu.length === 2 ? 2 : thuTu.length === 4 ? 4 : 3;
       duoi = `<div class="lua-chon c${nCot}">${thuTu.map((o, i) => {
         let ndung = '';
-        if (o.loai === 'p') ndung = tranh(o.spec, e.id + '_o' + (o.goc + 1));
+        if (o.loai === 'p') ndung = tranh(o.spec, (e.anh || e.id) + '_o' + (o.goc + 1));
         else if (o.loai === 't') ndung = htmlChu(o.text, zh);
         else if (o.loai === 's') ndung = `<span class="tranh-loa">${em('🔊')}</span>`;
         else ndung = htmlChu(o.text, zh) + `<span class="nghe-nho" data-nghe="${i}">${em('🔈')}</span>`;
@@ -469,7 +469,7 @@ function hienCau(e, tieuDe, opt = {}) {
     } else if (k === 'dungsai') {
       duoi = `<div class="dungsai"><button data-v="1">${zh ? em('✔️') : em('👍')}</button><button data-v="0">${zh ? em('✖️') : em('👎')}</button></div>`;
     } else if (k === 'mau') {
-      duoi = `<div class="to-hang">${it.vat.map((v, i) => `<button class="vat" data-v="${i}">${tranh(v, e.id + '_v' + (i + 1))}</button>`).join('')}</div>
+      duoi = `<div class="to-hang">${it.vat.map((v, i) => `<button class="vat" data-v="${i}">${tranh(v, (e.anh || e.id) + '_v' + (i + 1))}</button>`).join('')}</div>
         <div class="but-mau">${['blue', 'red', 'green', 'yellow'].map(c => `<button data-c="${c}" style="background:${MAU[c]}" aria-label="${c}"></button>`).join('')}</div>`;
     } else if (k === 'xep') {
       duoi = `<div class="dong-xep" id="dong"></div><div class="kho-the">${it.the.map((t, i) => { const [a, b] = t.split('|'); return `<button class="the-tu ${zh ? 'zh' : ''}" data-i="${i}">${esc(a)}${b ? `<small>${esc(b)}</small>` : ''}</button>`; }).join('')}</div>
@@ -570,7 +570,7 @@ async function cauThu(e, tieuDe) {
   const r = await hienCau(e, tieuDe, { truoc });
   ghiLog(e.id, 'thu', r);
   if (!r.dung && (e.item.o || e.item.dap)) {
-    const g = khung(`${bang(`<div class="de">${loiNV('huou', KT.LOI.dapAnDung) + '<div class="cau">' + esc(e.item.o ? nhanLC(e.item.o[0]) : e.item.dap[0]) + '</div>'}${e.item.o ? (phanLC(e.item.o[0]).loai === 'p' ? tranh(e.item.o[0]) : '') : ''}</div>`)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`);
+    const g = khung(`${bang(`<div class="de">${loiNV('huou', KT.LOI.dapAnDung) + '<div class="cau">' + esc(e.item.o ? nhanLC(e.item.o[0]) : e.item.dap[0]) + '</div>'}${e.item.o ? (phanLC(e.item.o[0]).loai === 'p' ? tranh(phanLC(e.item.o[0]).spec, (e.anh || e.id) + '_o1') : '') : ''}</div>`)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`);
     await new Promise(res => { g.querySelector('#t').onclick = () => { Am.dung(); res(); }; Am.noi('huou', 'vi', KT.LOI.dapAnDung).then(() => ngu(1200)).then(res); });
   }
 }
@@ -662,7 +662,7 @@ function chonCauDe(ma, def, tuBac, denBac) {
 /* không còn bậc thấp hơn: cho làm lại câu làm thử (bé đã biết cách làm) */
 function cauThuLai(ma, def) {
   if (!def.thu || PHIEN.daHoi[ma + '-THU-LAI']) return null;
-  return { id: ma + '-THU-LAI', lang: def.lang, dan: def.dan, item: def.thu };
+  return { id: ma + '-THU-LAI', anh: ma + '-THU', lang: def.lang, dan: def.dan, item: def.thu };
 }
 async function cauNhe(e, tieuDe, loai, lang) {
   if (!e) return null;
