@@ -37,8 +37,13 @@ Khoá Gemini để trong một tệp riêng ngoài kho (không bao giờ đưa l
 - Trang `duyet.html`: cô xem toàn bộ tranh và nghe giọng, đánh dấu mục cần làm lại, sao chép danh sách gửi Claude. Làm lại riêng từng mục: `tao_tranh.py <khoá> lai <mã>` / `tao_giong.py <khoá> lai <mã>`.
 - Xong thì chạy `node tools/build.js` để web dùng tranh, giọng mới.
 
-## Nhận kết quả về Google Sheet (tuỳ chọn)
-Làm theo hướng dẫn ở đầu `apps-script/KiemTra.gs`, dán link /exec vào `KQ_API`. Khi bé làm xong, web gửi 1 dòng vào trang tính "Kiểm tra đầu vào" và lưu file kết quả + ghi âm vào thư mục Drive "Kiểm tra đầu vào". Chưa cài thì ba mẹ bấm "Tải kết quả" ở trang Báo cáo và gửi file qua Zalo.
+## Nhận kết quả về Google Sheet
+Đã cài: Sheet "Kết quả kiểm tra đầu vào" trong thư mục Drive "Dữ liệu web Anh - Trung"; link /exec ở `KQ_API` (data/cau-hinh.js).
+- Web gửi sau **mỗi trạm** (bé bỏ dở vẫn có dữ liệu) và khi xong bài; cùng một bé thì cập nhật đúng dòng của bé (theo Mã phiên).
+- Trạm Nói gửi kèm ghi âm vào thư mục "Kiểm tra đầu vào" cạnh Sheet.
+- **Máy chấm gợi ý phần Nói** (Gemini, cần thuộc tính tập lệnh `GEMINI_KEY`): chép lời bé nói, điểm 0–3 từng câu, bậc Nói gợi ý, nhận xét ngắn → cột "Máy gợi ý" + tệp `may-cham-noi-en/zh.json`.
+- 3 cột cuối (xanh lá) dành cho **giáo viên chấm và nhận xét**; máy không bao giờ ghi đè. Muốn máy chấm lại: xoá ô "Máy gợi ý" rồi bấm "Gửi lại kết quả" ở trang Báo cáo.
+- Mã: `apps-script/KiemTra.gs` (hướng dẫn cài ở đầu tệp).
 
 ## Khác với tài liệu nội dung
 - Bài chạy liền mạch: xong một trạm (đã xác định được bậc) thì tự sang trạm tiếp theo, không cần bé bấm bản đồ hay chọn ô may mắn. Nút "Đi tiếp ngay" để bỏ qua lúc chờ; giáo viên (?gv=1) vẫn mở được bất kỳ trạm nào trên bản đồ.

@@ -757,6 +757,7 @@ async function chayTram(ma) {
   if (!ketQua) return;
   ketQua.xong = Date.now();
   S.kq[ma] = ketQua; S.tien[ma] = 'xong'; luu();
+  guiKetQua(false, ma.endsWith('NO'));   // gửi kết quả về Sheet sau mỗi trạm (bé bỏ dở giữa chừng vẫn có dữ liệu); trạm Nói gửi kèm ghi âm
   await sticker(ma);
 }
 
@@ -1104,7 +1105,7 @@ async function goiKetQua(coGhiAm) {
     const blob = await Kho.lay(b.key); if (!blob) continue;
     ghiAm[b.key] = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(blob); });
   }
-  return { phienBan: 1, phien: S.phien, hs: S.hs, batDau: S.batDau, ketThuc: S.ketThuc, ketQua: S.kq, tongHop: T, chamNoi: S.chamNoi || {}, nhatKy: S.log, ghiAm };
+  return { phienBan: 2, tienDo: S.tien.KET ? 'Xong bài' : 'Đang làm: ' + daXongSo() + '/' + LO.length + ' trạm', phien: S.phien, hs: S.hs, batDau: S.batDau, ketThuc: S.ketThuc, ketQua: S.kq, tongHop: T, chamNoi: S.chamNoi || {}, nhatKy: S.log, ghiAm };
 }
 async function taiFile(coGhiAm) {
   const d = await goiKetQua(coGhiAm);
@@ -1124,12 +1125,12 @@ function taiCsv() {
   const rows = [['Mã', 'Loại', 'Bé chọn', 'Đáp án', 'Đúng', 'Nhanh', 'Giây']].concat(S.log.map(l => [l.id, l.loai, l.chon, l.dapAn, l.dung, l.nhanh, (l.ms / 1000).toFixed(1)]));
   luuFile(`cau-tra-loi-${(S.hs.ten || 'be').replace(/\s+/g, '-')}.csv`, new Blob(['\ufeff' + rows.map(r => r.map(q).join(',')).join('\n')], { type: 'text/csv' }));
 }
-async function guiKetQua(baoLai) {
+async function guiKetQua(baoLai, coGhiAm = true) {
   if (!CF.KQ_API) return;
   const tt = document.getElementById('tt-gui');
   try {
     if (tt) tt.textContent = 'Đang gửi…';
-    const d = await goiKetQua(true);
+    const d = await goiKetQua(coGhiAm);
     await fetch(CF.KQ_API, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) });
     S.daGui = Date.now(); luu();
     if (tt) tt.textContent = 'Đã gửi kết quả cho trung tâm.';
