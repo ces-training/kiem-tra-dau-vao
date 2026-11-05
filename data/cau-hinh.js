@@ -4,7 +4,7 @@
 window.KT_CAU_HINH = {
   /* Link Web App Apps Script nhận kết quả (xem apps-script/KiemTra.gs).
      Để trống: kết quả chỉ lưu trên máy, ba mẹ / giáo viên tải file về. */
-  KQ_API: '',
+  KQ_API: 'https://script.google.com/macros/s/AKfycbxMGjKLZqGBbdNp-WOBzi8clym5r2hVnIoE3LEkemEJ38vGTW_DZE5ZZ_ElLyaRl0rB/exec',
 
   /* Hiện chú thích tiếng Việt dưới tranh tạm (emoji) – tắt khi đã có đủ tranh vẽ thật */
   CHU_THICH: true,
