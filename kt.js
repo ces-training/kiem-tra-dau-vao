@@ -226,7 +226,7 @@ function trangChu() {
   const g = khung(`<span class="nhan">Kiểm tra đầu vào Anh – Trung</span>
     <h1 style="margin-top:6px">Những nhà thám hiểm ngôn ngữ nhí</h1>
     <div class="luoi-trang-chu">
-      <div class="the lon" data-di="bat"><img src="img/trang/canopy_ban_do.webp" alt=""><div class="chan">🚀 ${S.hs ? (xong ? 'Xem lại bản đồ' : 'Tiếp tục thám hiểm') : 'Bắt đầu thám hiểm'}<small>${S.hs ? esc(S.hs.ten) + ' · đã qua ' + daXongSo() + '/' + LO.length + ' trạm' : 'Khoảng 25–35 phút · tiếng Anh trước, tiếng Trung sau'}</small></div></div>
+      <div class="the lon" data-di="bat"><img src="img/trang/canopy_ban_do.webp" alt=""><div class="chan">🚀 ${S.hs ? (xong ? 'Bé khác làm bài mới' : 'Tiếp tục bài của ' + esc(S.hs.ten)) : 'Bắt đầu thám hiểm'}<small>${S.hs ? (xong ? esc(S.hs.ten) + ' đã làm xong · bé tiếp theo sẽ có đề khác' : 'đã qua ' + daXongSo() + '/' + LO.length + ' trạm · làm tiếp đúng đề đang làm') : 'Khoảng 25–35 phút · tiếng Anh trước, tiếng Trung sau'}</small></div></div>
       <div class="the o cam" data-di="ph"><div class="anh"><img src="${NV.bong}" alt=""></div><div class="chan">Ba mẹ<small>Thông tin của con</small></div></div>
       <div class="the o xanh" data-di="hd"><div class="anh"><img src="${NV.huou2}" alt=""></div><div class="chan">Hướng dẫn<small>Cô Hươu chỉ cách làm</small></div></div>
       <div class="the o tim ${xong || GV ? '' : 'khoa'}" data-di="bc"><div class="anh"><img src="img/trang/cx_o_match.webp" alt=""></div><div class="chan">${xong || GV ? '' : '🔒 '}Báo cáo<small>Mở khi con làm xong</small></div></div>
@@ -235,7 +235,7 @@ function trangChu() {
   Am.noi('huou', 'vi', xong ? KT.LOI.baoCao : S.hs ? KT.LOI.trangChuLai : KT.LOI.trangChu);
   g.querySelectorAll('[data-di]').forEach(el => el.onclick = () => {
     const d = el.dataset.di;
-    if (d === 'bat') S.hs ? (S.daChao ? (xong ? banDo() : diTiep()) : moDau()) : phuHuynh();
+    if (d === 'bat') { if (xong) return baiMoi(); S.hs ? (S.daChao ? diTiep() : moDau()) : phuHuynh(); }
     else if (d === 'ph') phuHuynh();
     else if (d === 'hd') huongDan();
     else if (d === 'bc') baoCao(false);
@@ -244,6 +244,15 @@ function trangChu() {
 }
 const daXongSo = () => LO.filter(t => S.tien[t.ma]).length;
 
+/* Bé trước đã làm xong (kết quả đã gửi về trung tâm): cất bài cũ vào máy, mở bài mới với đề xáo mới */
+function baiMoi() {
+  try {
+    const cu = JSON.parse(localStorage.getItem(LUU + '-cu') || '[]');
+    cu.unshift({ phien: S.phien, hs: S.hs, ketThuc: S.ketThuc, tongHop: tinh(), daGui: S.daGui || null });
+    localStorage.setItem(LUU + '-cu', JSON.stringify(cu.slice(0, 20)));
+  } catch (e) {}
+  S = moi(); luu(); phuHuynh();
+}
 function lamLai() {
   const g = khung(`<div class="form"><h2>Bắt đầu lại cho bé khác?</h2><p>Kết quả và ghi âm của ${S.hs ? '<b>' + esc(S.hs.ten) + '</b>' : 'bé trước'} trên máy này sẽ bị xoá. Nếu cần giữ, ba mẹ / cô vào Báo cáo và bấm "Tải kết quả" trước.</p>
     <div class="hang-nut"><button class="nut trang" data-x="0">Quay lại</button><button class="nut do" data-x="1">Xoá và bắt đầu lại</button></div></div>`);
@@ -565,7 +574,13 @@ function hienCau(e, tieuDe, opt = {}) {
 }
 
 /* câu làm thử: không tính điểm, sai thì chỉ đáp án */
+/* Bé tải lại trang / rớt mạng giữa chừng: câu đã trả lời trong bài này thì dùng lại kết quả, không hỏi lại */
+function cauDaLam(id) {
+  for (let i = S.log.length - 1; i >= 0; i--) { const l = S.log[i]; if (l.id === id) return { dung: l.dung, ms: l.ms, nhanh: l.nhanh, chon: l.chon, dapAn: l.dapAn, cu: true }; }
+  return null;
+}
 async function cauThu(e, tieuDe) {
+  if (cauDaLam(e.id)) return;
   const truoc = loiNV('huou', KT.LOI.viDu, { anh: 'huou2' });
   const r = await hienCau(e, tieuDe, { truoc, loiTruoc: KT.LOI.viDu });
   ghiLog(e.id, 'thu', r);
@@ -636,7 +651,7 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
     const { d, k } = hang[i];
     if (k === 'B') await thoCon();
     const e = entryVai(ma, def, bac, d.pi, k);
-    const daLam = PHIEN.kd[e.id];   // câu này bé đã làm lúc khởi động / câu cứu: dùng lại, không hỏi lần nữa
+    const daLam = PHIEN.kd[e.id] || cauDaLam(e.id);   // câu bé đã làm (khởi động, câu cứu, hoặc trước khi tải lại trang): dùng lại
     const r = daLam || await hienCau(e, tieuDe);
     PHIEN.daHoi[e.id] = true;
     d.kq[k] = r; if (!daLam) ghiLog(e.id, k, r);
@@ -687,6 +702,7 @@ function cauThuLai(ma, def) {
 async function cauNhe(e, tieuDe, loai, lang) {
   if (!e) return null;
   PHIEN.daHoi[e.id] = true;
+  const cu = PHIEN.kd[e.id] || cauDaLam(e.id); if (cu) { PHIEN.kd[e.id] = cu; return cu; }
   const r = await hienCau(e, tieuDe);
   ghiLog(e.id, loai, r); PHIEN.kd[e.id] = r;
   await khen(lang, r.dung);
@@ -752,7 +768,7 @@ async function chayTram(ma) {
       const boKT = [KT.EN.DO.kiemTra].concat(KT.EN.DO.kiemTraSS || []), kKT = chonBo('E-DO-kt', boKT.length);
       for (let i = 0; i < boKT[kKT].length; i++) {
         const e = { id: 'E-DO-KT' + (i + 1) + (kKT ? '-' + (kKT + 1) : ''), lang: 'en', dan: 'anna', item: boKT[kKT][i] };
-        const r = await hienCau(e, 'Tiếng Anh · Đọc'); ghiLog(e.id, 'kt', r); if (!r.dung) sai++;
+        let r = cauDaLam(e.id); if (!r) { r = await hienCau(e, 'Tiếng Anh · Đọc'); ghiLog(e.id, 'kt', r); } if (!r.dung) sai++;
       }
       tienDoc = sai === 2;
     }
@@ -804,8 +820,9 @@ async function chayCong() {
   const boCong = [KT.ZH.CONG].concat(KT.ZH.CONG_SS || []);
   for (const it of boCong[chonBo('Z-G-bo', boCong.length)]) {
     const e = { id: it.id, lang: 'zh', dan: 'xm', item: it };
-    const r = await hienCau(e, 'Cổng vùng tiếng Trung'); ghiLog(e.id, 'cong', r); if (r.dung) dung++;
-    await khen('zh', r.dung);
+    const cu = cauDaLam(e.id), r = cu || await hienCau(e, 'Cổng vùng tiếng Trung');
+    if (r.dung) dung++;
+    if (!cu) { ghiLog(e.id, 'cong', r); await khen('zh', r.dung); }
   }
   const hoc = S.hs.ph.zh; // 0 chưa học, 1 dưới 6 tháng, 2–3 từ 6 tháng
   let c0 = false, bacDau = 1;
@@ -845,7 +862,7 @@ async function chayHan() {
   for (let i = 0; i < HAN.length; i++) {
     const [d, s] = HAN[i];
     const e = { id: 'Z-HZ-' + (i + 1) + (kHan ? '-' + (kHan + 1) : ''), lang: 'zh', dan: 'xm', item: { a: d, o: ['t:' + d, 't:' + s] } };
-    const r = await hienCau(e, 'Tiếng Trung · Thẻ chữ Hán'); ghiLog(e.id, 'han', r); lam++;
+    const cu = cauDaLam(e.id), r = cu || await hienCau(e, 'Tiếng Trung · Thẻ chữ Hán'); if (!cu) ghiLog(e.id, 'han', r); lam++;
     if (r.dung) { dung++; saiLien = 0; } else if (++saiLien >= 3) break;
   }
   return { dung, lam, tong: HAN.length, bo: kHan + 1, muc: dung <= 4 ? 'Mới đọc pinyin, chưa nắm chữ Hán' : dung <= 8 ? 'Nhận diện chữ Hán khá' : 'Đã biết chữ, sẵn sàng bài đọc không pinyin' };
@@ -908,6 +925,8 @@ async function chayNoi(ma, def, L) {
     if (t.loai === 'nhac') await manHuongDanBac(KT.LOI.nhacHd, tieuDe);
     for (let bi = 0; bi < t.buoc.length; bi++) {
       const b = t.buoc[bi];
+      const daGhi = cauDaLam(t.id + '-' + (bi + 1)), keyCu = `${S.phien}/${t.id}/${bi + 1}`;
+      if (daGhi && await Kho.lay(keyCu)) { rt.buoc.push({ key: keyCu, a: b.a, giay: (daGhi.ms || 0) / 1000, daNoi: daGhi.chon === 'có ghi âm', goiY: false }); continue; }   // đã ghi âm trước khi tải lại trang
       const g = khung(`${dauCau(tieuDe)}${bang(`<div class="de">
           <div style="display:flex;align-items:center;gap:12px;justify-content:center"><img src="${NV[dan]}" style="height:110px" alt=""><button class="loa-to" id="loa">${em('🔊')}</button></div>
           ${b.pic ? `<div class="tranh-de">${tranh(b.pic, t.id + '_b' + (bi + 1))}</div>` : ''}
