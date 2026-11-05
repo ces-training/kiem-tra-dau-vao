@@ -937,8 +937,8 @@ async function chayNoi(ma, def, L) {
         <div class="vach-am"><i></i></div>
         <div class="hang-nut"><button class="nut an" id="xong">✔ Xong</button></div>`)}`, { man: 'noi' });
       const tt = g.querySelector('#tt'), vach = g.querySelector('.vach-am i'), mic = g.querySelector('#mic'), xong = g.querySelector('#xong');
-      /* câu hỏi đọc chậm; bé được nghe lại 2 lần, kể cả khi đang thu (bỏ phần thu dở, nghe xong thì thu lại) */
-      const loa = g.querySelector('#loa'), lan = g.querySelector('#lan'), TOC = 0.85, MAX = 3;
+      /* câu hỏi đọc chậm; tổng cộng chỉ nghe 2 lần (bài test), kể cả khi đang thu (bỏ phần thu dở, nghe xong thì thu lại) */
+      const loa = g.querySelector('#loa'), lan = g.querySelector('#lan'), TOC = 0.85, MAX = 2;
       let daNghe = 0, dangThu = false, ngheLai = false;
       const capNhat = () => { lan.textContent = MAX - daNghe; loa.disabled = daNghe >= MAX; };
       const phat = async () => { daNghe++; capNhat(); loa.classList.add('dang'); await Am.noi(dan, def.lang, b.a, TOC); loa.classList.remove('dang'); };
