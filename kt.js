@@ -74,24 +74,25 @@ const Am = {
   },
   tHuy: 0, choPhat: null, uHien: null,
   dung() { this.luot++; this.choPhat = null; try { if (this.cur) { this.cur.pause(); this.cur = null; } this.tHuy = performance.now(); speechSynthesis.cancel(); } catch (e) {} },
-  async noi(nv, lang, loi) {
+  async noi(nv, lang, loi, toc) {
     if (!loi || this.tat) return;
     const id = CH.maGiong(nv, lang, loi), f = KT.AM_CO && KT.AM_CO[id];
-    if (f) return this.file(f);
+    if (f) return this.file(f, toc);
     try { console.warn('THIEU_GIONG', id, loi); } catch (e) {}
-    return this.may(nv, lang, loi);
+    return this.may(nv, lang, loi, toc);
   },
-  file(src) {
+  file(src, toc) {
     const luot = this.luot;
     return new Promise(res => {
       const a = new Audio(src); this.cur = a;
+      if (toc && toc !== 1) { a.preservesPitch = a.webkitPreservesPitch = true; a.playbackRate = toc; }   /* đọc chậm lại, giữ nguyên giọng */
       const xong = () => { if (this.cur === a) this.cur = null; res(); };
       a.onended = xong; a.onerror = xong;
-      a.play().catch(err => { if (err && err.name === 'NotAllowedError') this.choPhat = () => this.file(src); xong(); });
+      a.play().catch(err => { if (err && err.name === 'NotAllowedError') this.choPhat = () => this.file(src, toc); xong(); });
       setTimeout(() => { if (luot !== this.luot) xong(); }, 60000);
     });
   },
-  async may(nv, lang, loi) {
+  async may(nv, lang, loi, toc) {
     if (!('speechSynthesis' in window)) return;
     const luot = this.luot, ss = speechSynthesis;
     try {
@@ -114,12 +115,12 @@ const Am = {
           if (g) u.voice = g;
           u.lang = g ? g.lang : (lang === 'en' ? (CF.GIONG_ANH || 'en-GB') : lang === 'zh' ? 'zh-CN' : 'vi-VN');
           u.pitch = nv === 'bo' ? 0.75 : nv === 'tho' ? 1.6 : tre ? 1.35 : nv === 'me' ? 1.1 : 1;
-          u.rate = lang === 'zh' ? 0.78 : lang === 'en' ? (tre ? 0.88 : 0.9) : 1;
+          u.rate = (lang === 'zh' ? 0.78 : lang === 'en' ? (tre ? 0.88 : 0.9) : 1) * (toc || 1);
           let xong = false; const kt = v => { if (!xong) { xong = true; res(v); } };
           u.onend = () => kt(true);
-          u.onerror = ev => { if (ev && ev.error === 'not-allowed') { this.choPhat = () => this.may(nv, lang, loi); kt(false); } else kt(true); };
+          u.onerror = ev => { if (ev && ev.error === 'not-allowed') { this.choPhat = () => this.may(nv, lang, loi, toc); kt(false); } else kt(true); };
           ss.speak(u);
-          setTimeout(() => kt(true), 1500 + d.length * (lang === 'zh' ? 380 : 110));
+          setTimeout(() => kt(true), 1500 + d.length * (lang === 'zh' ? 380 : 110) / (toc || 1));
         });
         if (!ok) return;
       }
@@ -928,7 +929,7 @@ async function chayNoi(ma, def, L) {
       const daGhi = cauDaLam(t.id + '-' + (bi + 1)), keyCu = `${S.phien}/${t.id}/${bi + 1}`;
       if (daGhi && await Kho.lay(keyCu)) { rt.buoc.push({ key: keyCu, a: b.a, giay: (daGhi.ms || 0) / 1000, daNoi: daGhi.chon === 'có ghi âm', goiY: false }); continue; }   // đã ghi âm trước khi tải lại trang
       const g = khung(`${dauCau(tieuDe)}${bang(`<div class="de">
-          <div style="display:flex;align-items:center;gap:12px;justify-content:center"><img src="${NV[dan]}" style="height:110px" alt=""><button class="loa-to" id="loa">${em('🔊')}</button></div>
+          <div style="display:flex;align-items:center;gap:12px;justify-content:center"><img src="${NV[dan]}" style="height:110px" alt=""><button class="loa-to" id="loa">${em('🔊')}<span class="lan" id="lan"></span></button></div>
           ${b.pic ? `<div class="tranh-de">${tranh(b.pic, t.id + '_b' + (bi + 1))}</div>` : ''}
           ${t.loai === 'nhac' ? '' : `<div class="cau ${zh ? 'zh' : ''}">${esc(b.a)}</div>`}
         </div>
@@ -936,20 +937,30 @@ async function chayNoi(ma, def, L) {
         <div class="vach-am"><i></i></div>
         <div class="hang-nut"><button class="nut an" id="xong">✔ Xong</button></div>`)}`, { man: 'noi' });
       const tt = g.querySelector('#tt'), vach = g.querySelector('.vach-am i'), mic = g.querySelector('#mic'), xong = g.querySelector('#xong');
-      let nghe = 0;
-      const phat = async () => { if (nghe >= 2) return; nghe++; await Am.noi(dan, def.lang, b.a); };
-      g.querySelector('#loa').onclick = () => { if (!xong.classList.contains('an')) return; phat(); };
-      await phat(); await ngu(250);
-      if (manHienTai !== 'noi') return null;
-      tt.innerHTML = '<span class="dang-thu">Đang thu… con nói đi nào!</span>'; mic.classList.add('thu'); xong.classList.remove('an');
-      let goiY = false, daNoiCo = false;
-      const p = ghiAm(stream, b.giay || 20, (m, s) => {
-        vach.style.width = Math.min(100, m * 1.6) + '%';
-        if (m > 18) daNoiCo = true;
-        if (!goiY && t.goiY && s > 8 && !daNoiCo) { goiY = true; Am.noi(dan, def.lang, t.goiY); tt.innerHTML = '<span class="dang-thu">Bạn gợi ý rồi đó, con nói đi!</span>'; }
-      });
+      /* câu hỏi đọc chậm; bé được nghe lại 2 lần, kể cả khi đang thu (bỏ phần thu dở, nghe xong thì thu lại) */
+      const loa = g.querySelector('#loa'), lan = g.querySelector('#lan'), TOC = 0.85, MAX = 3;
+      let daNghe = 0, dangThu = false, ngheLai = false;
+      const capNhat = () => { lan.textContent = MAX - daNghe; loa.disabled = daNghe >= MAX; };
+      const phat = async () => { daNghe++; capNhat(); loa.classList.add('dang'); await Am.noi(dan, def.lang, b.a, TOC); loa.classList.remove('dang'); };
+      loa.onclick = () => { if (!dangThu || daNghe >= MAX) return; ngheLai = true; ghiAm.dungNgay && ghiAm.dungNgay(); };
       xong.onclick = () => ghiAm.dungNgay && ghiAm.dungNgay();
-      const r = await p; mic.classList.remove('thu');
+      await phat();
+      let goiY = false, daNoiCo = false, r;
+      for (;;) {
+        await ngu(600);
+        if (manHienTai !== 'noi') return null;
+        tt.innerHTML = '<span class="dang-thu">Đang thu… con nói đi nào!</span><br><small>Chưa nghe rõ? Bấm 🔊 để nghe lại.</small>'; mic.classList.add('thu'); xong.classList.remove('an');
+        ngheLai = false; dangThu = true;
+        const p = ghiAm(stream, b.giay || 20, (m, s) => {
+          vach.style.width = Math.min(100, m * 1.6) + '%';
+          if (m > 18) daNoiCo = true;
+          if (!goiY && t.goiY && s > 8 && !daNoiCo) { goiY = true; Am.noi(dan, def.lang, t.goiY); tt.innerHTML = '<span class="dang-thu">Bạn gợi ý rồi đó, con nói đi!</span>'; }
+        });
+        r = await p; dangThu = false; mic.classList.remove('thu');
+        if (!ngheLai) break;
+        xong.classList.add('an'); vach.style.width = '0'; tt.textContent = `Nghe bạn ${TEN_NV[dan]} hỏi lại nhé…`;
+        await phat();
+      }
       const key = `${S.phien}/${t.id}/${bi + 1}`;
       if (r && r.blob) await Kho.dat(key, r.blob);
       rt.buoc.push({ key, a: b.a, giay: r ? r.giay : 0, daNoi: r ? r.daNoi : false, goiY });
