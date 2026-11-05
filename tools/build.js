@@ -58,8 +58,12 @@ for (const f of flat) {
   (it.buoc || []).forEach((b, i) => { addPic(f.id + '_b' + (i + 1), b.pic, f.id); addLine(nvDan, f.lang, b.a, f.id); });
 }
 KT.ZH.HAN.forEach((h, i) => addLine('xm', 'zh', h[0], 'Z-HZ-' + (i + 1)));
-Object.entries(KT.LOI).forEach(([k, v]) => { if (!v.includes('{')) addLine(k === 'thuThem' ? 'tho' : (k === 'vaoZh' ? 'xm' : 'huou'), 'vi', v, 'LOI-' + k); });
-KT.KHEN.en.forEach(t => addLine('anna', 'en', t, 'KHEN')); KT.KHEN.zh.forEach(t => addLine('xm', 'zh', t, 'KHEN'));
+const NV_LOI = { thuThem: 'tho', vaoZh: 'xm', thanhDieu: 'xm', chuHan: 'xm' };
+Object.entries(KT.LOI).forEach(([k, v]) => { if (!v.includes('{')) addLine(NV_LOI[k] || 'huou', 'vi', v, 'LOI-' + k); });
+Object.entries(KT.LOI_TRAM || {}).forEach(([k, v]) => addLine('huou', 'vi', v, 'TRAM-' + k));
+for (const [lang, nv] of [['en', 'anna'], ['zh', 'xm']]) Object.values(KT.KHEN[lang]).flat().forEach(t => addLine(nv, lang, t, 'KHEN'));
+['Hi! Can you say hello?', 'Well done!'].forEach(t => addLine('anna', 'en', t, 'MO-DAU'));
+['你好！', '你做得很好！', '妈', '马', '爸', '书', '树', '好', '汤', '糖'].forEach(t => addLine('xm', 'zh', t, 'KHAC'));
 ['thu'].forEach(() => {});
 /* hướng dẫn từng bậc */
 for (const st of SHARED.cacTram(KT)) for (const [b, lv] of Object.entries(st.def.bac || {})) if (lv.hd) addLine('huou', 'vi', lv.hd, st.ma + '-' + b);

@@ -3303,7 +3303,8 @@
   "loi": "你好！",
   "file": "audio/xm_zh_aaf2cfeb.mp3",
   "dung_o": [
-   "Z-NO-1-R"
+   "Z-NO-1-R",
+   "KHAC"
   ]
  },
  {
@@ -3739,6 +3740,32 @@
  },
  {
   "co": true,
+  "ma": "huou_vi_7ecadcbd",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Chào con! Cô là cô Hươu. Con chạm vào nút màu đỏ để bắt đầu nhé!",
+  "file": "audio/huou_vi_7ecadcbd.mp3",
+  "dung_o": [
+   "LOI-batDau"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_419e8430",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Chào con! Cô là cô Hươu. Hôm nay Bông sẽ cùng con đi một chuyến thám hiểm qua hai vùng đất: vùng tiếng Anh của bạn Anna và vùng tiếng Trung của bạn Xiaomei nhé!",
+  "file": "audio/huou_vi_419e8430.mp3",
+  "dung_o": [
+   "LOI-chao"
+  ]
+ },
+ {
+  "co": true,
   "ma": "huou_vi_799bda81",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",
@@ -3752,26 +3779,52 @@
  },
  {
   "co": true,
-  "ma": "huou_vi_19272f9f",
+  "ma": "huou_vi_fdcf5e53",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",
   "nang_tong": false,
   "tieng": "vi",
-  "loi": "Con quay lại rồi! Con bấm vào bản đồ để đi tiếp chuyến thám hiểm nhé!",
-  "file": "audio/huou_vi_19272f9f.mp3",
+  "loi": "Con quay lại rồi! Con bấm Tiếp tục thám hiểm để đi tiếp nhé!",
+  "file": "audio/huou_vi_fdcf5e53.mp3",
   "dung_o": [
    "LOI-trangChuLai"
   ]
  },
  {
   "co": true,
-  "ma": "huou_vi_8cd417db",
+  "ma": "huou_vi_45bd50ee",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",
   "nang_tong": false,
   "tieng": "vi",
-  "loi": "Ở mỗi trạm, con chọn một ô may mắn, nghe thật kỹ rồi chạm vào đáp án. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!",
-  "file": "audio/huou_vi_8cd417db.mp3",
+  "loi": "Chào ba mẹ! Ba mẹ điền giúp cô vài thông tin, rồi đưa máy cho con làm bài nhé. Ba mẹ ngồi cạnh động viên con, không gợi ý đáp án nhé.",
+  "file": "audio/huou_vi_45bd50ee.mp3",
+  "dung_o": [
+   "LOI-phuHuynh"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_f126663c",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Ba mẹ muốn cho bạn khác làm bài phải không? Ba mẹ đọc kỹ rồi chọn nhé.",
+  "file": "audio/huou_vi_f126663c.mp3",
+  "dung_o": [
+   "LOI-lamLai"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_bf1947f1",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con nghe thật kỹ rồi chạm vào đáp án nhé. Làm xong trạm này, mình tự đi sang trạm tiếp theo. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!",
+  "file": "audio/huou_vi_bf1947f1.mp3",
   "dung_o": [
    "LOI-luat"
   ]
@@ -3804,6 +3857,32 @@
  },
  {
   "co": true,
+  "ma": "huou_vi_9728e7ce",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con xem bản đồ nhé. Trạm đang nhấp nháy là trạm tiếp theo của con.",
+  "file": "audio/huou_vi_9728e7ce.mp3",
+  "dung_o": [
+   "LOI-banDo"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_65d05b08",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Mình cùng đi tới trạm tiếp theo nhé!",
+  "file": "audio/huou_vi_65d05b08.mp3",
+  "dung_o": [
+   "LOI-diTiep"
+  ]
+ },
+ {
+  "co": true,
   "ma": "tho_vi_5f3a09db",
   "nhan_vat": "tho_con",
   "giong": "Achernar",
@@ -3817,13 +3896,13 @@
  },
  {
   "co": true,
-  "ma": "huou_vi_38073e0e",
+  "ma": "huou_vi_22ff8de8",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",
   "nang_tong": false,
   "tieng": "vi",
-  "loi": "Con nhận được một sticker!",
-  "file": "audio/huou_vi_38073e0e.mp3",
+  "loi": "Con nhận được một sticker! Mình đi tiếp nhé!",
+  "file": "audio/huou_vi_22ff8de8.mp3",
   "dung_o": [
    "LOI-xongTram"
   ]
@@ -3869,6 +3948,45 @@
  },
  {
   "co": true,
+  "ma": "xm_vi_bd52b14a",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "vi",
+  "loi": "Mình chơi trò Tai nghe thanh điệu nhé: nghe hai tiếng, giống nhau thì chạm Giống, khác nhau thì chạm Khác.",
+  "file": "audio/xm_vi_bd52b14a.mp3",
+  "dung_o": [
+   "LOI-thanhDieu"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_vi_3eed228a",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "vi",
+  "loi": "Bây giờ không có pinyin nữa nhé! Bạn nghe Xiaomei đọc, rồi chạm vào chữ Hán đúng.",
+  "file": "audio/xm_vi_3eed228a.mp3",
+  "dung_o": [
+   "LOI-chuHan"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_f9fca524",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Chúc mừng con! Con đã đi hết hai vùng đất rồi!",
+  "file": "audio/huou_vi_f9fca524.mp3",
+  "dung_o": [
+   "LOI-ket"
+  ]
+ },
+ {
+  "co": true,
   "ma": "huou_vi_7de8c54c",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",
@@ -3882,6 +4000,19 @@
  },
  {
   "co": true,
+  "ma": "huou_vi_677b0c0a",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Ba mẹ xem kết quả của con ở dưới đây nhé. Cảm ơn ba mẹ đã đồng hành cùng con!",
+  "file": "audio/huou_vi_677b0c0a.mp3",
+  "dung_o": [
+   "LOI-baoCao"
+  ]
+ },
+ {
+  "co": true,
   "ma": "huou_vi_f5fd4cf6",
   "nhan_vat": "co_huou",
   "giong": "Sulafat",
@@ -3891,6 +4022,19 @@
   "file": "audio/huou_vi_f5fd4cf6.mp3",
   "dung_o": [
    "LOI-viDu"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_0249eaa3",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Con xem đáp án đúng nhé. Giờ mình làm thật nhé!",
+  "file": "audio/huou_vi_0249eaa3.mp3",
+  "dung_o": [
+   "LOI-dapAnDung"
   ]
  },
  {
@@ -3921,6 +4065,149 @@
  },
  {
   "co": true,
+  "ma": "huou_vi_ae0b58b2",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Cô chưa bật được micro. Ba mẹ bấm Cho phép khi trình duyệt hỏi, rồi bấm Thử lại nhé.",
+  "file": "audio/huou_vi_ae0b58b2.mp3",
+  "dung_o": [
+   "LOI-micLoi"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_a34b0946",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Từ vựng! Con nghe bạn Anna nói rồi chạm vào hình đúng nhé!",
+  "file": "audio/huou_vi_a34b0946.mp3",
+  "dung_o": [
+   "TRAM-E-TV"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_4dc3f034",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Nghe! Con nghe thật kỹ nhé!",
+  "file": "audio/huou_vi_4dc3f034.mp3",
+  "dung_o": [
+   "TRAM-E-NG"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_96e4edcf",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Đọc! Con đọc rồi chọn đáp án đúng nhé!",
+  "file": "audio/huou_vi_96e4edcf.mp3",
+  "dung_o": [
+   "TRAM-E-DO"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_21f57a4c",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Viết! Con làm thật cẩn thận nhé!",
+  "file": "audio/huou_vi_21f57a4c.mp3",
+  "dung_o": [
+   "TRAM-E-VI"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_93111947",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Nói! Con nói thật to với bạn Anna nhé!",
+  "file": "audio/huou_vi_93111947.mp3",
+  "dung_o": [
+   "TRAM-E-NO"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_474f2816",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Cổng vùng tiếng Trung! Con nghe bạn Xiaomei nói nhé!",
+  "file": "audio/huou_vi_474f2816.mp3",
+  "dung_o": [
+   "TRAM-Z-G"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_58497990",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Nghe tiếng Trung! Con nghe thật kỹ nhé!",
+  "file": "audio/huou_vi_58497990.mp3",
+  "dung_o": [
+   "TRAM-Z-NG"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_011c5b03",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Đọc tiếng Trung! Con đọc rồi chọn đáp án đúng nhé!",
+  "file": "audio/huou_vi_011c5b03.mp3",
+  "dung_o": [
+   "TRAM-Z-DO"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_08851120",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Viết tiếng Trung! Con làm thật cẩn thận nhé!",
+  "file": "audio/huou_vi_08851120.mp3",
+  "dung_o": [
+   "TRAM-Z-VI"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "huou_vi_18fbfe4d",
+  "nhan_vat": "co_huou",
+  "giong": "Sulafat",
+  "nang_tong": false,
+  "tieng": "vi",
+  "loi": "Trạm Nói tiếng Trung! Con nói thật to với bạn Xiaomei nhé!",
+  "file": "audio/huou_vi_18fbfe4d.mp3",
+  "dung_o": [
+   "TRAM-Z-NO"
+  ]
+ },
+ {
+  "co": true,
   "ma": "anna_en_bdb20c7d",
   "nhan_vat": "anna",
   "giong": "Laomedeia",
@@ -3934,13 +4221,27 @@
  },
  {
   "co": true,
-  "ma": "anna_en_fd18b61b",
+  "ma": "anna_en_6b3efd82",
   "nhan_vat": "anna",
   "giong": "Laomedeia",
   "nang_tong": true,
   "tieng": "en",
-  "loi": "Thank you!",
-  "file": "audio/anna_en_fd18b61b.mp3",
+  "loi": "Well done!",
+  "file": "audio/anna_en_6b3efd82.mp3",
+  "dung_o": [
+   "KHEN",
+   "MO-DAU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "anna_en_9b27c35e",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Good job!",
+  "file": "audio/anna_en_9b27c35e.mp3",
   "dung_o": [
    "KHEN"
   ]
@@ -3960,6 +4261,45 @@
  },
  {
   "co": true,
+  "ma": "anna_en_fd18b61b",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Thank you!",
+  "file": "audio/anna_en_fd18b61b.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_2e9415f3",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "很好！",
+  "file": "audio/xm_zh_2e9415f3.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_b3f63820",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "真棒！",
+  "file": "audio/xm_zh_b3f63820.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "co": true,
   "ma": "xm_zh_8f73e2bc",
   "nhan_vat": "xiaomei",
   "giong": "Aoede",
@@ -3967,6 +4307,19 @@
   "tieng": "zh",
   "loi": "好！",
   "file": "audio/xm_zh_8f73e2bc.mp3",
+  "dung_o": [
+   "KHEN"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_519ed056",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "下一个！",
+  "file": "audio/xm_zh_519ed056.mp3",
   "dung_o": [
    "KHEN"
   ]
@@ -3986,15 +4339,132 @@
  },
  {
   "co": true,
-  "ma": "xm_zh_519ed056",
+  "ma": "anna_en_7bff57d4",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "Hi! Can you say hello?",
+  "file": "audio/anna_en_7bff57d4.mp3",
+  "dung_o": [
+   "MO-DAU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_fcfa6fc2",
   "nhan_vat": "xiaomei",
   "giong": "Aoede",
   "nang_tong": true,
   "tieng": "zh",
-  "loi": "下一个！",
-  "file": "audio/xm_zh_519ed056.mp3",
+  "loi": "你做得很好！",
+  "file": "audio/xm_zh_fcfa6fc2.mp3",
   "dung_o": [
-   "KHEN"
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6cfb714e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "妈",
+  "file": "audio/xm_zh_6cfb714e.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6e73a161",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "马",
+  "file": "audio/xm_zh_6e73a161.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_14a47636",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "爸",
+  "file": "audio/xm_zh_14a47636.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_4143da08",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "书",
+  "file": "audio/xm_zh_4143da08.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_ad40b29e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "树",
+  "file": "audio/xm_zh_ad40b29e.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_41fa8206",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "好",
+  "file": "audio/xm_zh_41fa8206.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_1c168054",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "汤",
+  "file": "audio/xm_zh_1c168054.mp3",
+  "dung_o": [
+   "KHAC"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_c104ecfb",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "糖",
+  "file": "audio/xm_zh_c104ecfb.mp3",
+  "dung_o": [
+   "KHAC"
   ]
  },
  {

@@ -1644,6 +1644,201 @@
    "ok": true,
    "nghe_duoc": "Con xếp câu không có pinyin hoặc chọn chữ Hán đúng.",
    "ly_do": ""
+  },
+  "anna_en_6b3efd82": {
+   "ok": true,
+   "nghe_duoc": "Well done!",
+   "ly_do": ""
+  },
+  "anna_en_7bff57d4": {
+   "ok": true,
+   "nghe_duoc": "Hi! Can you say hello?",
+   "ly_do": ""
+  },
+  "anna_en_9b27c35e": {
+   "ok": true,
+   "nghe_duoc": "Good job!",
+   "ly_do": ""
+  },
+  "huou_vi_011c5b03": {
+   "ok": true,
+   "nghe_duoc": "Trạm Đọc tiếng Trung! Con đọc rồi chọn đáp án đúng nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_0249eaa3": {
+   "ok": true,
+   "nghe_duoc": "Con xem đáp án đúng nhé. Giờ mình làm thật nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_08851120": {
+   "ok": true,
+   "nghe_duoc": "Trạm Viết tiếng Trung! Con làm thật cẩn thận nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_18fbfe4d": {
+   "ok": true,
+   "nghe_duoc": "Trạm Nói tiếng Trung! Con nói thật to với bạn Xiaomei nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_21f57a4c": {
+   "ok": true,
+   "nghe_duoc": "Trạm Viết! Con làm thật cẩn thận nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_22ff8de8": {
+   "ok": true,
+   "nghe_duoc": "Con nhận được một sticker! Mình đi tiếp nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_419e8430": {
+   "ok": true,
+   "nghe_duoc": "Chào con! Cô là cô Hươu. Hôm nay Bông sẽ cùng con đi một chuyến thám hiểm qua hai vùng đất: vùng tiếng Anh của bạn Anna và vùng tiếng Trung của bạn Xiaomei nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_45bd50ee": {
+   "ok": true,
+   "nghe_duoc": "Chào ba mẹ, ba mẹ điền giúp cô vài thông tin, rồi đưa máy cho con làm bài nhé. Ba mẹ ngồi cạnh động viên con, không gợi ý đáp án nhé.",
+   "ly_do": ""
+  },
+  "huou_vi_474f2816": {
+   "ok": true,
+   "nghe_duoc": "Cổng vùng tiếng Trung! Con nghe bạn Xiaomei nói nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_4dc3f034": {
+   "ok": true,
+   "nghe_duoc": "Trạm Nghe! Con nghe thật kỹ nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_58497990": {
+   "ok": true,
+   "nghe_duoc": "Trạm Nghe tiếng Trung! Con nghe thật kỹ nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_65d05b08": {
+   "ok": true,
+   "nghe_duoc": "Mình cùng đi tới trạm tiếp theo nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_677b0c0a": {
+   "ok": true,
+   "nghe_duoc": "Ba mẹ xem kết quả của con ở dưới đây nhé. Cảm ơn ba mẹ đã đồng hành cùng con!",
+   "ly_do": ""
+  },
+  "huou_vi_7ecadcbd": {
+   "ok": true,
+   "nghe_duoc": "Chào con! Cô là cô Hươu. Con chạm vào nút màu đỏ để bắt đầu nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_93111947": {
+   "ok": true,
+   "nghe_duoc": "Trạm Nói! Con nói thật to với bạn Anna nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_96e4edcf": {
+   "ok": true,
+   "nghe_duoc": "Trạm Đọc! Con đọc rồi chọn đáp án đúng nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_9728e7ce": {
+   "ok": true,
+   "nghe_duoc": "Con xem bản đồ nhé. Trạm đang nhấp nháy là trạm tiếp theo của con.",
+   "ly_do": ""
+  },
+  "huou_vi_a34b0946": {
+   "ok": true,
+   "nghe_duoc": "Trạm Từ vựng! Con nghe bạn Anna nói rồi chạm vào hình đúng nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_ae0b58b2": {
+   "ok": true,
+   "nghe_duoc": "Cô chưa bật được micro. Ba mẹ bấm Cho phép khi trình duyệt hỏi, rồi bấm Thử lại nhé.",
+   "ly_do": ""
+  },
+  "huou_vi_bf1947f1": {
+   "ok": true,
+   "nghe_duoc": "Con nghe thật kỹ rồi chạm vào đáp án nhé. Làm xong trạm này, mình tự đi sang trạm tiếp theo. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!",
+   "ly_do": ""
+  },
+  "huou_vi_f126663c": {
+   "ok": true,
+   "nghe_duoc": "Ba mẹ muốn cho bạn khác làm bài phải không? Ba mẹ đọc kỹ rồi chọn nhé.",
+   "ly_do": ""
+  },
+  "huou_vi_f9fca524": {
+   "ok": true,
+   "nghe_duoc": "Chúc mừng con! Con đã đi hết hai vùng đất rồi!",
+   "ly_do": ""
+  },
+  "huou_vi_fdcf5e53": {
+   "ok": true,
+   "nghe_duoc": "Con quay lại rồi! Con bấm Tiếp tục thám hiểm để đi tiếp nhé!",
+   "ly_do": ""
+  },
+  "xm_vi_3eed228a": {
+   "ok": true,
+   "nghe_duoc": "Bây giờ không có pinyin nữa nhé! Bạn nghe Xiaomei đọc, rồi chạm vào chữ Hán đúng.",
+   "ly_do": ""
+  },
+  "xm_vi_bd52b14a": {
+   "ok": true,
+   "nghe_duoc": "Mình chơi trò Tai nghe thanh điệu nhé: nghe hai tiếng, giống nhau thì chạm Giống, khác nhau thì chạm Khác.",
+   "ly_do": ""
+  },
+  "xm_zh_14a47636": {
+   "ok": true,
+   "nghe_duoc": "爸",
+   "ly_do": ""
+  },
+  "xm_zh_1c168054": {
+   "ok": true,
+   "nghe_duoc": "汤",
+   "ly_do": ""
+  },
+  "xm_zh_2e9415f3": {
+   "ok": true,
+   "nghe_duoc": "很好",
+   "ly_do": ""
+  },
+  "xm_zh_4143da08": {
+   "ok": true,
+   "nghe_duoc": "书",
+   "ly_do": ""
+  },
+  "xm_zh_41fa8206": {
+   "ok": true,
+   "nghe_duoc": "好",
+   "ly_do": ""
+  },
+  "xm_zh_6cfb714e": {
+   "ok": true,
+   "nghe_duoc": "妈",
+   "ly_do": ""
+  },
+  "xm_zh_6e73a161": {
+   "ok": true,
+   "nghe_duoc": "马",
+   "ly_do": ""
+  },
+  "xm_zh_ad40b29e": {
+   "ok": true,
+   "nghe_duoc": "树",
+   "ly_do": ""
+  },
+  "xm_zh_b3f63820": {
+   "ok": true,
+   "nghe_duoc": "真棒！",
+   "ly_do": ""
+  },
+  "xm_zh_c104ecfb": {
+   "ok": true,
+   "nghe_duoc": "糖",
+   "ly_do": ""
+  },
+  "xm_zh_fcfa6fc2": {
+   "ok": true,
+   "nghe_duoc": "你做得很好！",
+   "ly_do": ""
   }
  },
  "tranh": {

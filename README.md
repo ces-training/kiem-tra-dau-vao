@@ -41,6 +41,9 @@ Khoá Gemini để trong một tệp riêng ngoài kho (không bao giờ đưa l
 Làm theo hướng dẫn ở đầu `apps-script/KiemTra.gs`, dán link /exec vào `KQ_API`. Khi bé làm xong, web gửi 1 dòng vào trang tính "Kiểm tra đầu vào" và lưu file kết quả + ghi âm vào thư mục Drive "Kiểm tra đầu vào". Chưa cài thì ba mẹ bấm "Tải kết quả" ở trang Báo cáo và gửi file qua Zalo.
 
 ## Khác với tài liệu nội dung
+- Bài chạy liền mạch: xong một trạm (đã xác định được bậc) thì tự sang trạm tiếp theo, không cần bé bấm bản đồ hay chọn ô may mắn. Nút "Đi tiếp ngay" để bỏ qua lúc chờ; giáo viên (?gv=1) vẫn mở được bất kỳ trạm nào trên bản đồ.
+- Sau mỗi câu: đúng thì khen (Great!, Well done!…), sai thì chỉ nói "Next one!" / "下一个！", phần Nói thì "Thank you!".
+- Màn nào cũng có giọng cô Hươu (kể cả màn đầu tiên; trình duyệt chặn tiếng trước lần chạm đầu nên bé chạm cô Hươu để nghe).
 - E-NG-1-1A/B ("Put the ball under the chair"): bé chọn 1 trong 3 tranh thay vì kéo đồ vật.
 - Phần Nói: web ghi âm, giáo viên chấm trên trang giáo viên; bậc Nói hiện "chờ giáo viên chấm" đến khi chấm xong.
 - "Chạm nhanh" (kích hoạt câu xác nhận) = chạm trong 1 giây đầu kể từ khi câu hiện ra.

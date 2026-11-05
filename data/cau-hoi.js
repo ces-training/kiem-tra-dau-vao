@@ -533,22 +533,48 @@ KT.ZH.NO = {
 
 /* ---------- Lời thoại nhân vật (tiếng Việt, cô Hươu đọc) ---------- */
 KT.LOI = {
-  chao: 'Chào {ten}! Cô là cô Hươu. Hôm nay Bông sẽ cùng con đi một chuyến thám hiểm qua hai vùng đất: vùng tiếng Anh của bạn Anna và vùng tiếng Trung của bạn Xiaomei nhé!',
+  batDau: 'Chào con! Cô là cô Hươu. Con chạm vào nút màu đỏ để bắt đầu nhé!',
+  chao: 'Chào con! Cô là cô Hươu. Hôm nay Bông sẽ cùng con đi một chuyến thám hiểm qua hai vùng đất: vùng tiếng Anh của bạn Anna và vùng tiếng Trung của bạn Xiaomei nhé!',
   trangChu: 'Chào mừng con đến với chuyến thám hiểm ngôn ngữ! Ba mẹ bấm vào ô Ba mẹ để điền thông tin của con, rồi con bấm Bắt đầu thám hiểm nhé!',
-  trangChuLai: 'Con quay lại rồi! Con bấm vào bản đồ để đi tiếp chuyến thám hiểm nhé!',
-  luat: 'Ở mỗi trạm, con chọn một ô may mắn, nghe thật kỹ rồi chạm vào đáp án. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!',
+  trangChuLai: 'Con quay lại rồi! Con bấm Tiếp tục thám hiểm để đi tiếp nhé!',
+  phuHuynh: 'Chào ba mẹ! Ba mẹ điền giúp cô vài thông tin, rồi đưa máy cho con làm bài nhé. Ba mẹ ngồi cạnh động viên con, không gợi ý đáp án nhé.',
+  lamLai: 'Ba mẹ muốn cho bạn khác làm bài phải không? Ba mẹ đọc kỹ rồi chọn nhé.',
+  luat: 'Con nghe thật kỹ rồi chạm vào đáp án nhé. Làm xong trạm này, mình tự đi sang trạm tiếp theo. Không biết cũng không sao, con cứ chọn đáp án con thấy đúng nhất nhé!',
   thuLoa: 'Con có nghe rõ cô nói không? Nếu nghe rõ, con chạm vào ngôi sao nhé!',
   thuMic: 'Con nói thật to: Hello!',
-  vaoTram: 'Trạm {tram}! Con chọn một ô may mắn nào!',
+  banDo: 'Con xem bản đồ nhé. Trạm đang nhấp nháy là trạm tiếp theo của con.',
+  diTiep: 'Mình cùng đi tới trạm tiếp theo nhé!',
   thuThem: 'Ôi, Thỏ con muốn chơi thêm một thử thách nữa!',
-  xongTram: 'Con nhận được một sticker!',
+  xongTram: 'Con nhận được một sticker! Mình đi tiếp nhé!',
   imLang: 'Con cần nghe lại không? Con chạm vào cái loa nhé!',
   nghi: 'Con giỏi quá! Vùng tiếng Anh xong rồi. Cùng các bạn vươn vai nào!',
   vaoZh: 'Mình là Xiaomei. Chào mừng bạn đến vùng tiếng Trung!',
-  ket: 'Chúc mừng {ten}! Con đã đi hết hai vùng đất rồi!',
+  thanhDieu: 'Mình chơi trò Tai nghe thanh điệu nhé: nghe hai tiếng, giống nhau thì chạm Giống, khác nhau thì chạm Khác.',
+  chuHan: 'Bây giờ không có pinyin nữa nhé! Bạn nghe Xiaomei đọc, rồi chạm vào chữ Hán đúng.',
+  ket: 'Chúc mừng con! Con đã đi hết hai vùng đất rồi!',
   ketPh: 'Giờ con đưa máy cho ba mẹ nhé. Hẹn gặp con ở lớp học!',
+  baoCao: 'Ba mẹ xem kết quả của con ở dưới đây nhé. Cảm ơn ba mẹ đã đồng hành cùng con!',
   viDu: 'Mình làm thử một câu nhé!',
+  dapAnDung: 'Con xem đáp án đúng nhé. Giờ mình làm thật nhé!',
   noiHd: 'Con bấm nút micro rồi nói thật to nhé. Nói xong con bấm Xong.',
-  nhacHd: 'Con nghe bạn nói, rồi nói lại giống hệt bạn nhé.'
+  nhacHd: 'Con nghe bạn nói, rồi nói lại giống hệt bạn nhé.',
+  micLoi: 'Cô chưa bật được micro. Ba mẹ bấm Cho phép khi trình duyệt hỏi, rồi bấm Thử lại nhé.'
 };
-KT.KHEN = { en: ['Great!', 'Thank you!', 'Next one!'], zh: ['好！', '谢谢！', '下一个！'] };
+/* Lời cô Hươu khi vào từng trạm */
+KT.LOI_TRAM = {
+  'E-TV': 'Trạm Từ vựng! Con nghe bạn Anna nói rồi chạm vào hình đúng nhé!',
+  'E-NG': 'Trạm Nghe! Con nghe thật kỹ nhé!',
+  'E-DO': 'Trạm Đọc! Con đọc rồi chọn đáp án đúng nhé!',
+  'E-VI': 'Trạm Viết! Con làm thật cẩn thận nhé!',
+  'E-NO': 'Trạm Nói! Con nói thật to với bạn Anna nhé!',
+  'Z-G': 'Cổng vùng tiếng Trung! Con nghe bạn Xiaomei nói nhé!',
+  'Z-NG': 'Trạm Nghe tiếng Trung! Con nghe thật kỹ nhé!',
+  'Z-DO': 'Trạm Đọc tiếng Trung! Con đọc rồi chọn đáp án đúng nhé!',
+  'Z-VI': 'Trạm Viết tiếng Trung! Con làm thật cẩn thận nhé!',
+  'Z-NO': 'Trạm Nói tiếng Trung! Con nói thật to với bạn Xiaomei nhé!'
+};
+/* Sau mỗi câu: đúng thì khen, sai thì chỉ nói "câu tiếp theo", phần Nói / viết tự do thì cảm ơn */
+KT.KHEN = {
+  en: { dung: ['Great!', 'Well done!', 'Good job!'], sai: ['Next one!'], khac: ['Thank you!'] },
+  zh: { dung: ['很好！', '真棒！', '好！'], sai: ['下一个！'], khac: ['谢谢！'] }
+};

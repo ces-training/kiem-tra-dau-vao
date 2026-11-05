@@ -78,6 +78,7 @@ const Am = {
     if (!loi || this.tat) return;
     const id = CH.maGiong(nv, lang, loi), f = KT.AM_CO && KT.AM_CO[id];
     if (f) return this.file(f);
+    try { console.warn('THIEU_GIONG', id, loi); } catch (e) {}
     return this.may(nv, lang, loi);
   },
   file(src) {
@@ -209,8 +210,11 @@ function bang(html) { return `<div class="bang">${html}</div>`; }
    MÀN ĐẦU, TRANG CHỦ, PHỤ HUYNH
    ============================================================ */
 function chamBatDau() {
-  app.innerHTML = `<div class="cham-bd"><img src="${NV.huou3}" alt=""><h1 style="color:var(--ink)">Những nhà thám hiểm ngôn ngữ nhí</h1><p style="margin:0;font-weight:700">Bài kiểm tra đầu vào tiếng Anh – tiếng Trung</p><button class="nut do">👆 Chạm để bắt đầu</button></div>`;
-  app.querySelector('button').onclick = () => {
+  app.innerHTML = `<div class="cham-bd"><button class="huou-noi" aria-label="Nghe cô Hươu"><img src="${NV.huou3}" alt=""><span>🔊</span></button><h1 style="color:var(--ink)">Những nhà thám hiểm ngôn ngữ nhí</h1><p style="margin:0;font-weight:700">${esc(KT.LOI.batDau)}</p><button class="nut do" id="bd">👆 Chạm để bắt đầu</button></div>`;
+  /* trình duyệt chỉ cho phát tiếng sau lần chạm đầu: thử đọc ngay, bị chặn thì chạm cô Hươu (hoặc bất kỳ đâu) để nghe */
+  Am.noi('huou', 'vi', KT.LOI.batDau);
+  app.querySelector('.huou-noi').onclick = () => { Am.dung(); Am.noi('huou', 'vi', KT.LOI.batDau); };
+  app.querySelector('#bd').onclick = () => {
     try { const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } catch (e) {}
     try { const a = new Audio(); a.play().catch(() => {}); } catch (e) {}
     trangChu();
@@ -228,10 +232,10 @@ function trangChu() {
       <div class="the o tim ${xong || GV ? '' : 'khoa'}" data-di="bc"><div class="anh"><img src="img/trang/cx_o_match.webp" alt=""></div><div class="chan">${xong || GV ? '' : '🔒 '}Báo cáo<small>Mở khi con làm xong</small></div></div>
       <div class="the o" data-di="lai"><div class="anh"><img src="${NV.tho}" alt=""></div><div class="chan">Bé khác làm<small>Bắt đầu lại từ đầu</small></div></div>
     </div>`, { man: 'chu' });
-  if (!xong) Am.noi('huou', 'vi', S.hs ? KT.LOI.trangChuLai : KT.LOI.trangChu);
+  Am.noi('huou', 'vi', xong ? KT.LOI.baoCao : S.hs ? KT.LOI.trangChuLai : KT.LOI.trangChu);
   g.querySelectorAll('[data-di]').forEach(el => el.onclick = () => {
     const d = el.dataset.di;
-    if (d === 'bat') S.hs ? (S.daChao ? banDo() : moDau()) : phuHuynh();
+    if (d === 'bat') S.hs ? (S.daChao ? (xong ? banDo() : diTiep()) : moDau()) : phuHuynh();
     else if (d === 'ph') phuHuynh();
     else if (d === 'hd') huongDan();
     else if (d === 'bc') baoCao(false);
@@ -243,6 +247,7 @@ const daXongSo = () => LO.filter(t => S.tien[t.ma]).length;
 function lamLai() {
   const g = khung(`<div class="form"><h2>Bắt đầu lại cho bé khác?</h2><p>Kết quả và ghi âm của ${S.hs ? '<b>' + esc(S.hs.ten) + '</b>' : 'bé trước'} trên máy này sẽ bị xoá. Nếu cần giữ, ba mẹ / cô vào Báo cáo và bấm "Tải kết quả" trước.</p>
     <div class="hang-nut"><button class="nut trang" data-x="0">Quay lại</button><button class="nut do" data-x="1">Xoá và bắt đầu lại</button></div></div>`);
+  Am.noi('huou', 'vi', KT.LOI.lamLai);
   g.querySelector('[data-x="0"]').onclick = trangChu;
   g.querySelector('[data-x="1"]').onclick = async () => { await Kho.xoaHet(); S = moi(); luu(); phuHuynh(); };
 }
@@ -250,13 +255,14 @@ function lamLai() {
 function phuHuynh() {
   const hs = S.hs || { ten: '', tuoi: 0, sdt: '', ph: {} };
   const g = khung(`<div class="form">
-    ${loiNV('huou', 'Chào ba mẹ! Ba mẹ điền giúp cô vài thông tin, rồi đưa máy cho con làm bài nhé. Ba mẹ ngồi cạnh động viên con, không gợi ý đáp án nhé.')}
+    ${loiNV('huou', KT.LOI.phuHuynh)}
     <label>Tên của con</label><input type="text" id="ten" value="${esc(hs.ten)}" autocomplete="off">
     <label>Con mấy tuổi?</label><div class="chon-nhanh" data-q="tuoi">${[5, 6, 7, 8, 9, 10].map(t => `<button data-v="${t}" class="${hs.tuoi === t ? 'chon' : ''}">${t}</button>`).join('')}</div>
     <label>Số điện thoại (Zalo) của ba mẹ</label><input type="tel" id="sdt" value="${esc(hs.sdt || '')}" autocomplete="off">
     ${KT.PHU_HUYNH.map(q => `<label>${esc(q.q)}</label><div class="chon-nhanh" data-q="${q.id}">${q.o.map((o, i) => `<button data-v="${i}" class="${hs.ph[q.id] === i ? 'chon' : ''}">${esc(o)}</button>`).join('')}</div>`).join('')}
     <p class="nho" id="loi-form"></p>
     <div class="hang-nut"><button class="nut" id="xong-form">Lưu và bắt đầu</button></div></div>`);
+  Am.noi('huou', 'vi', KT.LOI.phuHuynh);
   const tam = { tuoi: hs.tuoi, ph: Object.assign({}, hs.ph) };
   g.querySelectorAll('.chon-nhanh').forEach(h => h.querySelectorAll('button').forEach(b => b.onclick = () => {
     h.querySelectorAll('button').forEach(x => x.classList.remove('chon')); b.classList.add('chon');
@@ -267,33 +273,37 @@ function phuHuynh() {
     const thieu = !ten ? 'tên của con' : !tam.tuoi ? 'tuổi của con' : KT.PHU_HUYNH.find(q => tam.ph[q.id] == null) ? 'các câu hỏi' : '';
     if (thieu) { g.querySelector('#loi-form').textContent = 'Ba mẹ điền giúp cô ' + thieu + ' nhé.'; return; }
     S.hs = { ten, tuoi: tam.tuoi, sdt: g.querySelector('#sdt').value.trim(), ph: tam.ph };
-    luu(); S.daChao ? banDo() : moDau();
+    luu(); S.daChao ? diTiep() : moDau();
   };
 }
 
 /* ---------- lời mở đầu M1–M4 ---------- */
 async function moDau() {
   const buoc = [
-    { nv: 'huou', anh: 'huou3', t: KT.LOI.chao.replace('{ten}', S.hs.ten), them: `<div class="doi-hinh" style="margin:6px 0"><img src="${NV.bong}" alt=""><img src="${NV.anna}" alt=""><img src="${NV.xiaomei}" alt=""></div>` },
+    { nv: 'huou', anh: 'huou3', t: KT.LOI.chao, hien: KT.LOI.chao.replace('Chào con!', 'Chào ' + S.hs.ten + '!'), them: `<div class="doi-hinh" style="margin:6px 0"><img src="${NV.bong}" alt=""><img src="${NV.anna}" alt=""><img src="${NV.xiaomei}" alt=""></div>` },
     { nv: 'huou', anh: 'huou2', t: KT.LOI.luat },
     { nv: 'huou', t: KT.LOI.thuLoa, sao: true },
     { nv: 'anna', t: 'Hi! Can you say hello?', mic: true }
   ];
   for (let i = 0; i < buoc.length; i++) {
     const b = buoc[i];
-    const g = khung(`${loiNV(b.nv, b.t, { anh: b.anh })}${b.them || ''}
+    const g = khung(`${loiNV(b.nv, b.hien || b.t, { anh: b.anh })}${b.them || ''}
       ${b.sao ? `<div class="hang-nut"><button class="nut vang" id="sao" style="font-size:40px">⭐</button></div>` : ''}
       ${b.mic ? `<p style="text-align:center;font-weight:700">${esc(KT.LOI.thuMic)}</p><div class="vach-am"><i></i></div><p class="nho" id="mic-tt" style="text-align:center"></p>` : ''}
-      <div class="hang-nut"><button class="nut" id="tiep">${i === buoc.length - 1 ? 'Đi tới bản đồ' : 'Tiếp'}</button></div>`, { man: 'modau' });
-    const tiep = new Promise(res => { g.querySelector('#tiep').onclick = res; const s = g.querySelector('#sao'); if (s) s.onclick = res; });
+      <div class="hang-nut"><button class="nut" id="tiep">${i === buoc.length - 1 ? 'Bắt đầu thám hiểm' : 'Tiếp'}</button></div>`, { man: 'modau' });
     const nv = b.nv === 'anna' ? 'anna' : 'huou';
-    Am.noi(nv, nv === 'anna' ? 'en' : 'vi', b.t).then(() => b.mic && Am.noi('huou', 'vi', KT.LOI.thuMic));
+    const doc = Am.noi(nv, nv === 'anna' ? 'en' : 'vi', b.t).then(() => b.mic && Am.noi('huou', 'vi', KT.LOI.thuMic));
+    /* tự sang bước sau khi cô đọc xong; riêng bước thử loa phải chạm ngôi sao */
+    const tiep = new Promise(res => {
+      g.querySelector('#tiep').onclick = () => { Am.dung(); res(); }; const s = g.querySelector('#sao'); if (s) s.onclick = () => { Am.dung(); res(); };
+      if (!b.sao) doc.then(() => ngu(b.mic ? 6000 : 900)).then(res);
+    });
     let dungMic = null;
     if (b.mic) dungMic = await thuMic(g);
     await tiep; if (dungMic) dungMic();
     if (manHienTai !== 'modau') return;
   }
-  S.daChao = true; luu(); banDo();
+  S.daChao = true; luu(); diTiep();
 }
 async function thuMic(g) {
   const tt = g.querySelector('#mic-tt'), vach = g.querySelector('.vach-am i');
@@ -320,16 +330,17 @@ function huongDan() {
       <li>Mỗi câu nghe được tối đa ${CF.SO_LAN_NGHE || 2} lần. Con có thể dừng và quay lại sau: các trạm đã xong được giữ nguyên.</li>
     </ul></div><div class="hang-nut"><button class="nut" id="ok">Đã hiểu</button></div>`);
   Am.noi('huou', 'vi', KT.LOI.luat);
-  g.querySelector('#ok').onclick = () => S.hs ? banDo() : trangChu();
+  g.querySelector('#ok').onclick = () => S.hs && S.daChao ? diTiep() : trangChu();
 }
 
 /* ============================================================
    BẢN ĐỒ
    ============================================================ */
 function tramHienTai() { return LO.find(t => !S.tien[t.ma]); }
-function banDo() {
+function banDo(tuDong) {
   if (!S.hs) return phuHuynh();
   const cur = tramHienTai();
+  if (tuDong && !cur) return ketThuc();
   const g = khung(`<div class="dau-cau"><span class="nhan">Bản đồ thám hiểm</span><span class="vi-tri">${esc(S.hs.ten)} · đã qua ${daXongSo()}/${LO.length} trạm</span></div>
     <div class="ban-do"><div class="trong-bd"><img class="nen" src="img/trang/canopy_ban_do.webp" alt="">
       <span class="vung en">Vùng tiếng Anh</span><span class="vung zh">Vùng tiếng Trung</span>
@@ -338,18 +349,37 @@ function banDo() {
         return `<button class="moc ${t.vung} ${cls}" data-ma="${t.ma}" style="left:${t.x}%;top:${t.y}%"><span class="tron">${st === 'xong' ? em('✅') : st === 'bo' ? '–' : em(t.ic) }</span><span class="ten">${esc(t.ten)}</span></button>`;
       }).join('')}
     </div></div>
-    ${cur ? loiNV('huou', cur.ma === 'KET' ? 'Con đã tới đích rồi! Chạm vào chiếc cúp nhé.' : 'Chạm vào trạm đang nhấp nháy để đi tiếp nhé!') : ''}`, { man: 'bando' });
+    ${cur && !tuDong ? `${loiNV('huou', KT.LOI.banDo)}<div class="hang-nut"><button class="nut" id="di">▶ Đi tiếp</button></div>` : ''}
+    ${tuDong ? loiNV('huou', KT.LOI.diTiep) : ''}`, { man: 'bando' });
+  if (tuDong) { tuDongDi(KT.LOI.diTiep, 'bando', () => moTram(cur.ma)); return; }
+  if (cur) { Am.noi('huou', 'vi', KT.LOI.banDo); g.querySelector('#di').onclick = () => diTiep(); }
   g.querySelectorAll('.moc').forEach(b => b.onclick = () => {
     const ma = b.dataset.ma;
     if ((cur && cur.ma === ma) || GV) moTram(ma);
   });
 }
 
+/* Bài chạy liền mạch: xong một trạm (đã xác định được bậc) thì tự sang trạm tiếp theo */
+function diTiep() {
+  if (!S.hs) return phuHuynh();
+  let cur = tramHienTai();
+  while (cur && !['NGHI', 'KET', 'Z-G'].includes(cur.ma) && !tramCoChay(cur.ma)) { S.tien[cur.ma] = 'bo'; luu(); cur = tramHienTai(); }
+  if (!cur || cur.ma === 'KET') return ketThuc();
+  if (cur.ma === 'NGHI') return nghi();
+  banDo(true);
+}
+/* Đọc lời rồi tự chuyển; nếu bé/ba mẹ bấm sang màn khác thì thôi */
+async function tuDongDi(loi, man, tiep, nv = 'huou', lang = 'vi') {
+  await Promise.race([Am.noi(nv, lang, loi), ngu(9000)]);
+  await ngu(700);
+  if (manHienTai === man) tiep();
+}
+
 function moTram(ma) {
   if (ma === 'NGHI') return nghi();
   if (ma === 'KET') return ketThuc();
   if (ma === 'Z-G') return trangTram(ma);
-  if (!tramCoChay(ma)) { S.tien[ma] = 'bo'; luu(); return banDo(); }
+  if (!tramCoChay(ma)) { S.tien[ma] = 'bo'; luu(); return GV ? banDo() : diTiep(); }
   trangTram(ma);
 }
 
@@ -373,11 +403,13 @@ function trangTram(ma) {
       <span class="nhan" style="background:${zh ? 'var(--red)' : 'var(--blue)'}">${zh ? 'Vùng tiếng Trung' : 'Vùng tiếng Anh'}</span>
       <h2 style="margin-top:6px">${tenTram}</h2>
       <div class="dan-duong"><img src="${NV[dan]}" alt=""><div><div class="nho">Bạn dẫn đường</div><b>${TEN_NV[dan]}</b></div></div>
-      <button class="nut" id="bd" style="width:100%">▶ Bắt đầu</button>
+      <button class="nut" id="bd" style="width:100%">▶ Bắt đầu ngay</button>
       <div class="loi-nhan">🔊 <b>Ba mẹ đồng hành:</b> ngồi cạnh và khen con, không gợi ý đáp án. ${ma.endsWith('NO') ? 'Phần này cần micro.' : ''}</div>
-    </div></div><div id="ben-phai">${loiNV('huou', KT.LOI.vaoTram.replace('{tram}', t.ten), { anh: 'huou2' })}</div></div>`, { man: 'tram' });
-  Am.noi('huou', 'vi', KT.LOI.vaoTram.replace('{tram}', t.ten));
-  g.querySelector('#bd').onclick = ev => { ev.currentTarget.classList.add('an'); const bp = g.querySelector('#ben-phai'); oMayMan(bp, () => chayTram(ma)); bp.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+    </div></div><div id="ben-phai">${loiNV('huou', KT.LOI_TRAM[ma], { anh: 'huou2' })}</div></div>`, { man: 'tram' });
+  let daChay = false;
+  const chay = () => { if (daChay || manHienTai !== 'tram') return; daChay = true; chayTram(ma); };
+  g.querySelector('#bd').onclick = () => { Am.dung(); chay(); };
+  tuDongDi(KT.LOI_TRAM[ma], 'tram', chay);
 }
 function oMayMan(vung, tiep) {
   vung.innerHTML = `<h2 style="text-align:center">Chọn một ô may mắn!</h2><div class="o-may-man">${[1, 2, 3, 4].map(i => `<button>${i}</button>`).join('')}</div>`;
@@ -538,8 +570,8 @@ async function cauThu(e, tieuDe) {
   const r = await hienCau(e, tieuDe, { truoc });
   ghiLog(e.id, 'thu', r);
   if (!r.dung && (e.item.o || e.item.dap)) {
-    const g = khung(`${bang(`<div class="de">${loiNV('huou', 'Đáp án đúng là: ' + (e.item.o ? nhanLC(e.item.o[0]) : e.item.dap[0]) + '. Giờ mình làm thật nhé!')}${e.item.o ? (phanLC(e.item.o[0]).loai === 'p' ? tranh(e.item.o[0]) : '') : ''}</div>`)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`);
-    await new Promise(res => { g.querySelector('#t').onclick = res; setTimeout(res, 6000); });
+    const g = khung(`${bang(`<div class="de">${loiNV('huou', KT.LOI.dapAnDung) + '<div class="cau">' + esc(e.item.o ? nhanLC(e.item.o[0]) : e.item.dap[0]) + '</div>'}${e.item.o ? (phanLC(e.item.o[0]).loai === 'p' ? tranh(e.item.o[0]) : '') : ''}</div>`)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`);
+    await new Promise(res => { g.querySelector('#t').onclick = () => { Am.dung(); res(); }; Am.noi('huou', 'vi', KT.LOI.dapAnDung).then(() => ngu(1200)).then(res); });
   }
 }
 
@@ -549,8 +581,10 @@ function ghiLog(id, loai, r) {
   luu();
 }
 
-async function khen(lang) {
-  const arr = KT.KHEN[lang === 'zh' ? 'zh' : 'en'], t = arr[Math.floor(Math.random() * arr.length)];
+/* đúng: khen; sai: chỉ nói "câu tiếp theo" (không khen); không chấm được (Nói, viết tự do): cảm ơn */
+async function khen(lang, dung) {
+  const bo = KT.KHEN[lang === 'zh' ? 'zh' : 'en'], arr = dung === true ? bo.dung : dung === false ? bo.sai : bo.khac;
+  const t = arr[Math.floor(Math.random() * arr.length)];
   await Am.noi(lang === 'zh' ? 'xm' : 'anna', lang, t);
 }
 
@@ -586,7 +620,7 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
     const r = await hienCau(e, tieuDe);
     d.kq[k] = r; ghiLog(e.id, k, r);
     if (k === 'A' && !d.tuDo && (!r.dung || r.nhanh) && !opt.chiA) hang.splice(Math.min(i + 2, hang.length), 0, { d, k: 'B' }, { d, k: 'C' });
-    if (r.dung !== null) await khen(def.lang);
+    await khen(def.lang, r.dung);
   }
   let tong = 0, dem = 0;
   for (const d of diem) {
@@ -682,9 +716,9 @@ async function sticker(ma) {
   S.sticker.push(src); luu();
   const g = khung(`<div class="giua-man"><div class="sticker"><img src="${src}" alt=""></div><h1>${esc(KT.LOI.xongTram)}</h1>
     <div class="hang-sticker">${S.sticker.map(s => `<img src="${s}" alt="">`).join('')}</div>
-    <div class="hang-nut"><button class="nut" id="t">🗺️ Về bản đồ</button></div></div>`, { man: 'sticker' });
-  Am.noi('huou', 'vi', KT.LOI.xongTram);
-  g.querySelector('#t').onclick = banDo;
+    <div class="hang-nut"><button class="nut" id="t">▶ Đi tiếp ngay</button></div></div>`, { man: 'sticker' });
+  g.querySelector('#t').onclick = () => { Am.dung(); diTiep(); };
+  tuDongDi(KT.LOI.xongTram, 'sticker', diTiep);
 }
 
 /* ---------- cổng tiếng Trung ---------- */
@@ -693,7 +727,7 @@ async function chayCong() {
   for (const it of KT.ZH.CONG) {
     const e = { id: it.id, lang: 'zh', dan: 'xm', item: it };
     const r = await hienCau(e, 'Cổng vùng tiếng Trung'); ghiLog(e.id, 'cong', r); if (r.dung) dung++;
-    await khen('zh');
+    await khen('zh', r.dung);
   }
   const hoc = S.hs.ph.zh; // 0 chưa học, 1 dưới 6 tháng, 2–3 từ 6 tháng
   let c0 = false, bacDau = 1;
@@ -711,8 +745,8 @@ async function troThanhDieu() {
   const cap = [['mā', 'mā', 1], ['mā', 'mǎ', 0], ['bà', 'bà', 1], ['shū', 'shù', 0], ['hǎo', 'hǎo', 1], ['tāng', 'táng', 0]];
   const nghe = { 'mā': '妈', 'mǎ': '马', 'bà': '爸', 'shū': '书', 'shù': '树', 'hǎo': '好', 'tāng': '汤', 'táng': '糖' };
   let dung = 0;
-  const g0 = khung(`${loiNV('xm', 'Mình chơi trò "Tai nghe thanh điệu" nhé: nghe 2 tiếng, giống nhau thì chạm "Giống", khác nhau thì chạm "Khác".')}<div class="hang-nut"><button class="nut" id="t">Chơi</button><button class="nut trang" id="b">Bỏ qua</button></div>`, { man: 'td' });
-  const chon = await new Promise(res => { g0.querySelector('#t').onclick = () => res(1); g0.querySelector('#b').onclick = () => res(0); });
+  const g0 = khung(`${loiNV('xm', KT.LOI.thanhDieu)}<div class="hang-nut"><button class="nut" id="t">Chơi</button><button class="nut trang" id="b">Bỏ qua</button></div>`, { man: 'td' });
+  const chon = await new Promise(res => { g0.querySelector('#t').onclick = () => { Am.dung(); res(1); }; g0.querySelector('#b').onclick = () => { Am.dung(); res(0); }; Am.noi('xm', 'vi', KT.LOI.thanhDieu).then(() => ngu(600)).then(() => res(1)); });
   if (!chon) return null;
   for (const [a, b, giong] of cap) {
     const g = khung(`${bang(`<div class="de"><button class="loa-to" id="loa">${em('🔊')}</button><div class="cau">Giống hay khác?</div></div><div class="dungsai"><button data-v="1" style="font-size:24px;font-weight:800">Giống</button><button data-v="0" style="font-size:24px;font-weight:800">Khác</button></div>`)}`, { man: 'td' });
@@ -727,8 +761,8 @@ async function troThanhDieu() {
 /* ---------- thẻ chữ Hán ---------- */
 async function chayHan() {
   let dung = 0, saiLien = 0, lam = 0;
-  const g0 = khung(`${loiNV('xm', 'Bây giờ không có pinyin nữa nhé! Bạn nghe Xiaomei đọc, rồi chạm vào chữ Hán đúng.')}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`, { man: 'han' });
-  await new Promise(res => g0.querySelector('#t').onclick = res);
+  const g0 = khung(`${loiNV('xm', KT.LOI.chuHan)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`, { man: 'han' });
+  await new Promise(res => { g0.querySelector('#t').onclick = () => { Am.dung(); res(); }; Am.noi('xm', 'vi', KT.LOI.chuHan).then(() => ngu(600)).then(res); });
   PHIEN.cauSo = 0;
   for (let i = 0; i < KT.ZH.HAN.length; i++) {
     const [d, s] = KT.ZH.HAN[i];
@@ -779,8 +813,9 @@ async function chayNoi(ma, def, L) {
   let stream = null;
   for (;;) {
     try { stream = await layMic(); break; } catch (e) {
-      const g = khung(`${loiNV('huou', 'Cô chưa bật được micro. Ba mẹ bấm "Cho phép" khi trình duyệt hỏi, rồi bấm Thử lại nhé.')}
+      const g = khung(`${loiNV('huou', KT.LOI.micLoi)}
         <div class="hang-nut"><button class="nut" id="lai">Thử lại</button><button class="nut trang" id="bo">Bỏ qua phần Nói</button></div>`, { man: 'noi' });
+      Am.noi('huou', 'vi', KT.LOI.micLoi);
       const v = await new Promise(res => { g.querySelector('#lai').onclick = () => res(1); g.querySelector('#bo').onclick = () => res(0); });
       if (!v) return { khongMic: true, bacs, tasks: [] };
     }
@@ -820,7 +855,7 @@ async function chayNoi(ma, def, L) {
       if (r && r.blob) await Kho.dat(key, r.blob);
       rt.buoc.push({ key, a: b.a, giay: r ? r.giay : 0, daNoi: r ? r.daNoi : false, goiY });
       ghiLog(t.id + '-' + (bi + 1), 'noi', { dung: null, ms: r ? r.giay * 1000 : 0, chon: r && r.daNoi ? 'có ghi âm' : 'im lặng' });
-      await khen(def.lang); await ngu(300);
+      await khen(def.lang, null); await ngu(300);
     }
     kq.tasks.push(rt);
   }
@@ -841,8 +876,9 @@ function nghi() {
     if (manHienTai !== 'nghi') return;
     S.tien.NGHI = 'xong'; luu();
     khung(`<div class="giua-man"><img src="${NV.xiaomei}" style="height:240px" alt="">${loiNV('xm', '你好！' + KT.LOI.vaoZh)}<div class="hang-nut"><button class="nut do" id="t">Vào vùng tiếng Trung</button></div></div>`, { man: 'vaozh' });
-    Am.noi('xm', 'zh', '你好！').then(() => Am.noi('xm', 'vi', KT.LOI.vaoZh));
-    app.querySelector('#t').onclick = banDo;
+    app.querySelector('#t').onclick = () => { Am.dung(); diTiep(); };
+    await Am.noi('xm', 'zh', '你好！');
+    if (manHienTai === 'vaozh') tuDongDi(KT.LOI.vaoZh, 'vaozh', diTiep, 'xm', 'vi');
   };
   const iv = setInterval(() => { n--; const d = g.querySelector('#dem'); if (d) d.textContent = n; if (n <= 0) het(); }, 1000);
   g.querySelector('#bo').onclick = het;
@@ -850,9 +886,9 @@ function nghi() {
 
 function ketThuc() {
   S.tien.KET = 'xong'; S.ketThuc = S.ketThuc || Date.now(); luu();
-  const t = KT.LOI.ket.replace('{ten}', S.hs.ten);
+  const t = KT.LOI.ket, hien = t.replace('Chúc mừng con!', 'Chúc mừng ' + S.hs.ten + '!');
   const g = khung(`<div class="giua-man"><div class="doi-hinh"><img src="${NV.huou3}" alt=""><img src="${NV.bong}" alt=""><img src="${NV.anna}" alt=""><img src="${NV.leo}" alt=""><img src="${NV.xiaomei}" alt=""></div>
-    <h1>🎉 ${esc(t)}</h1><p style="font-size:22px;font-weight:700">Well done! · <span class="zh">你做得很好！</span></p>
+    <h1>🎉 ${esc(hien)}</h1><p style="font-size:22px;font-weight:700">Well done! · <span class="zh">你做得很好！</span></p>
     <div class="hang-sticker">${S.sticker.map(s => `<img src="${s}" alt="">`).join('')}</div>
     ${loiNV('huou', KT.LOI.ketPh)}
     <div class="hang-nut"><button class="nut" id="bc">Ba mẹ xem báo cáo</button></div></div>`, { man: 'ket' });
@@ -955,6 +991,7 @@ async function baoCao(laGV) {
   html += `<div class="hang-nut"><button class="nut vang" id="tai">⬇️ Tải kết quả</button>${CF.KQ_API ? '<button class="nut" id="gui">📤 Gửi lại kết quả cho trung tâm</button>' : ''}${laGV ? '<button class="nut trang" id="csv">⬇️ Tải bảng câu trả lời (.csv)</button>' : ''}</div><p class="nho" id="tt-gui" style="text-align:center"></p>`;
   if (laGV) html += await phanGV();
   const g = khung(html, { man: 'bc' });
+  if (!laGV) Am.noi('huou', 'vi', KT.LOI.baoCao);
   g.querySelector('#tai').onclick = () => taiFile(true);
   const gui = g.querySelector('#gui'); if (gui) gui.onclick = () => guiKetQua(true);
   const csv = g.querySelector('#csv'); if (csv) csv.onclick = taiCsv;

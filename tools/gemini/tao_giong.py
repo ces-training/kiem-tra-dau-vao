@@ -70,6 +70,10 @@ def bo_tieng_re(pcm):
 
 
 def to_mp3(pcm, j):
+    if pcm[:4] == b"RIFF":   # mô hình mới trả về file WAV: chỉ lấy phần âm thanh, bỏ phần đầu/đuôi của tệp
+        import io, wave
+        with wave.open(io.BytesIO(pcm)) as w:
+            pcm = w.readframes(w.getnframes())
     pcm = bo_tieng_re(pcm)
     OUT.mkdir(exist_ok=True)
     dst = OUT / f"{j['ma']}.mp3"; raw = dst.with_suffix(".pcm"); raw.write_bytes(pcm)
