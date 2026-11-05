@@ -295,3 +295,22 @@ PROMPTS = {
     "Z-G-1_o3": ("a child eating a bowl of rice with chopsticks", [], O),
     "Z-G-3_o3": ("one baby", [], O),
 }
+
+# ---------- bộ song song (câu làm thử, kiểm tra biết đọc, cổng tiếng Trung): dùng lại đúng câu lệnh của tranh đã có → máy chép, không vẽ lại
+FISH = ("one orange fish", [], O)
+PROMPTS.update({
+    "E-TV-THU2_o3": FISH, "E-TV-THU3_o1": ("one football", [], O), "E-TV-THU3_o2": ("one red apple", [], O),
+    "E-TV-THU3_o3": ("one red toy car", [], O),
+    "E-NG-THU2_o1": FISH, "E-NG-THU2_o3": ("one small blue bird", [], O),
+    "E-NG-THU3_o1": ("one yellow duck", [], O), "E-NG-THU3_o2": FISH,
+    "E-DO-THU2_pic": FISH, "E-DO-THU3_pic": ("one sun hat", [], O),
+    "E-DO-KT1-2_pic": ("one pink pig", [], O), "E-DO-KT2-2_pic": ("one white egg", [], O),
+    "E-DO-KT1-3_pic": FISH, "E-DO-KT2-3_pic": ("one red book", [], O),
+    "E-VI-THU3_pic": ("one pink pig", [], O),
+    "Z-NG-THU2_o3": FISH, "Z-NG-THU3_o1": FISH, "Z-DO-THU3_pic": ("one red book", [], O),
+    "Z-G-1-2_o2": ("a child sleeping in bed", [], O), "Z-G-1-2_o3": ("a child eating a bowl of rice with chopsticks", [], O),
+    "Z-G-3-2_o3": ("one baby", [], O),
+    "Z-G-1-3_o1": ("a child receiving a gift box with both hands and bowing politely to say thank you", [], O),
+    "Z-G-1-3_o2": ("a child sleeping in bed", [], O), "Z-G-1-3_o3": ("a child eating a bowl of rice with chopsticks", [], O),
+    "Z-G-3-3_o3": ("one baby", [], O),
+})

@@ -53,6 +53,9 @@ KT.EN = {};
 KT.EN.TV = {
   ten: 'Từ vựng', o: 'cx_o_cards', lang: 'en', dan: 'anna',
   thu: { a: 'apple', o: ['e:🍎 ~ quả táo', 'e:🍌 ~ quả chuối', 'e:🥛 ~ cốc sữa'] },
+  thuSS: [
+    { a: 'dog', o: ['f:cun ~ con chó', 'f:meo ~ con mèo', 'e:🐟 ~ con cá'] },
+    { a: 'ball', o: ['e:⚽ ~ quả bóng', 'e:🍎 ~ quả táo', 'e:🚗 ~ ô tô đồ chơi'] } ],
   bac: {
     1: { hd: 'Con nghe từ rồi chạm vào tranh đúng nhé.', diem: [
       { ten: 'Màu sắc', cau: [
@@ -113,6 +116,9 @@ KT.EN.TV = {
 KT.EN.NG = {
   ten: 'Nghe', o: 'cx_o_quiz', lang: 'en', dan: 'anna',
   thu: { a: 'cat', o: ['f:meo ~ con mèo', 'f:cun ~ con chó', 'e:🐟 ~ con cá'] },
+  thuSS: [
+    { a: 'fish', o: ['e:🐟 ~ con cá', 'f:meo ~ con mèo', 'e:🐦 ~ con chim'] },
+    { a: 'duck', o: ['e:🦆 ~ con vịt', 'e:🐟 ~ con cá', 'f:cun ~ con chó'] } ],
   bac: {
     1: { hd: 'Con nghe câu rồi chạm vào tranh đúng nhé.', diem: [
       { ten: 'Vị trí: in, on, under', cau: [
@@ -176,7 +182,15 @@ KT.EN.DO = {
   kiemTra: [
     { pic: 'f:cun ~ con chó', o: ['t:dog', 't:bed', 't:sun'] },
     { pic: 'e:🍎 ~ quả táo', o: ['t:apple', 't:egg', 't:bus'] } ],
+  kiemTraSS: [
+    [ { pic: 'e:🐖 ~ con lợn', o: ['t:pig', 't:cup', 't:hat'] },
+      { pic: 'e:🥚 ~ quả trứng', o: ['t:egg', 't:bed', 't:dog'] } ],
+    [ { pic: 'e:🐟 ~ con cá', o: ['t:fish', 't:bus', 't:pen'] },
+      { pic: 'e:📕 ~ cuốn sách', o: ['t:book', 't:cat', 't:sun'] } ] ],
   thu: { pic: 'e:☀️ ~ mặt trời', o: ['t:sun', 't:bus', 't:hat'] },
+  thuSS: [
+    { pic: 'e:🐟 ~ con cá', o: ['t:fish', 't:cup', 't:bed'] },
+    { pic: 'e:👒 ~ chiếc mũ', o: ['t:hat', 't:dog', 't:pen'] } ],
   truyen: {
     1: "Last Saturday, Ben and his dad went to the mountains. They wanted to see a waterfall. It was a long walk, and Ben's legs were tired, but he didn't stop. When they arrived, the waterfall was enormous and very loud. Ben took lots of photos. \"That was the best day ever!\" he said.",
     2: "Yesterday was Emma's first day at a new school. In the morning she felt nervous because she didn't know anyone. In the art lesson, a girl called Zoe lent her some colouring pens. At lunchtime they sat together and talked about their favourite animals. Now Emma has a new friend.",
@@ -242,6 +256,9 @@ KT.EN.DO = {
 KT.EN.VI = {
   ten: 'Viết', o: 'cx_o_puzzle', lang: 'en', dan: 'anna',
   thu: { k: 'xep', pic: 'e:☀️ ~ mặt trời', the: ['u', 's', 'n'], dap: ['sun'] },
+  thuSS: [
+    { k: 'xep', pic: 'f:cun ~ con chó', the: ['g', 'o', 'd'], dap: ['dog'] },
+    { k: 'xep', pic: 'e:🐖 ~ con lợn', the: ['i', 'g', 'p'], dap: ['pig'] } ],
   bac: {
     1: { ten: 'Tiền đọc viết', hd: 'Con chọn chữ cái còn thiếu, hoặc xếp chữ thành từ.', diem: [
       { ten: 'Chữ đầu', cau: [
@@ -346,11 +363,23 @@ KT.ZH.CONG = [
   { id: 'Z-G-2', a: '二', o: ['n:2', 'n:5', 'n:8'] },
   { id: 'Z-G-3', a: '妈妈', o: ['f:mom ~ mẹ', 'f:dad ~ bố', 'e:👶 ~ em bé'] }
 ];
+/* bộ cổng song song: mỗi bé được một bộ ngẫu nhiên */
+KT.ZH.CONG_SS = [
+  [ { id: 'Z-G-1-2', a: '再见', o: ['f:goodbye ~ hai bạn vẫy tay tạm biệt', 'e:😴 ~ bạn đang ngủ', 'e:🍚 ~ bạn đang ăn'] },
+    { id: 'Z-G-2-2', a: '三', o: ['n:3', 'n:6', 'n:9'] },
+    { id: 'Z-G-3-2', a: '爸爸', o: ['f:dad ~ bố', 'f:mom ~ mẹ', 'e:👶 ~ em bé'] } ],
+  [ { id: 'Z-G-1-3', a: '谢谢', o: ['e:🎁🙇 ~ bạn nhận quà, cúi đầu cảm ơn', 'e:😴 ~ bạn đang ngủ', 'e:🍚 ~ bạn đang ăn'] },
+    { id: 'Z-G-2-3', a: '五', o: ['n:5', 'n:7', 'n:1'] },
+    { id: 'Z-G-3-3', a: '老师', o: ['f:teacher ~ cô giáo', 'f:dad ~ bố', 'e:👶 ~ em bé'] } ]
+];
 
 /* ---------- Nghe + Từ vựng ---------- */
 KT.ZH.NG = {
   ten: 'Nghe + Từ vựng', o: 'cx_o_quiz', lang: 'zh', dan: 'xm',
   thu: { a: '猫', o: ['f:meo ~ con mèo', 'f:cun ~ con chó', 'e:🐟 ~ con cá'] },
+  thuSS: [
+    { a: '狗', o: ['f:cun ~ con chó', 'f:meo ~ con mèo', 'e:🐟 ~ con cá'] },
+    { a: '鱼', o: ['e:🐟 ~ con cá', 'f:cun ~ con chó', 'f:meo ~ con mèo'] } ],
   bac: {
     1: { hd: 'Con nghe bạn Xiaomei nói rồi chạm vào tranh đúng nhé.', diem: [
       { ten: 'Chào hỏi, lịch sự', cau: [
@@ -411,6 +440,9 @@ KT.ZH.NG = {
 KT.ZH.DO = {
   ten: 'Đọc', o: 'cx_o_story', lang: 'zh', dan: 'xm',
   thu: { pic: 'e:🍎 ~ quả táo', o: ['t:苹果 / píngguǒ', 't:狗 / gǒu', 't:书 / shū'] },
+  thuSS: [
+    { pic: 'f:cun ~ con chó', o: ['t:狗 / gǒu', 't:书 / shū', 't:水 / shuǐ'] },
+    { pic: 'e:📕 ~ cuốn sách', o: ['t:书 / shū', 't:狗 / gǒu', 't:苹果 / píngguǒ'] } ],
   bac: {
     2: { hd: 'Con đọc từ. Đúng với tranh thì chạm ✔, sai thì chạm ✘.', diem: [
       { ten: 'Người', cau: [
@@ -460,11 +492,32 @@ KT.ZH.HAN = [
   ['老师', '学生', 'C3'], ['学校', '家', 'C3'], ['水', '米饭', 'C3'], ['写字', '看书', 'C3'],
   ['雨', '雪', 'C4'], ['起床', '睡觉', 'C4'], ['教室', '商店', 'C4'], ['喜欢', '不喜欢', 'C4']
 ];
+/* bộ thẻ chữ Hán song song (cùng độ khó tăng dần C2 → C4, chữ khác hẳn bộ gốc) */
+KT.ZH.HAN_SS = [
+  [ ['哥哥', '姐姐', 'C2'], ['白色', '黑色', 'C2'], ['鱼', '鸟', 'C2'], ['香蕉', '葡萄', 'C2'],
+    ['朋友', '同学', 'C3'], ['早上', '晚上', 'C3'], ['面条', '牛奶', 'C3'], ['唱歌', '跳舞', 'C3'],
+    ['下雪', '刮风', 'C4'], ['医院', '商店', 'C4'], ['眼睛', '耳朵', 'C4'], ['高兴', '难过', 'C4'] ],
+  [ ['弟弟', '妹妹', 'C2'], ['黄色', '绿色', 'C2'], ['马', '牛', 'C2'], ['草莓', '西瓜', 'C2'],
+    ['书包', '铅笔', 'C3'], ['电视', '电脑', 'C3'], ['喝水', '吃饭', 'C3'], ['跑步', '走路', 'C3'],
+    ['晴天', '阴天', 'C4'], ['公园', '动物园', 'C4'], ['头发', '鼻子', 'C4'], ['生气', '害怕', 'C4'] ]
+];
+/* trò "Tai nghe thanh điệu" (bé chưa học tiếng Trung): 3 bộ, mỗi bộ 6 cặp [tiếng 1, tiếng 2, 1 = giống / 0 = khác] */
+KT.ZH.THANH_DIEU = [
+  { cap: [['mā', 'mā', 1], ['mā', 'mǎ', 0], ['bà', 'bà', 1], ['shū', 'shù', 0], ['hǎo', 'hǎo', 1], ['tāng', 'táng', 0]],
+    nghe: { 'mā': '妈', 'mǎ': '马', 'bà': '爸', 'shū': '书', 'shù': '树', 'hǎo': '好', 'tāng': '汤', 'táng': '糖' } },
+  { cap: [['fēi', 'féi', 0], ['mǐ', 'mǐ', 1], ['dà', 'dà', 1], ['tī', 'tí', 0], ['huā', 'huā', 1], ['shuǐ', 'shuì', 0]],
+    nghe: { 'fēi': '飞', 'féi': '肥', 'mǐ': '米', 'dà': '大', 'tī': '踢', 'tí': '题', 'huā': '花', 'shuǐ': '水', 'shuì': '睡' } },
+  { cap: [['gē', 'gē', 1], ['yú', 'yǔ', 0], ['māo', 'māo', 1], ['táng', 'tǎng', 0], ['chī', 'chī', 1], ['bā', 'bà', 0]],
+    nghe: { 'gē': '哥', 'yú': '鱼', 'yǔ': '雨', 'māo': '猫', 'táng': '糖', 'tǎng': '躺', 'chī': '吃', 'bā': '八', 'bà': '爸' } }
+];
 
 /* ---------- Viết ---------- */
 KT.ZH.VI = {
   ten: 'Viết', o: 'cx_o_puzzle', lang: 'zh', dan: 'xm',
   thu: { k: 'xep', the: ['好|hǎo', '你|nǐ'], dap: ['你好'] },
+  thuSS: [
+    { k: 'xep', the: ['见|jiàn', '再|zài'], dap: ['再见'] },
+    { k: 'xep', the: ['师|shī', '老|lǎo'], dap: ['老师'] } ],
   bac: {
     3: { hd: 'Con kéo thẻ từ thành câu đúng.', diem: [
       { ten: 'Câu chủ – vị – tân', cau: [

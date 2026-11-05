@@ -19,7 +19,7 @@ KEY = Path(sys.argv[1]).read_text().strip() if sys.argv[1] != "-" else ""
 MODE = sys.argv[2]
 ONLY = set(sys.argv[3:]) if sys.argv[2] != "cho" else set()
 # Câu Gemini hay đọc sai khi đứng một mình: gửi kèm dấu câu / cách viết khác (chỉ đổi lời gửi đi, không đổi mã)
-DOC_THAY = {"xm_zh_02239684": "学校。"}
+DOC_THAY = {"xm_zh_02239684": "学校。", "xm_zh_f9c30c60": "睡。"}
 NANG = 1.12   # nâng tông giọng bạn nhỏ (Anna, Xiaomei) khoảng 2 nửa cung, giữ nguyên tốc độ
 
 

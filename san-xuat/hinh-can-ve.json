@@ -24,6 +24,38 @@
   "co": true
  },
  {
+  "ma": "E-TV-THU2_o3",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/E-TV-THU2_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "E-TV-THU3_o1",
+  "mo_ta": "quả bóng",
+  "tranh_tam": "e:⚽",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). quả bóng",
+  "file": "img/tranh/E-TV-THU3_o1.webp",
+  "co": true
+ },
+ {
+  "ma": "E-TV-THU3_o2",
+  "mo_ta": "quả táo",
+  "tranh_tam": "e:🍎",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). quả táo",
+  "file": "img/tranh/E-TV-THU3_o2.webp",
+  "co": true
+ },
+ {
+  "ma": "E-TV-THU3_o3",
+  "mo_ta": "ô tô đồ chơi",
+  "tranh_tam": "e:🚗",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). ô tô đồ chơi",
+  "file": "img/tranh/E-TV-THU3_o3.webp",
+  "co": true
+ },
+ {
   "ma": "E-TV-1-1B_o1",
   "mo_ta": "áo xanh lá",
   "tranh_tam": "c:green:👕",
@@ -485,6 +517,38 @@
   "tranh_tam": "e:🐟",
   "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
   "file": "img/tranh/E-NG-THU_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "E-NG-THU2_o1",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/E-NG-THU2_o1.webp",
+  "co": true
+ },
+ {
+  "ma": "E-NG-THU2_o3",
+  "mo_ta": "con chim",
+  "tranh_tam": "e:🐦",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con chim",
+  "file": "img/tranh/E-NG-THU2_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "E-NG-THU3_o1",
+  "mo_ta": "con vịt",
+  "tranh_tam": "e:🦆",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con vịt",
+  "file": "img/tranh/E-NG-THU3_o1.webp",
+  "co": true
+ },
+ {
+  "ma": "E-NG-THU3_o2",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/E-NG-THU3_o2.webp",
   "co": true
  },
  {
@@ -1032,11 +1096,59 @@
   "co": true
  },
  {
+  "ma": "E-DO-THU2_pic",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/E-DO-THU2_pic.webp",
+  "co": true
+ },
+ {
+  "ma": "E-DO-THU3_pic",
+  "mo_ta": "chiếc mũ",
+  "tranh_tam": "e:👒",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). chiếc mũ",
+  "file": "img/tranh/E-DO-THU3_pic.webp",
+  "co": true
+ },
+ {
   "ma": "E-DO-KT2_pic",
   "mo_ta": "quả táo",
   "tranh_tam": "e:🍎",
   "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). quả táo",
   "file": "img/tranh/E-DO-KT2_pic.webp",
+  "co": true
+ },
+ {
+  "ma": "E-DO-KT1-2_pic",
+  "mo_ta": "con lợn",
+  "tranh_tam": "e:🐖",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con lợn",
+  "file": "img/tranh/E-DO-KT1-2_pic.webp",
+  "co": true
+ },
+ {
+  "ma": "E-DO-KT2-2_pic",
+  "mo_ta": "quả trứng",
+  "tranh_tam": "e:🥚",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). quả trứng",
+  "file": "img/tranh/E-DO-KT2-2_pic.webp",
+  "co": true
+ },
+ {
+  "ma": "E-DO-KT1-3_pic",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/E-DO-KT1-3_pic.webp",
+  "co": true
+ },
+ {
+  "ma": "E-DO-KT2-3_pic",
+  "mo_ta": "cuốn sách",
+  "tranh_tam": "e:📕",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). cuốn sách",
+  "file": "img/tranh/E-DO-KT2-3_pic.webp",
   "co": true
  },
  {
@@ -1248,6 +1360,14 @@
   "co": true
  },
  {
+  "ma": "E-VI-THU3_pic",
+  "mo_ta": "con lợn",
+  "tranh_tam": "e:🐖",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con lợn",
+  "file": "img/tranh/E-VI-THU3_pic.webp",
+  "co": true
+ },
+ {
   "ma": "E-VI-1-1A_pic",
   "mo_ta": "con cá",
   "tranh_tam": "e:🐟",
@@ -1373,6 +1493,22 @@
   "tranh_tam": "e:🐟",
   "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
   "file": "img/tranh/Z-NG-THU_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-NG-THU2_o3",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/Z-NG-THU2_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-NG-THU3_o1",
+  "mo_ta": "con cá",
+  "tranh_tam": "e:🐟",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). con cá",
+  "file": "img/tranh/Z-NG-THU3_o1.webp",
   "co": true
  },
  {
@@ -1744,6 +1880,14 @@
   "co": true
  },
  {
+  "ma": "Z-DO-THU3_pic",
+  "mo_ta": "cuốn sách",
+  "tranh_tam": "e:📕",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). cuốn sách",
+  "file": "img/tranh/Z-DO-THU3_pic.webp",
+  "co": true
+ },
+ {
   "ma": "Z-DO-2-2B_pic",
   "mo_ta": "chiếc lá xanh lá",
   "tranh_tam": "c:green:🍃",
@@ -1973,6 +2117,62 @@
   "tranh_tam": "e:👶",
   "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). em bé",
   "file": "img/tranh/Z-G-3_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-1-2_o2",
+  "mo_ta": "bạn đang ngủ",
+  "tranh_tam": "e:😴",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). bạn đang ngủ",
+  "file": "img/tranh/Z-G-1-2_o2.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-1-2_o3",
+  "mo_ta": "bạn đang ăn",
+  "tranh_tam": "e:🍚",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). bạn đang ăn",
+  "file": "img/tranh/Z-G-1-2_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-3-2_o3",
+  "mo_ta": "em bé",
+  "tranh_tam": "e:👶",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). em bé",
+  "file": "img/tranh/Z-G-3-2_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-1-3_o1",
+  "mo_ta": "bạn nhận quà, cúi đầu cảm ơn",
+  "tranh_tam": "e:🎁🙇",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). bạn nhận quà, cúi đầu cảm ơn",
+  "file": "img/tranh/Z-G-1-3_o1.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-1-3_o2",
+  "mo_ta": "bạn đang ngủ",
+  "tranh_tam": "e:😴",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). bạn đang ngủ",
+  "file": "img/tranh/Z-G-1-3_o2.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-1-3_o3",
+  "mo_ta": "bạn đang ăn",
+  "tranh_tam": "e:🍚",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). bạn đang ăn",
+  "file": "img/tranh/Z-G-1-3_o3.webp",
+  "co": true
+ },
+ {
+  "ma": "Z-G-3-3_o3",
+  "mo_ta": "em bé",
+  "tranh_tam": "e:👶",
+  "cau_lenh": "Tranh minh hoạ 2D cho trẻ em, nét viền nâu mềm, màu ấm, nền trắng, cùng phong cách bảng nhân vật Little Language Explorers (img/nhan-vat). em bé",
+  "file": "img/tranh/Z-G-3-3_o3.webp",
   "co": true
  }
 ]

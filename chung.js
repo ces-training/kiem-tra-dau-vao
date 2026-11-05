@@ -24,7 +24,8 @@
     for (const st of cacTram(KT)) {
       const d = st.def, base = { L: st.L, sk: st.sk, lang: st.lang, dan: d.dan };
       if (d.thu) out.push(Object.assign({ id: st.ma + '-THU', kind: 'thu', item: d.thu }, base));
-      (d.kiemTra || []).forEach((it, i) => out.push(Object.assign({ id: st.ma + '-KT' + (i + 1), kind: 'kiemtra', item: it }, base)));
+      (d.thuSS || []).forEach((it, k) => out.push(Object.assign({ id: st.ma + '-THU' + (k + 2), kind: 'thu', item: it }, base)));
+      [d.kiemTra || []].concat(d.kiemTraSS || []).forEach((bo, k) => bo.forEach((it, i) => out.push(Object.assign({ id: st.ma + '-KT' + (i + 1) + (k ? '-' + (k + 1) : ''), kind: 'kiemtra', item: it }, base))));
       for (const [b, lv] of Object.entries(d.bac)) {
         lv.diem.forEach((p, pi) => p.cau.forEach((it, ci) => out.push(Object.assign({
           id: `${st.ma}-${b}-${pi + 1}${ABC[ci]}`, kind: 'cau', bac: +b, diem: pi + 1, idx: ci, item: it
@@ -36,7 +37,7 @@
         id: t.id, kind: 'noi', L, sk: 'NO', lang: def.lang, dan: def.dan, bac: +b, item: t
       }));
     }
-    KT.ZH.CONG.forEach(it => out.push({ id: it.id, kind: 'cong', L: 'Z', sk: 'G', lang: 'zh', dan: 'xm', item: it }));
+    [KT.ZH.CONG].concat(KT.ZH.CONG_SS || []).forEach(bo => bo.forEach(it => out.push({ id: it.id, kind: 'cong', L: 'Z', sk: 'G', lang: 'zh', dan: 'xm', item: it })));
     return out;
   }
 

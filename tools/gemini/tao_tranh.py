@@ -106,6 +106,21 @@ def ghep():
     print("đã ghép", len(GHEP), "tranh đếm số")
 
 
+def chep_trung(codes):
+    """Mã nào trùng câu lệnh với một tranh đã vẽ thì chép tranh đó sang (không tốn tiền)."""
+    import shutil
+    co = {}
+    for c, v in PROMPTS.items():
+        if not c.startswith("_goc-") and (OUT / f"{c}.webp").exists():
+            co.setdefault((v[0], tuple(v[1]), v[2]), c)
+    n = 0
+    for c in codes:
+        if c.startswith("_goc-") or path_of(c).exists(): continue
+        d, ch, r = PROMPTS[c]; src = co.get((d, tuple(ch), r))
+        if src: shutil.copy(OUT / f"{src}.webp", OUT / f"{c}.webp"); n += 1
+    if n: print("chép lại", n, "tranh trùng câu lệnh (không vẽ lại)")
+
+
 def nhom(codes):
     """Gộp các mã cùng câu lệnh để chỉ vẽ một lần."""
     g = {}
@@ -127,6 +142,7 @@ all_codes = ["_goc-" + k for k in GOC] + [c for c in all_codes if c not in GHEP]
 ONLY = [] if MODE == "cho" else [c for c in ONLY if c not in GHEP] or ([] if not sys.argv[3:] else ["_goc-" + GHEP[c][0] for c in sys.argv[3:] if c in GHEP])
 
 if MODE in ("thu", "lai"):
+    if MODE == "thu": chep_trung(ONLY or all_codes)
     groups = nhom(ONLY or all_codes)
     for (d, ch, r), codes in groups.items():
         if MODE == "thu" and all(path_of(c).exists() for c in codes):
@@ -145,6 +161,7 @@ if MODE in ("thu", "lai"):
     ghep()
 
 elif MODE == "batch":
+    chep_trung(ONLY or all_codes)
     todo = [c for c in (ONLY or all_codes) if not path_of(c).exists()]
     groups = list(nhom(todo).items())
     print("cần vẽ", len(todo), "mã =", len(groups), "tranh khác nhau")

@@ -615,6 +615,12 @@ function hoanVi(key, n) {
   if (!S.tron[key] || S.tron[key].length !== n) { S.tron[key] = tronMang(n); luu(); }
   return S.tron[key];
 }
+/* chọn 1 trong n bộ song song cho bé này (giữ cố định trong cả bài) */
+function chonBo(key, n) { return n > 1 ? hoanVi(key, n)[0] : 0; }
+function layThu(ma, def) {
+  const ds = [def.thu].concat(def.thuSS || []), k = chonBo(ma + '-thu', ds.length);
+  return { id: ma + '-THU' + (k ? k + 1 : ''), lang: def.lang, dan: def.dan, item: ds[k] };
+}
 function entryVai(ma, def, bac, pi, vai) {
   const n = def.bac[bac].diem[pi].cau.length;
   const ci = hoanVi(`${ma}-${bac}-${pi}`, n)[ABC.indexOf(vai)] ?? ABC.indexOf(vai);
@@ -675,7 +681,8 @@ function chonCauDe(ma, def, tuBac, denBac) {
 /* không còn bậc thấp hơn: cho làm lại câu làm thử (bé đã biết cách làm) */
 function cauThuLai(ma, def) {
   if (!def.thu || PHIEN.daHoi[ma + '-THU-LAI']) return null;
-  return { id: ma + '-THU-LAI', anh: ma + '-THU', lang: def.lang, dan: def.dan, item: def.thu };
+  const t = layThu(ma, def);
+  return { id: ma + '-THU-LAI', anh: t.id, lang: def.lang, dan: def.dan, item: t.item };
 }
 async function cauNhe(e, tieuDe, loai, lang) {
   if (!e) return null;
@@ -702,7 +709,7 @@ async function khoiDong(ma, def, opt, tieuDe) {
 async function chayKyNang(ma, def, opt) {
   const tieuDe = (ma.startsWith('Z') ? 'Tiếng Trung · ' : 'Tiếng Anh · ') + def.ten;
   PHIEN.tram = ma; PHIEN.cauSo = 0; PHIEN.daHoi = {}; PHIEN.kd = {}; PHIEN.saiLien = 0; PHIEN.soCuu = 0;
-  if (def.thu && !opt.boThu) await cauThu({ id: ma + '-THU', lang: def.lang, dan: def.dan, item: def.thu }, tieuDe);
+  if (def.thu && !opt.boThu) await cauThu(layThu(ma, def), tieuDe);
   await khoiDong(ma, def, opt, tieuDe);
   let bac = opt.bacDau, xuong = 0, coQua = false, kq = null;
   const chiTiet = [];
@@ -742,8 +749,9 @@ async function chayTram(ma) {
     let tienDoc = ph.doc === 0;
     if (!tienDoc) {
       PHIEN.cauSo = 0; let sai = 0;
-      for (let i = 0; i < KT.EN.DO.kiemTra.length; i++) {
-        const e = { id: 'E-DO-KT' + (i + 1), lang: 'en', dan: 'anna', item: KT.EN.DO.kiemTra[i] };
+      const boKT = [KT.EN.DO.kiemTra].concat(KT.EN.DO.kiemTraSS || []), kKT = chonBo('E-DO-kt', boKT.length);
+      for (let i = 0; i < boKT[kKT].length; i++) {
+        const e = { id: 'E-DO-KT' + (i + 1) + (kKT ? '-' + (kKT + 1) : ''), lang: 'en', dan: 'anna', item: boKT[kKT][i] };
         const r = await hienCau(e, 'Tiếng Anh · Đọc'); ghiLog(e.id, 'kt', r); if (!r.dung) sai++;
       }
       tienDoc = sai === 2;
@@ -793,7 +801,8 @@ async function sticker(ma) {
 /* ---------- cổng tiếng Trung ---------- */
 async function chayCong() {
   PHIEN.cauSo = 0; let dung = 0;
-  for (const it of KT.ZH.CONG) {
+  const boCong = [KT.ZH.CONG].concat(KT.ZH.CONG_SS || []);
+  for (const it of boCong[chonBo('Z-G-bo', boCong.length)]) {
     const e = { id: it.id, lang: 'zh', dan: 'xm', item: it };
     const r = await hienCau(e, 'Cổng vùng tiếng Trung'); ghiLog(e.id, 'cong', r); if (r.dung) dung++;
     await khen('zh', r.dung);
@@ -811,8 +820,7 @@ async function chayCong() {
   return kq;
 }
 async function troThanhDieu() {
-  const cap = [['mā', 'mā', 1], ['mā', 'mǎ', 0], ['bà', 'bà', 1], ['shū', 'shù', 0], ['hǎo', 'hǎo', 1], ['tāng', 'táng', 0]];
-  const nghe = { 'mā': '妈', 'mǎ': '马', 'bà': '爸', 'shū': '书', 'shù': '树', 'hǎo': '好', 'tāng': '汤', 'táng': '糖' };
+  const bo = KT.ZH.THANH_DIEU[chonBo('Z-td', KT.ZH.THANH_DIEU.length)], cap = bo.cap, nghe = bo.nghe;
   let dung = 0;
   const g0 = khung(`${loiNV('xm', KT.LOI.thanhDieu)}<div class="hang-nut"><button class="nut" id="t">Chơi</button><button class="nut trang" id="b">Bỏ qua</button></div>`, { man: 'td' });
   const chon = await new Promise(res => { g0.querySelector('#t').onclick = () => { Am.dung(); res(1); }; g0.querySelector('#b').onclick = () => { Am.dung(); res(0); }; Am.noi('xm', 'vi', KT.LOI.thanhDieu).then(() => ngu(600)).then(() => res(1)); });
@@ -833,13 +841,14 @@ async function chayHan() {
   const g0 = khung(`${loiNV('xm', KT.LOI.chuHan)}<div class="hang-nut"><button class="nut" id="t">Tiếp</button></div>`, { man: 'han' });
   await new Promise(res => { g0.querySelector('#t').onclick = () => { Am.dung(); res(); }; Am.noi('xm', 'vi', KT.LOI.chuHan).then(() => ngu(600)).then(res); });
   PHIEN.cauSo = 0;
-  for (let i = 0; i < KT.ZH.HAN.length; i++) {
-    const [d, s] = KT.ZH.HAN[i];
-    const e = { id: 'Z-HZ-' + (i + 1), lang: 'zh', dan: 'xm', item: { a: d, o: ['t:' + d, 't:' + s] } };
+  const boHan = [KT.ZH.HAN].concat(KT.ZH.HAN_SS || []), kHan = chonBo('Z-HZ-bo', boHan.length), HAN = boHan[kHan];
+  for (let i = 0; i < HAN.length; i++) {
+    const [d, s] = HAN[i];
+    const e = { id: 'Z-HZ-' + (i + 1) + (kHan ? '-' + (kHan + 1) : ''), lang: 'zh', dan: 'xm', item: { a: d, o: ['t:' + d, 't:' + s] } };
     const r = await hienCau(e, 'Tiếng Trung · Thẻ chữ Hán'); ghiLog(e.id, 'han', r); lam++;
     if (r.dung) { dung++; saiLien = 0; } else if (++saiLien >= 3) break;
   }
-  return { dung, lam, tong: KT.ZH.HAN.length, muc: dung <= 4 ? 'Mới đọc pinyin, chưa nắm chữ Hán' : dung <= 8 ? 'Nhận diện chữ Hán khá' : 'Đã biết chữ, sẵn sàng bài đọc không pinyin' };
+  return { dung, lam, tong: HAN.length, bo: kHan + 1, muc: dung <= 4 ? 'Mới đọc pinyin, chưa nắm chữ Hán' : dung <= 8 ? 'Nhận diện chữ Hán khá' : 'Đã biết chữ, sẵn sàng bài đọc không pinyin' };
 }
 
 /* ============================================================
@@ -1166,14 +1175,15 @@ function xemDe(ma = 'E-TV', baoKq = '') {
   const nut = (id, nhan) => `<button class="xem-cau" data-id="${id}">${nhan}</button>`;
   let noi = '';
   const def = TRAM_DEF[ma];
-  if (ma === 'Z-G') noi = `<div class="xem-bac"><h3>3 câu sàng lọc</h3><div class="xem-diem">${KT.ZH.CONG.map((it, i) => nut('CONG:' + i, 'Câu ' + (i + 1))).join('')}</div></div>`;
-  else if (ma === 'Z-HZ') noi = `<div class="xem-bac"><h3>12 thẻ chữ Hán (dừng khi sai 3 thẻ liền)</h3><div class="xem-diem">${KT.ZH.HAN.map((h, i) => nut('HZ:' + i, esc(h[0]))).join('')}</div></div>`;
+  if (ma === 'Z-G') noi = [KT.ZH.CONG].concat(KT.ZH.CONG_SS || []).map((bo, k) => `<div class="xem-bac"><h3>3 câu sàng lọc · bộ ${k + 1}</h3><div class="xem-diem">${bo.map((it, i) => nut('CONG:' + k + ':' + i, 'Câu ' + (i + 1))).join('')}</div></div>`).join('')
+    + KT.ZH.THANH_DIEU.map((bo, k) => `<div class="xem-bac"><h3>Trò tai nghe thanh điệu · bộ ${k + 1} <span class="nho">(chỉ cho bé chưa học tiếng Trung)</span></h3><div class="xem-diem">${bo.cap.map(([a, b2, gi]) => `<span>${esc(a)} – ${esc(b2)} (${gi ? 'giống' : 'khác'}) <button class="xem-nghe" data-nv="xm" data-lang="zh" data-t="${esc(bo.nghe[a])}">🔊</button><button class="xem-nghe" data-nv="xm" data-lang="zh" data-t="${esc(bo.nghe[b2])}">🔊</button></span>`).join(' · ')}</div></div>`).join('');
+  else if (ma === 'Z-HZ') noi = [KT.ZH.HAN].concat(KT.ZH.HAN_SS || []).map((bo, k) => `<div class="xem-bac"><h3>12 thẻ chữ Hán · bộ ${k + 1} (dừng khi sai 3 thẻ liền)</h3><div class="xem-diem">${bo.map((h, i) => nut('HZ:' + k + ':' + i, esc(h[0]))).join('')}</div></div>`).join('');
   else if (ma.endsWith('NO')) {
     noi = Object.entries(def.bac).map(([b, ts]) => `<div class="xem-bac"><h3>Bậc ${b}</h3>${ts.map(t => `<div class="xem-noi"><b>${esc(t.ten)}</b> <span class="nho">· đạt: ${esc(t.dat || (t.loai === 'nhac' ? 'nhắc lại đủ, rõ, đúng thanh điệu' : ''))}</span>
       <div class="xem-buoc">${t.buoc.map((bc, i) => `<div>${bc.pic ? tranh(bc.pic, t.id + '_b' + (i + 1)) : ''}<button class="xem-nghe" data-nv="${def.dan}" data-lang="${def.lang}" data-t="${esc(bc.a)}">🔊</button> <span class="${def.lang === 'zh' ? 'zh' : ''}">${t.loai === 'nhac' ? '(nhắc lại) ' : ''}${esc(bc.a)}</span></div>`).join('')}</div></div>`).join('')}</div>`).join('');
   } else {
-    if (def.thu) noi += `<div class="xem-bac"><h3>Câu làm thử</h3><div class="xem-diem">${nut(ma + ':THU', 'Làm thử')}</div></div>`;
-    if (def.kiemTra) noi += `<div class="xem-bac"><h3>Kiểm tra biết đọc (2 câu)</h3><div class="xem-diem">${def.kiemTra.map((it, i) => nut(ma + ':KT:' + i, 'Câu ' + (i + 1))).join('')}</div></div>`;
+    if (def.thu) noi += `<div class="xem-bac"><h3>Câu làm thử (mỗi bé 1 trong ${1 + (def.thuSS || []).length} câu)</h3><div class="xem-diem">${[def.thu].concat(def.thuSS || []).map((it, k) => nut(ma + ':THU:' + k, 'Bộ ' + (k + 1))).join('')}</div></div>`;
+    if (def.kiemTra) noi += [def.kiemTra].concat(def.kiemTraSS || []).map((bo, k) => `<div class="xem-bac"><h3>Kiểm tra biết đọc · bộ ${k + 1}</h3><div class="xem-diem">${bo.map((it, i) => nut(ma + ':KT:' + k + ':' + i, 'Câu ' + (i + 1))).join('')}</div></div>`).join('');
     noi += Object.entries(def.bac).map(([b, lv]) => `<div class="xem-bac"><h3>Bậc ${b} <button class="xem-nghe" data-nv="huou" data-lang="vi" data-t="${esc(lv.hd)}">🔊</button></h3><p class="nho">${esc(lv.hd)}</p>
       ${lv.diem.map((p, pi) => `<div class="xem-diem"><span class="ten-diem">${pi + 1}. ${esc(p.ten)}${p.tuDo ? ' (viết tự do, GV chấm)' : ''}</span>${p.cau.map((c, ci) => nut(`${ma}:${b}:${pi}:${ci}`, ABC[ci])).join('')}</div>`).join('')}</div>`).join('');
   }
@@ -1186,10 +1196,10 @@ function xemDe(ma = 'E-TV', baoKq = '') {
     xemCuon = window.scrollY;
     const id = b.dataset.id, p = id.split(':');
     let e;
-    if (p[0] === 'CONG') { const it = KT.ZH.CONG[+p[1]]; e = { id: it.id, lang: 'zh', dan: 'xm', item: it }; }
-    else if (p[0] === 'HZ') { const [d, s2] = KT.ZH.HAN[+p[1]]; e = { id: 'Z-HZ-' + (+p[1] + 1), lang: 'zh', dan: 'xm', item: { a: d, o: ['t:' + d, 't:' + s2] } }; }
-    else if (p[1] === 'THU') e = { id: p[0] + '-THU', lang: def.lang, dan: def.dan, item: def.thu };
-    else if (p[1] === 'KT') e = { id: p[0] + '-KT' + (+p[2] + 1), lang: def.lang, dan: def.dan, item: def.kiemTra[+p[2]] };
+    if (p[0] === 'CONG') { const it = [KT.ZH.CONG].concat(KT.ZH.CONG_SS || [])[+p[1]][+p[2]]; e = { id: it.id, lang: 'zh', dan: 'xm', item: it }; }
+    else if (p[0] === 'HZ') { const k = +p[1], [d, s2] = [KT.ZH.HAN].concat(KT.ZH.HAN_SS || [])[k][+p[2]]; e = { id: 'Z-HZ-' + (+p[2] + 1) + (k ? '-' + (k + 1) : ''), lang: 'zh', dan: 'xm', item: { a: d, o: ['t:' + d, 't:' + s2] } }; }
+    else if (p[1] === 'THU') { const k = +p[2]; e = { id: p[0] + '-THU' + (k ? k + 1 : ''), lang: def.lang, dan: def.dan, item: [def.thu].concat(def.thuSS || [])[k] }; }
+    else if (p[1] === 'KT') { const k = +p[2]; e = { id: p[0] + '-KT' + (+p[3] + 1) + (k ? '-' + (k + 1) : ''), lang: def.lang, dan: def.dan, item: [def.kiemTra].concat(def.kiemTraSS || [])[k][+p[3]] }; }
     else e = entry(p[0], def, +p[1], +p[2], +p[3]);
     const r = await hienCau(e, 'Xem đề · ' + XEM_TRAM.find(x => x[0] === ma)[1] + ' · ' + e.id);
     xemDe(ma, `Câu ${esc(e.id)}: ${r.dung === null ? 'viết tự do (giáo viên chấm)' : r.dung ? '✅ đúng' : '❌ sai'}${r.chon != null ? ' · đã chọn: ' + esc(String(r.chon)) : ''}`);

@@ -14,6 +14,33 @@
  },
  {
   "co": true,
+  "ma": "anna_en_e668bd09",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "dog",
+  "file": "audio/anna_en_e668bd09.mp3",
+  "dung_o": [
+   "E-TV-THU2",
+   "E-TV-1-2A"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "anna_en_348f1364",
+  "nhan_vat": "anna",
+  "giong": "Laomedeia",
+  "nang_tong": true,
+  "tieng": "en",
+  "loi": "ball",
+  "file": "audio/anna_en_348f1364.mp3",
+  "dung_o": [
+   "E-TV-THU3"
+  ]
+ },
+ {
+  "co": true,
   "ma": "anna_en_40f480dc",
   "nhan_vat": "anna",
   "giong": "Laomedeia",
@@ -80,19 +107,6 @@
  },
  {
   "co": true,
-  "ma": "anna_en_e668bd09",
-  "nhan_vat": "anna",
-  "giong": "Laomedeia",
-  "nang_tong": true,
-  "tieng": "en",
-  "loi": "dog",
-  "file": "audio/anna_en_e668bd09.mp3",
-  "dung_o": [
-   "E-TV-1-2A"
-  ]
- },
- {
-  "co": true,
   "ma": "anna_en_afad8963",
   "nhan_vat": "anna",
   "giong": "Laomedeia",
@@ -101,7 +115,8 @@
   "loi": "fish",
   "file": "audio/anna_en_afad8963.mp3",
   "dung_o": [
-   "E-TV-1-2B"
+   "E-TV-1-2B",
+   "E-NG-THU2"
   ]
  },
  {
@@ -128,7 +143,8 @@
   "loi": "duck",
   "file": "audio/anna_en_bb323378.mp3",
   "dung_o": [
-   "E-TV-1-2C"
+   "E-TV-1-2C",
+   "E-NG-THU3"
   ]
  },
  {
@@ -1898,7 +1914,38 @@
   "loi": "猫",
   "file": "audio/xm_zh_2b987a0f.mp3",
   "dung_o": [
-   "Z-NG-THU"
+   "Z-NG-THU",
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_afa198a0",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "狗",
+  "file": "audio/xm_zh_afa198a0.mp3",
+  "dung_o": [
+   "Z-NG-THU2",
+   "Z-NG-2-2A",
+   "Z-HZ-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_5e857ce9",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "鱼",
+  "file": "audio/xm_zh_5e857ce9.mp3",
+  "dung_o": [
+   "Z-NG-THU3",
+   "Z-HZ-3-2",
+   "THANH-DIEU"
   ]
  },
  {
@@ -1912,7 +1959,8 @@
   "file": "audio/xm_zh_54abffeb.mp3",
   "dung_o": [
    "Z-NG-1-1A",
-   "Z-NG-1-1C"
+   "Z-NG-1-1C",
+   "Z-G-1-2"
   ]
  },
  {
@@ -1925,7 +1973,8 @@
   "loi": "谢谢",
   "file": "audio/xm_zh_4f774845.mp3",
   "dung_o": [
-   "Z-NG-1-1B"
+   "Z-NG-1-1B",
+   "Z-G-1-3"
   ]
  },
  {
@@ -1965,7 +2014,8 @@
   "loi": "爸爸",
   "file": "audio/xm_zh_3259564b.mp3",
   "dung_o": [
-   "Z-NG-1-2A"
+   "Z-NG-1-2A",
+   "Z-G-3-2"
   ]
  },
  {
@@ -1978,7 +2028,8 @@
   "loi": "哥哥",
   "file": "audio/xm_zh_bbe64cdf.mp3",
   "dung_o": [
-   "Z-NG-1-2B"
+   "Z-NG-1-2B",
+   "Z-HZ-1-2"
   ]
  },
  {
@@ -2032,7 +2083,8 @@
   "loi": "五",
   "file": "audio/xm_zh_554027ed.mp3",
   "dung_o": [
-   "Z-NG-1-3A"
+   "Z-NG-1-3A",
+   "Z-G-2-3"
   ]
  },
  {
@@ -2045,7 +2097,8 @@
   "loi": "八",
   "file": "audio/xm_zh_d44986bc.mp3",
   "dung_o": [
-   "Z-NG-1-3B"
+   "Z-NG-1-3B",
+   "THANH-DIEU"
   ]
  },
  {
@@ -2058,7 +2111,8 @@
   "loi": "三",
   "file": "audio/xm_zh_94469b48.mp3",
   "dung_o": [
-   "Z-NG-1-3C"
+   "Z-NG-1-3C",
+   "Z-G-2-2"
   ]
  },
  {
@@ -2111,7 +2165,8 @@
   "loi": "黄色",
   "file": "audio/xm_zh_d7767726.mp3",
   "dung_o": [
-   "Z-NG-2-1B"
+   "Z-NG-2-1B",
+   "Z-HZ-2-3"
   ]
  },
  {
@@ -2155,20 +2210,6 @@
  },
  {
   "co": true,
-  "ma": "xm_zh_afa198a0",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "狗",
-  "file": "audio/xm_zh_afa198a0.mp3",
-  "dung_o": [
-   "Z-NG-2-2A",
-   "Z-HZ-3"
-  ]
- },
- {
-  "co": true,
   "ma": "xm_zh_91036441",
   "nhan_vat": "xiaomei",
   "giong": "Aoede",
@@ -2191,7 +2232,8 @@
   "loi": "香蕉",
   "file": "audio/xm_zh_8f0926f5.mp3",
   "dung_o": [
-   "Z-NG-2-2C"
+   "Z-NG-2-2C",
+   "Z-HZ-4-2"
   ]
  },
  {
@@ -2204,7 +2246,8 @@
   "loi": "草莓",
   "file": "audio/xm_zh_713d6f38.mp3",
   "dung_o": [
-   "Z-NG-2-2C"
+   "Z-NG-2-2C",
+   "Z-HZ-4-3"
   ]
  },
  {
@@ -3644,6 +3687,7 @@
   "loi": "老师",
   "file": "audio/xm_zh_81a3b6e3.mp3",
   "dung_o": [
+   "Z-G-3-3",
    "Z-HZ-5"
   ]
  },
@@ -3670,7 +3714,8 @@
   "loi": "水",
   "file": "audio/xm_zh_921978ad.mp3",
   "dung_o": [
-   "Z-HZ-7"
+   "Z-HZ-7",
+   "THANH-DIEU"
   ]
  },
  {
@@ -3696,7 +3741,8 @@
   "loi": "雨",
   "file": "audio/xm_zh_4e50dcbf.mp3",
   "dung_o": [
-   "Z-HZ-9"
+   "Z-HZ-9",
+   "THANH-DIEU"
   ]
  },
  {
@@ -3736,6 +3782,490 @@
   "file": "audio/xm_zh_30c99b3e.mp3",
   "dung_o": [
    "Z-HZ-12"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_17c30c53",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "白色",
+  "file": "audio/xm_zh_17c30c53.mp3",
+  "dung_o": [
+   "Z-HZ-2-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_62cf6955",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "朋友",
+  "file": "audio/xm_zh_62cf6955.mp3",
+  "dung_o": [
+   "Z-HZ-5-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_aaf772a5",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "早上",
+  "file": "audio/xm_zh_aaf772a5.mp3",
+  "dung_o": [
+   "Z-HZ-6-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_7a38d2fd",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "面条",
+  "file": "audio/xm_zh_7a38d2fd.mp3",
+  "dung_o": [
+   "Z-HZ-7-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_977e75f2",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "唱歌",
+  "file": "audio/xm_zh_977e75f2.mp3",
+  "dung_o": [
+   "Z-HZ-8-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_91d41db0",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "下雪",
+  "file": "audio/xm_zh_91d41db0.mp3",
+  "dung_o": [
+   "Z-HZ-9-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_f08ac657",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "医院",
+  "file": "audio/xm_zh_f08ac657.mp3",
+  "dung_o": [
+   "Z-HZ-10-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_650c7d53",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "眼睛",
+  "file": "audio/xm_zh_650c7d53.mp3",
+  "dung_o": [
+   "Z-HZ-11-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_838272df",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "高兴",
+  "file": "audio/xm_zh_838272df.mp3",
+  "dung_o": [
+   "Z-HZ-12-2"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6f52276d",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "弟弟",
+  "file": "audio/xm_zh_6f52276d.mp3",
+  "dung_o": [
+   "Z-HZ-1-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6e73a161",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "马",
+  "file": "audio/xm_zh_6e73a161.mp3",
+  "dung_o": [
+   "Z-HZ-3-3",
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_c42ac6cc",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "书包",
+  "file": "audio/xm_zh_c42ac6cc.mp3",
+  "dung_o": [
+   "Z-HZ-5-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_7b113cfe",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "电视",
+  "file": "audio/xm_zh_7b113cfe.mp3",
+  "dung_o": [
+   "Z-HZ-6-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6b91a9a5",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "喝水",
+  "file": "audio/xm_zh_6b91a9a5.mp3",
+  "dung_o": [
+   "Z-HZ-7-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_52f4b3e9",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "跑步",
+  "file": "audio/xm_zh_52f4b3e9.mp3",
+  "dung_o": [
+   "Z-HZ-8-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_d1d45c6c",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "晴天",
+  "file": "audio/xm_zh_d1d45c6c.mp3",
+  "dung_o": [
+   "Z-HZ-9-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_42dee400",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "公园",
+  "file": "audio/xm_zh_42dee400.mp3",
+  "dung_o": [
+   "Z-HZ-10-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6759c43b",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "头发",
+  "file": "audio/xm_zh_6759c43b.mp3",
+  "dung_o": [
+   "Z-HZ-11-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_99bd6583",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "生气",
+  "file": "audio/xm_zh_99bd6583.mp3",
+  "dung_o": [
+   "Z-HZ-12-3"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_6cfb714e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "妈",
+  "file": "audio/xm_zh_6cfb714e.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_14a47636",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "爸",
+  "file": "audio/xm_zh_14a47636.mp3",
+  "dung_o": [
+   "THANH-DIEU",
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_4143da08",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "书",
+  "file": "audio/xm_zh_4143da08.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_ad40b29e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "树",
+  "file": "audio/xm_zh_ad40b29e.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_41fa8206",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "好",
+  "file": "audio/xm_zh_41fa8206.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_1c168054",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "汤",
+  "file": "audio/xm_zh_1c168054.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_c104ecfb",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "糖",
+  "file": "audio/xm_zh_c104ecfb.mp3",
+  "dung_o": [
+   "THANH-DIEU",
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_7c6319e1",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "飞",
+  "file": "audio/xm_zh_7c6319e1.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_3f73bade",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "肥",
+  "file": "audio/xm_zh_3f73bade.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_140859d2",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "米",
+  "file": "audio/xm_zh_140859d2.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_37f6a0b1",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "大",
+  "file": "audio/xm_zh_37f6a0b1.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_e2b3cfcd",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "踢",
+  "file": "audio/xm_zh_e2b3cfcd.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_3862033e",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "题",
+  "file": "audio/xm_zh_3862033e.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_4388dbe2",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "花",
+  "file": "audio/xm_zh_4388dbe2.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_f9c30c60",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "睡",
+  "file": "audio/xm_zh_f9c30c60.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_366b2044",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "哥",
+  "file": "audio/xm_zh_366b2044.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_caaf2cd7",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "躺",
+  "file": "audio/xm_zh_caaf2cd7.mp3",
+  "dung_o": [
+   "THANH-DIEU"
+  ]
+ },
+ {
+  "co": true,
+  "ma": "xm_zh_a4637ea9",
+  "nhan_vat": "xiaomei",
+  "giong": "Aoede",
+  "nang_tong": true,
+  "tieng": "zh",
+  "loi": "吃",
+  "file": "audio/xm_zh_a4637ea9.mp3",
+  "dung_o": [
+   "THANH-DIEU"
   ]
  },
  {
@@ -4385,110 +4915,6 @@
   "tieng": "zh",
   "loi": "你做得很好！",
   "file": "audio/xm_zh_fcfa6fc2.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_6cfb714e",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "妈",
-  "file": "audio/xm_zh_6cfb714e.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_6e73a161",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "马",
-  "file": "audio/xm_zh_6e73a161.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_14a47636",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "爸",
-  "file": "audio/xm_zh_14a47636.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_4143da08",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "书",
-  "file": "audio/xm_zh_4143da08.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_ad40b29e",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "树",
-  "file": "audio/xm_zh_ad40b29e.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_41fa8206",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "好",
-  "file": "audio/xm_zh_41fa8206.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_1c168054",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "汤",
-  "file": "audio/xm_zh_1c168054.mp3",
-  "dung_o": [
-   "KHAC"
-  ]
- },
- {
-  "co": true,
-  "ma": "xm_zh_c104ecfb",
-  "nhan_vat": "xiaomei",
-  "giong": "Aoede",
-  "nang_tong": true,
-  "tieng": "zh",
-  "loi": "糖",
-  "file": "audio/xm_zh_c104ecfb.mp3",
   "dung_o": [
    "KHAC"
   ]
