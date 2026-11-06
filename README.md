@@ -47,7 +47,7 @@ Khoá Gemini để trong một tệp riêng ngoài kho (không bao giờ đưa l
 
 ## Khác với tài liệu nội dung
 - Bài chạy liền mạch: xong một trạm (đã xác định được bậc) thì tự sang trạm tiếp theo, không cần bé bấm bản đồ hay chọn ô may mắn. Nút "Đi tiếp ngay" để bỏ qua lúc chờ; giáo viên (?gv=1) vẫn mở được bất kỳ trạm nào trên bản đồ.
-- Chấm chặt hơn (06/11): mỗi điểm kiến thức luôn hỏi 2 câu A, B; đúng cả 2 = vững (1 điểm); lệch nhau thì hỏi câu C, đúng 2/3 = chưa vững (0,5); còn lại 0. Qua bậc khi đạt từ 2/3 tổng điểm. Đủ chắc chắn qua / không qua thì dừng sớm. Bé đoán mò chỉ còn khoảng 4% qua một bậc (trước là 47%).
+- Chấm chặt hơn (06/11): mỗi điểm kiến thức luôn hỏi 2 câu A, B; đúng cả 2 = vững (1 điểm); lệch nhau thì hỏi câu C, đúng 2/3 = chưa vững (0,5); còn lại 0. Qua bậc khi đạt từ 2/3 tổng điểm. Bé đang qua bậc thì hỏi đủ cả 3 điểm (6 câu); chắc chắn không qua thì dừng sớm. Bé đoán mò chỉ còn khoảng 4% qua một bậc (trước là 47%).
 - Qua bậc cao nhất bài đo được thì ghi đúng bậc đó (E4 Flyers, C4 YCT3), không tự cộng lên E5 / C5; báo cáo ghi chú để giáo viên kiểm tra thêm.
 - Sau mỗi câu: đúng thì khen (Great!, Well done!…), sai thì chỉ nói "Next one!" / "下一个！", phần Nói thì "Thank you!".
 - Màn nào cũng có giọng cô Hươu (kể cả màn đầu tiên; trình duyệt chặn tiếng trước lần chạm đầu nên bé chạm cô Hươu để nghe).

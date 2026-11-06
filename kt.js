@@ -649,11 +649,11 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
   const diem = lv.diem.map((p, pi) => ({ ten: p.ten, tuDo: !!p.tuDo, kq: {}, pi }));
   const hang = hoanVi(`${ma}-${bac}-thuTu`, diem.length).map(pi => ({ d: diem[pi], k: 'A' }));
   const nDiem = diem.filter(d => !d.tuDo).length, can = nDiem * 2 / 3 - 1e-9;
-  /* đã đủ chắc chắn qua / không qua bậc thì dừng sớm (bớt câu cho bé), riêng câu viết tự do vẫn làm */
+  /* chắc chắn không qua bậc thì dừng sớm (đỡ cho bé phải làm câu quá khó); bé đang qua thì hỏi đủ cả 3 điểm; câu viết tự do vẫn làm */
   const daRo = () => {
     let co = 0, conLai = 0;
     for (const d of diem) { if (d.tuDo) continue; const x = chamDiem(d, opt); if (x.xong) co += x.gt; else conLai++; }
-    return co >= can || co + conLai < can;
+    return co + conLai < can;
   };
   for (let i = 0; i < hang.length; i++) {
     const { d, k } = hang[i];
