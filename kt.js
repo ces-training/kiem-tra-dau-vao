@@ -249,8 +249,8 @@ const daXongSo = () => LO.filter(t => S.tien[t.ma]).length;
 function baiMoi() {
   try {
     const cu = JSON.parse(localStorage.getItem(LUU + '-cu') || '[]');
-    cu.unshift({ phien: S.phien, hs: S.hs, ketThuc: S.ketThuc, tongHop: tinh(), daGui: S.daGui || null });
-    localStorage.setItem(LUU + '-cu', JSON.stringify(cu.slice(0, 20)));
+    cu.unshift({ phien: S.phien, hs: S.hs, ketThuc: S.ketThuc, tongHop: tinh(), daGui: S.daGui || null, guiAmV: S.guiAmV || null, S: S.guiAmV === 2 ? null : S });   // giữ bài đầy đủ tới khi ghi âm gửi được
+    localStorage.setItem(LUU + '-cu', JSON.stringify(cu.slice(0, 10)));
   } catch (e) {}
   S = moi(); luu(); phuHuynh();
 }
@@ -648,15 +648,25 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
   await manHuongDanBac(lv.hd, tieuDe);
   const diem = lv.diem.map((p, pi) => ({ ten: p.ten, tuDo: !!p.tuDo, kq: {}, pi }));
   const hang = hoanVi(`${ma}-${bac}-thuTu`, diem.length).map(pi => ({ d: diem[pi], k: 'A' }));
+  const nDiem = diem.filter(d => !d.tuDo).length, can = nDiem * 2 / 3 - 1e-9;
+  /* đã đủ chắc chắn qua / không qua bậc thì dừng sớm (bớt câu cho bé), riêng câu viết tự do vẫn làm */
+  const daRo = () => {
+    let co = 0, conLai = 0;
+    for (const d of diem) { if (d.tuDo) continue; const x = chamDiem(d, opt); if (x.xong) co += x.gt; else conLai++; }
+    return co >= can || co + conLai < can;
+  };
   for (let i = 0; i < hang.length; i++) {
     const { d, k } = hang[i];
-    if (k === 'B') await thoCon();
+    if (!d.tuDo && daRo()) continue;
+    if (k === 'C') await thoCon();
     const e = entryVai(ma, def, bac, d.pi, k);
     const daLam = PHIEN.kd[e.id] || cauDaLam(e.id);   // câu bé đã làm (khởi động, câu cứu, hoặc trước khi tải lại trang): dùng lại
     const r = daLam || await hienCau(e, tieuDe);
     PHIEN.daHoi[e.id] = true;
     d.kq[k] = r; if (!daLam) ghiLog(e.id, k, r);
-    if (k === 'A' && !d.tuDo && (!r.dung || r.nhanh) && !opt.chiA) hang.splice(Math.min(i + 2, hang.length), 0, { d, k: 'B' }, { d, k: 'C' });
+    /* mỗi điểm kiến thức luôn hỏi 2 câu (A, B) để tránh đoán trúng; A, B lệch nhau thì hỏi thêm câu C để phân định */
+    if (k === 'A' && !d.tuDo) hang.splice(Math.min(i + 2, hang.length), 0, { d, k: 'B' });
+    if (k === 'B' && !opt.chiA && !!d.kq.A.dung !== !!r.dung) hang.splice(Math.min(i + 2, hang.length), 0, { d, k: 'C' });
     if (daLam) continue;
     await khen(def.lang, r.dung);
     PHIEN.saiLien = r.dung === false ? PHIEN.saiLien + 1 : r.dung ? 0 : PHIEN.saiLien;
@@ -665,20 +675,26 @@ async function chayBac(ma, def, bac, tieuDe, opt) {
       await cauNhe(chonCauDe(ma, def, opt.min, bac) || cauThuLai(ma, def), tieuDe, 'cuu', def.lang);
     }
   }
-  let tong = 0, dem = 0;
+  let tong = 0;
   for (const d of diem) {
     if (d.tuDo) { d.gt = null; d.ketLuan = 'cho_gv'; d.baiViet = d.kq.A && d.kq.A.chon; continue; }
-    const A = d.kq.A, B = d.kq.B, C = d.kq.C;
-    if (A.dung && !A.nhanh) { d.gt = 1; d.ketLuan = 'vung'; }
-    else if (B && C) {
-      const n = (B.dung ? 1 : 0) + (C.dung ? 1 : 0);
-      if (A.dung) { d.gt = n >= 1 ? 1 : 0.5; d.ketLuan = n >= 1 ? 'vung' : 'chua_vung'; }
-      else { d.gt = n === 2 ? 1 : n === 1 ? 0.5 : 0; d.ketLuan = n === 2 ? 'nham' : n === 1 ? 'chua_vung' : 'chua_nam'; }
-    } else { d.gt = A.dung ? 1 : 0; d.ketLuan = A.dung ? 'vung' : 'chua_nam'; }
-    tong += d.gt; dem++;
+    const x = chamDiem(d, opt);
+    if (!x.xong) { d.gt = null; d.ketLuan = 'chua_hoi'; continue; }   // dừng sớm: điểm này chưa cần hỏi
+    d.gt = x.gt; d.ketLuan = x.ketLuan; tong += d.gt;
   }
-  const qua = tong >= dem * 2 / 3 - 1e-9;
+  const dem = nDiem, qua = tong >= can;
   return { bac, tong, dem, qua, diem: diem.map(d => ({ ten: d.ten, gt: d.gt, ketLuan: d.ketLuan, baiViet: d.baiViet })) };
+}
+
+/* chấm một điểm kiến thức: vững = đúng cả A và B; đúng 2/3 câu = chưa vững (0,5); còn lại = chưa nắm */
+function chamDiem(d, opt) {
+  const A = d.kq.A, B = d.kq.B, C = d.kq.C;
+  if (!A || !B) return { xong: false };
+  const nAB = (A.dung ? 1 : 0) + (B.dung ? 1 : 0);
+  if (nAB === 2) return { xong: true, gt: 1, ketLuan: 'vung' };
+  if (nAB === 0) return { xong: true, gt: 0, ketLuan: 'chua_nam' };
+  if (!C && !opt.chiA) return { xong: false };
+  return (C ? C.dung : true) ? { xong: true, gt: 0.5, ketLuan: 'chua_vung' } : { xong: true, gt: 0, ketLuan: 'chua_nam' };
 }
 
 /* ---------- nhịp êm cho bé: khởi động, câu cứu, câu về đích (không tính điểm) ---------- */
@@ -728,7 +744,7 @@ async function chayKyNang(ma, def, opt) {
   PHIEN.tram = ma; PHIEN.cauSo = 0; PHIEN.daHoi = {}; PHIEN.kd = {}; PHIEN.saiLien = 0; PHIEN.soCuu = 0;
   if (def.thu && !opt.boThu) await cauThu(layThu(ma, def), tieuDe);
   await khoiDong(ma, def, opt, tieuDe);
-  let bac = opt.bacDau, xuong = 0, coQua = false, kq = null;
+  let bac = opt.bacDau, xuong = 0, coQua = false, kq = null, tran = false;
   const chiTiet = [];
   for (;;) {
     const r = await chayBac(ma, def, bac, tieuDe, opt);
@@ -736,7 +752,7 @@ async function chayKyNang(ma, def, opt) {
     if (r.qua) {
       coQua = true;
       if (xuong > 0 || opt.ngan) { kq = bac; break; }
-      if (bac >= opt.max) { kq = bac + 1; break; }
+      if (bac >= opt.max) { kq = bac; tran = true; break; }   // vượt bậc cao nhất bài đo được: ghi đúng bậc đó, không tự cộng thêm
       bac++;
       await manHuongDanBac(KT.LOI.lenBac, tieuDe);   // báo trước nhẹ nhàng: câu sẽ khó hơn một chút
     } else {
@@ -750,7 +766,7 @@ async function chayKyNang(ma, def, opt) {
     if (e) { await manHuongDanBac(KT.LOI.veDich, tieuDe); await cauNhe(e, tieuDe, 'vedich', def.lang); }
   }
   const choGV = chiTiet.some(c => c.diem.some(d => d.ketLuan === 'cho_gv'));
-  return { bac: kq, chiTiet, choGV, ngan: !!opt.ngan };
+  return { bac: kq, chiTiet, choGV, ngan: !!opt.ngan, tran };
 }
 
 /* ============================================================
@@ -1045,6 +1061,8 @@ function tinh() {
     if (kn.NO && chung != null && kn.NO.bac <= chung - 2) { chung = Math.max(0, chung - 1); ghiChu.push('Nói thấp hơn bậc chung 2 bậc: xếp xuống 1 bậc, cần ưu tiên nói.'); }
     if (choNoi) ghiChu.push('Bậc tạm tính, chưa có điểm Nói (giáo viên chấm).');
     if (kq['E-VI'] && kq['E-VI'].choGV && L === 'en') ghiChu.push('Bài viết tự do bậc E4 chờ giáo viên chấm.');
+    const tran = Object.entries(kq).filter(([m, r]) => m.startsWith(P + '-') && r && r.tran).map(([m]) => TEN_KN[m.split('-')[1]]);
+    if (tran.length) ghiChu.push('Đạt bậc cao nhất bài đo được ở: ' + tran.join(', ') + '. Bé có thể còn giỏi hơn, giáo viên kiểm tra thêm nếu cần.');
     // điểm vững / cần luyện
     const vung = [], luyen = []; let soChuaVung = 0;
     for (const [m, r] of Object.entries(kq)) {
@@ -1132,7 +1150,7 @@ async function phanGV() {
       <div class="cham-noi" data-t="E-VI-TUDO" data-k="d">${[0, 1, 2, 3].map(v => `<button data-v="${v}" class="${((S.chamNoi || {})['E-VI-TUDO'] || {}).d === v ? 'chon' : ''}">${v}</button>`).join('')}</div>`;
   }
   h += `<h3>Kết luận từng điểm kiến thức</h3><table><tr><th>Kỹ năng</th><th>Bậc</th><th>Điểm kiến thức</th><th>Kết luận</th></tr>`;
-  const KL = { vung: 'Nắm vững', nham: 'Nhầm nhất thời', chua_vung: 'Chưa vững', chua_nam: 'Chưa nắm', cho_gv: 'Chờ GV chấm' };
+  const KL = { vung: 'Nắm vững', nham: 'Nhầm nhất thời', chua_vung: 'Chưa vững', chua_nam: 'Chưa nắm', cho_gv: 'Chờ GV chấm', chua_hoi: 'Không cần hỏi (đã đủ kết luận)' };
   for (const [m, r] of Object.entries(S.kq)) (r.chiTiet || []).forEach(c => c.diem.forEach(d => { h += `<tr><td>${m}</td><td>${c.bac} ${c.qua ? '✔' : '✘'}</td><td>${esc(d.ten)}</td><td>${KL[d.ketLuan] || ''}</td></tr>`; }));
   h += `</table><h3>Nhật ký câu trả lời (${S.log.length})</h3><table><tr><th>Mã</th><th>Câu</th><th>Bé chọn</th><th>Đáp án</th><th>Kết quả</th><th>Thời gian</th></tr>`;
   for (const l of S.log) h += `<tr><td>${esc(l.id)}</td><td>${esc(l.loai)}</td><td>${esc(l.chon)}</td><td>${esc(l.dapAn)}</td><td>${l.dung == null ? '—' : l.dung ? '<span class="dung-c">đúng</span>' : '<span class="sai-c">sai</span>'}${l.nhanh ? ' ⚡' : ''}</td><td>${(l.ms / 1000).toFixed(1)}s</td></tr>`;
@@ -1150,14 +1168,16 @@ function ganGV(g) {
 }
 
 /* ---------- xuất, gửi ---------- */
-async function goiKetQua(coGhiAm) {
-  const T = tinh();
+async function goiKetQua(coGhiAm, st = S, T = null) {
+  if (!T) T = tinh();
   const ghiAm = {};
-  if (coGhiAm) for (const m of ['E-NO', 'Z-NO']) for (const t of ((S.kq[m] || {}).tasks || [])) for (const b of t.buoc) {
+  if (coGhiAm) for (const m of ['E-NO', 'Z-NO']) for (const t of ((st.kq[m] || {}).tasks || [])) for (const b of t.buoc) {
     const blob = await Kho.lay(b.key); if (!blob) continue;
-    ghiAm[b.key] = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(blob); });
+    /* Chrome ghi "audio/webm;codecs=opus": bỏ phần codecs để máy chủ nhận đúng dạng data:<loại>;base64, */
+    ghiAm[b.key] = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(String(fr.result).replace(/^data:([^;,]+)[^,]*?;base64,/, 'data:$1;base64,')); fr.readAsDataURL(blob); });
   }
-  return { phienBan: 2, tienDo: S.tien.KET ? 'Xong bài' : 'Đang làm: ' + daXongSo() + '/' + LO.length + ' trạm', phien: S.phien, hs: S.hs, batDau: S.batDau, ketThuc: S.ketThuc, ketQua: S.kq, tongHop: T, chamNoi: S.chamNoi || {}, nhatKy: S.log, ghiAm };
+  const tienDo = st.tien.KET ? 'Xong bài' : st === S ? 'Đang làm: ' + daXongSo() + '/' + LO.length + ' trạm' : 'Bỏ dở';
+  return { phienBan: 2, tienDo, phien: st.phien, hs: st.hs, batDau: st.batDau, ketThuc: st.ketThuc, ketQua: st.kq, tongHop: T, chamNoi: st.chamNoi || {}, nhatKy: st.log, ghiAm };
 }
 async function taiFile(coGhiAm) {
   const d = await goiKetQua(coGhiAm);
@@ -1184,7 +1204,7 @@ async function guiKetQua(baoLai, coGhiAm = true) {
     if (tt) tt.textContent = 'Đang gửi…';
     const d = await goiKetQua(coGhiAm);
     await fetch(CF.KQ_API, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) });
-    S.daGui = Date.now(); luu();
+    S.daGui = Date.now(); if (coGhiAm) S.guiAmV = 2; luu();
     if (tt) tt.textContent = 'Đã gửi kết quả cho trung tâm.';
   } catch (e) { if (tt) tt.textContent = 'Chưa gửi được. Ba mẹ bấm "Tải kết quả" rồi gửi file qua Zalo cho trung tâm nhé.'; }
 }
@@ -1238,4 +1258,17 @@ function xemDe(ma = 'E-TV', baoKq = '') {
 
 if (XEM) xemDe();
 else if (GV && S.hs && S.tien.KET) baoCao(true); else chamBatDau();
+/* gửi bù ghi âm phần Nói (bản cũ gửi sai định dạng nên Drive chưa nhận được): làm một lần, chạy ngầm */
+if (!XEM && CF.KQ_API) setTimeout(async () => {
+  try {
+    if (S.phien && S.hs && (S.kq['E-NO'] || S.kq['Z-NO']) && S.guiAmV !== 2) await guiKetQua(false);
+    const cu = JSON.parse(localStorage.getItem(LUU + '-cu') || '[]'); let doi = false;
+    for (const x of cu) if (x.S && x.S.guiAmV !== 2) {   // bài của bé trước trên cùng máy
+      const d = await goiKetQua(true, x.S, x.tongHop);
+      await fetch(CF.KQ_API, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) });
+      x.guiAmV = 2; x.S = null; doi = true;
+    }
+    if (doi) localStorage.setItem(LUU + '-cu', JSON.stringify(cu));
+  } catch (e) {}
+}, 4000);
 })();

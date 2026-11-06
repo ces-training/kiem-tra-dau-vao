@@ -45,7 +45,7 @@ function luuKiemTra_(d) {
     // ghi âm: mỗi file chỉ lưu một lần
     var soFile = 0;
     Object.keys(d.ghiAm || {}).forEach(function (k) {
-      var m = String(d.ghiAm[k]).match(/^data:([^;]+);base64,(.*)$/); if (!m) return;
+      var m = String(d.ghiAm[k]).match(/^data:([^;,]+)[^,]*?;base64,(.*)$/); if (!m) return;   // nhận cả dạng "audio/webm;codecs=opus" 
       var ten = tenFile_(k, m[1]);
       if (!tm.getFilesByName(ten).hasNext()) tm.createFile(Utilities.newBlob(Utilities.base64Decode(m[2]), m[1], ten));
     });
@@ -84,7 +84,7 @@ function luuKiemTra_(d) {
   if (khoa && viecCham.length) viecCham.forEach(function (v) {
     try {
       var kq = chamNoi_(khoa, v.tram, v.lang, d.hs, tm);
-      if (!kq) return;
+      if (!kq) { sh.getRange(dong, v.cot + 1).setValue(''); return; }   // chưa có file ghi âm: để trống, lần gửi sau có ghi âm thì chấm
       sh.getRange(dong, v.cot + 1).setValue(kq.goiY);
       var o = sh.getRange(dong, 23), cu = o.getValue();
       o.setValue((cu ? cu + '\n' : '') + (v.lang === 'en' ? 'TA: ' : 'TT: ') + kq.nhanXet);
