@@ -456,6 +456,9 @@ function hienCau(e, tieuDe, opt = {}) {
   const truyen = it.truyen ? KT.EN.DO.truyen[it.truyen] : null;
   let de = '';
   if (coLoa) de += `<button class="loa-to" id="loa">${em('🔊')}<span class="lan" id="lan"></span></button>`;
+  const chiLoa = (it.k || 'pick') === 'pick' && !coLoa && (it.o || []).some(o => String(o).startsWith('s:'));
+  const loiChiLoa = 'Bấm từng cái loa để nghe, rồi chọn câu đúng với hình nhé!';
+  if (chiLoa) de += `<div class="nho" style="text-align:center;font-weight:700;margin-bottom:6px">${em('👆')} ${esc(loiChiLoa)}</div>`;
   if (it.pic) de += `<div class="tranh-de">${tranh(it.pic, (e.anh || e.id) + '_pic')}</div>`;
   if (truyen) de += `<div class="truyen">${esc(truyen)}</div>`;
   if (it.q) de += `<div class="cau ${zh ? 'zh' : ''} ${String(it.q).length > 60 ? 'nho-hon' : ''}">${esc(it.q)}</div>`;
@@ -504,6 +507,7 @@ function hienCau(e, tieuDe, opt = {}) {
     }
     /* lời cô Hươu trước câu (nếu có) đọc hết rồi mới phát câu hỏi */
     const dauLoi = opt.loiTruoc ? Am.noi('huou', 'vi', opt.loiTruoc) : Promise.resolve();
+    if (chiLoa) Am.noi('huou', 'vi', loiChiLoa);
     if (loa) { loa.onclick = () => phat(); capNhatLoa(); if (!docTruyen) dauLoi.then(() => { if (!daTra && manHienTai === 'cau') phat(); }); }
 
     let daTra = false;
