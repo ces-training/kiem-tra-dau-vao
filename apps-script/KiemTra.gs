@@ -171,3 +171,29 @@ function khoiTao() {
   var r = UrlFetchApp.fetch('https://generativelanguage.googleapis.com/v1beta/models/' + MO_HINH, { headers: { 'x-goog-api-key': khoa }, muteHttpExceptions: true });
   Logger.log(r.getResponseCode() === 200 ? 'Khoá Gemini dùng được.' : 'Khoá Gemini lỗi: ' + r.getResponseCode());
 }
+
+/* Chấm lại các dòng bị "lỗi máy chấm" hoặc kẹt "đang chấm…" (sau khi đã đổi khoá Gemini). Chạy tay: chọn chamLaiLoi → Chạy. */
+function chamLaiLoi() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet(), sh = ss.getSheetByName(TEN_TRANG);
+  var khoa = PropertiesService.getScriptProperties().getProperty('GEMINI_KEY');
+  if (!sh || !khoa) { Logger.log('Thiếu trang hoặc GEMINI_KEY'); return; }
+  var n = sh.getLastRow(); if (n < 2) return;
+  var data = sh.getRange(2, 1, n - 1, SO_COT_MAY).getValues(), xong = 0, loi = 0;
+  data.forEach(function (r, i) {
+    var dong = i + 2, m = String(r[18]).match(/folders\/([\w-]+)/); if (!m) return;
+    var tm = DriveApp.getFolderById(m[1]), kqf = tm.getFilesByName('ket-qua.json'); if (!kqf.hasNext()) return;
+    var d = JSON.parse(kqf.next().getBlob().getDataAsString());
+    var coLoi = false;
+    [['E-NO', 'en', 20], ['Z-NO', 'zh', 21]].forEach(function (x) {
+      var cu = String(r[x[2]]); if (!/^(lỗi máy chấm|đang chấm)/.test(cu)) return;
+      var tram = (d.ketQua || {})[x[0]]; if (!tram || !tram.tasks) return;
+      try {
+        var kq = chamNoi_(khoa, tram, x[1], d.hs || {}, tm);
+        sh.getRange(dong, x[2] + 1).setValue(kq ? kq.goiY : '');
+        if (kq) { var o = sh.getRange(dong, 23), c = coLoi ? o.getValue() : ''; o.setValue((c ? c + '\n' : '') + (x[1] === 'en' ? 'TA: ' : 'TT: ') + kq.nhanXet); coLoi = true; }
+        xong++;
+      } catch (err) { sh.getRange(dong, x[2] + 1).setValue('lỗi máy chấm: ' + String(err).slice(0, 80)); loi++; }
+    });
+  });
+  Logger.log('Đã chấm lại ' + xong + ', còn lỗi ' + loi);
+}
